@@ -27,3 +27,4 @@ dist-ssr
 assets/index-*.js
 assets/index-*.css
 index.html
+.vercel
