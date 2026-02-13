@@ -1,5 +1,4 @@
-import React from 'react';
-import { Shield, BarChart3, Briefcase, ChevronRight, Phone, Mail, MapPin, ExternalLink, ArrowRight, CheckCircle2, TrendingUp, Building2, Anchor, Truck, HardHat, Stethoscope } from 'lucide-react';
+import { Shield, ChevronRight, Phone, Mail, MapPin, ArrowRight, CheckCircle2, TrendingUp, Building2, Truck, HardHat, Stethoscope } from 'lucide-react';
 
 const SECTORS = [
     { name: 'Manufacturing', icon: <Building2 className="w-8 h-8" />, img: '/industry_factory.jpg' }, // Placeholder, will fallback or use existing
