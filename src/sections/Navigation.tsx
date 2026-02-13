@@ -33,24 +33,20 @@ const Navigation = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 ${
-          isScrolled
+        className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 ${isScrolled
             ? 'bg-shefa-white/90 backdrop-blur-md shadow-sm'
             : 'bg-transparent'
-        }`}
+          }`}
       >
         <div className="w-full px-6 lg:px-12">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <a href="#" className="flex items-center gap-3">
               <img
-                src="/Logo-Shefa-Risk-Management-OL_Shefa-Icon.png"
+                src="/shefa white logo.png"
                 alt="Shefa"
-                className="h-10 w-auto"
+                className="h-10 lg:h-12 w-auto transition-all"
               />
-              <span className="font-heading font-semibold text-xl text-shefa-navy">
-                Shefa
-              </span>
             </a>
 
             {/* Desktop Navigation */}
@@ -74,7 +70,7 @@ const Navigation = () => {
               >
                 Get a quote
               </button>
-              
+
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="lg:hidden p-2 text-shefa-navy"
@@ -89,9 +85,8 @@ const Navigation = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 z-[999] bg-shefa-white transition-transform duration-300 lg:hidden ${
-          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        className={`fixed inset-0 z-[999] bg-shefa-white transition-transform duration-300 lg:hidden ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
       >
         <div className="flex flex-col items-center justify-center h-full gap-8">
           {navLinks.map((link) => (

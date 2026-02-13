@@ -55,7 +55,7 @@ module.exports = {
           navy: "#0a1f44",
           black: "#0B0D10",
           white: "#F6F7FA",
-          gray: "#6D7278",
+          gray: "#E5E7EB",
         },
       },
       fontFamily: {
