@@ -19,10 +19,16 @@
   }
 }
 
-.glass {
-  @apply bg-white/80 backdrop-blur-md border border-white/20;
-}
+@layer components {
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20;
+  }
 
-.hover-lift {
-  @apply transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg;
+  .card {
+    @apply bg-white p-10 rounded-[32px] border border-shefa-navy/5 shadow-sm hover:shadow-2xl hover:shadow-shefa-navy/10 transition-all duration-500;
+  }
+
+  .eyebrow {
+    @apply text-[10px] uppercase tracking-[0.2em] font-bold;
+  }
 }
