@@ -14,7 +14,7 @@ const ContactFooter = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
@@ -212,13 +212,10 @@ const ContactFooter = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <img
-                src="/Logo-Shefa-Risk-Management-OL_Shefa-Icon.png"
-                alt="Shefa"
-                className="h-8 w-auto"
+                src="/shefa-white-logo.png"
+                alt="Shefa Risk Management"
+                className="h-8 lg:h-10 w-auto transition-all"
               />
-              <span className="font-heading font-semibold text-shefa-navy">
-                Shefa Risk Management
-              </span>
             </div>
 
             <div className="flex items-center gap-6 text-sm text-shefa-gray">

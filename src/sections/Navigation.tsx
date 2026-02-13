@@ -34,8 +34,8 @@ const Navigation = () => {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 ${isScrolled
-            ? 'bg-shefa-white/90 backdrop-blur-md shadow-sm'
-            : 'bg-transparent'
+          ? 'bg-shefa-white/90 backdrop-blur-md shadow-sm'
+          : 'bg-transparent'
           }`}
       >
         <div className="w-full px-6 lg:px-12">
@@ -43,7 +43,7 @@ const Navigation = () => {
             {/* Logo */}
             <a href="#" className="flex items-center gap-3">
               <img
-                src="/shefa white logo.png"
+                src="/shefa-white-logo.png"
                 alt="Shefa"
                 className="h-10 lg:h-12 w-auto transition-all"
               />
