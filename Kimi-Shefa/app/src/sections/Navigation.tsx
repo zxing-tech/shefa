@@ -34,8 +34,8 @@ const Navigation = () => {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 ${isScrolled
-            ? 'bg-shefa-white/90 backdrop-blur-md shadow-sm'
-            : 'bg-transparent'
+          ? 'bg-shefa-navy/95 backdrop-blur-md shadow-sm border-b border-white/10'
+          : 'bg-transparent'
           }`}
       >
         <div className="w-full px-6 lg:px-12">
@@ -55,7 +55,8 @@ const Navigation = () => {
                 <button
                   key={link.label}
                   onClick={() => scrollToSection(link.href)}
-                  className="text-sm font-medium text-shefa-navy/80 hover:text-shefa-navy transition-colors"
+                  className={`text-sm font-medium transition-colors ${isScrolled ? 'text-white/90 hover:text-white' : 'text-shefa-navy/80 hover:text-shefa-navy'
+                    }`}
                 >
                   {link.label}
                 </button>
@@ -66,14 +67,17 @@ const Navigation = () => {
             <div className="flex items-center gap-4">
               <button
                 onClick={() => scrollToSection('#contact')}
-                className="hidden lg:inline-flex btn-primary text-sm py-3 px-6"
+                className={`hidden lg:inline-flex px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-200 ${isScrolled
+                    ? 'bg-shefa-gold text-shefa-navy hover:bg-shefa-gold/90'
+                    : 'btn-primary text-sm py-3 px-6'
+                  }`}
               >
                 Get a quote
               </button>
 
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 text-shefa-navy"
+                className={`lg:hidden p-2 ${isScrolled ? 'text-white' : 'text-shefa-navy'}`}
                 aria-label="Toggle menu"
               >
                 {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -85,7 +89,7 @@ const Navigation = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 z-[999] bg-shefa-white transition-transform duration-300 lg:hidden ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed inset-0 z-[999] bg-shefa-navy/98 transition-transform duration-300 lg:hidden ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
       >
         <div className="flex flex-col items-center justify-center h-full gap-8">
@@ -93,7 +97,7 @@ const Navigation = () => {
             <button
               key={link.label}
               onClick={() => scrollToSection(link.href)}
-              className="text-2xl font-heading font-medium text-shefa-navy"
+              className="text-2xl font-heading font-medium text-white"
             >
               {link.label}
             </button>
