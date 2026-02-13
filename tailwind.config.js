@@ -8,11 +8,12 @@ export default {
         extend: {
             colors: {
                 shefa: {
-                    gold: '#C8A34C',
-                    navy: '#0A1F44',
-                    black: '#0B0D10',
-                    gray: '#6D7278',
-                    white: '#F6F7FA',
+                    gold: '#C5A065',
+                    navy: '#051b35',
+                    black: '#020408',
+                    gray: '#5A6472',
+                    'light-blue': '#F3F6F9',
+                    white: '#FFFFFF',
                 }
             },
             fontFamily: {
