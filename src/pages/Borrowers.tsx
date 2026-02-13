@@ -56,7 +56,7 @@ const Borrowers = () => {
   ];
 
   return (
-    <main className="pt-20">
+    <main>
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center">
         <div className="absolute inset-0">
@@ -85,8 +85,8 @@ const Borrowers = () => {
                 Apply Now
                 <ArrowRight className="ml-2 w-4 h-4" />
               </a>
-              <a 
-                href="tel:+60327745254" 
+              <a
+                href="tel:+60327745254"
                 className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-medium rounded-full border border-white/30 hover:bg-white/20 transition-all"
               >
                 <Phone className="mr-2 w-4 h-4" />
@@ -242,8 +242,8 @@ const Borrowers = () => {
                 Apply Now
                 <ArrowRight className="ml-2 w-4 h-4" />
               </a>
-              <a 
-                href="mailto:enquiries@shefa.com.my" 
+              <a
+                href="mailto:enquiries@shefa.com.my"
                 className="inline-flex items-center px-8 py-4 border border-shefa-navy/20 text-shefa-navy font-medium rounded-full hover:bg-shefa-navy/5 transition-all"
               >
                 <Mail className="mr-2 w-4 h-4" />

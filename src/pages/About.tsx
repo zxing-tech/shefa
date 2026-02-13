@@ -43,7 +43,7 @@ const About = () => {
   ];
 
   return (
-    <main className="pt-20">
+    <main>
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 bg-shefa-navy">
         <div className="w-[86vw] mx-auto">

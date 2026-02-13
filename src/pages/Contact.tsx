@@ -16,7 +16,7 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
@@ -60,7 +60,7 @@ const Contact = () => {
   ];
 
   return (
-    <main className="pt-20">
+    <main>
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 bg-shefa-navy">
         <div className="w-[86vw] mx-auto">
@@ -96,7 +96,7 @@ const Contact = () => {
                   </div>
                 </div>
               );
-              
+
               return info.link ? (
                 <a key={info.title} href={info.link} className="block hover:shadow-card-hover transition-shadow">
                   {content}
@@ -118,7 +118,7 @@ const Contact = () => {
               <p className="body-lg mb-8">
                 Fill out the form below and our team will get back to you within 48 hours.
               </p>
-              
+
               {submitted ? (
                 <div className="card p-8 text-center">
                   <div className="w-16 h-16 rounded-full bg-shefa-gold/20 flex items-center justify-center mx-auto mb-4">
@@ -163,7 +163,7 @@ const Contact = () => {
                       />
                     </div>
                   </div>
-                  
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-sm font-medium text-shefa-navy mb-2">
@@ -193,7 +193,7 @@ const Contact = () => {
                       />
                     </div>
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-shefa-navy mb-2">
                       I am interested in *
@@ -212,7 +212,7 @@ const Contact = () => {
                       <option value="general">General Enquiry</option>
                     </select>
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-shefa-navy mb-2">
                       Message *
@@ -227,7 +227,7 @@ const Contact = () => {
                       placeholder="How can we help you?"
                     />
                   </div>
-                  
+
                   <button
                     type="submit"
                     disabled={isSubmitting}
@@ -239,7 +239,7 @@ const Contact = () => {
                 </form>
               )}
             </div>
-            
+
             <div className="image-card h-[400px] lg:h-auto overflow-hidden">
               <img
                 src="/hero_main.jpg"
@@ -264,7 +264,7 @@ const Contact = () => {
               Located in the heart of KL Eco City, easily accessible via public transport.
             </p>
           </div>
-          
+
           <div className="rounded-3xl overflow-hidden bg-white/5 border border-white/10 h-[400px] flex items-center justify-center">
             <div className="text-center p-8">
               <MapPin className="w-16 h-16 text-shefa-gold mx-auto mb-4" />
@@ -273,9 +273,9 @@ const Contact = () => {
                 Level 19, Boutique Office 1, Menara 2<br />
                 KL Eco City, 59200 Kuala Lumpur
               </p>
-              <a 
-                href="https://maps.google.com/?q=KL+Eco+City" 
-                target="_blank" 
+              <a
+                href="https://maps.google.com/?q=KL+Eco+City"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center mt-6 px-6 py-3 bg-shefa-gold text-shefa-navy font-medium rounded-full hover:bg-shefa-gold/90 transition-colors"
               >
