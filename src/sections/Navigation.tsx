@@ -15,11 +15,8 @@ const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { label: 'Services', href: '#services' },
-    { label: 'How it works', href: '#how-it-works' },
-    { label: 'Coverage', href: '#coverage' },
-    { label: 'About', href: '#about' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Borrowers', href: '#borrowers' }, // Note: This might need to be page navigation instead of scroll if it's a multi-page app, but assuming scroll for this section component for now or placeholders. Wait, the main nav is page based. This seems to be a single page scroll nav?  Let's stick to the request "Reduce the current multi-item menu to just two core links".
+    { label: 'Lenders', href: '#lenders' },
   ];
 
   const scrollToSection = (href: string) => {
@@ -68,11 +65,11 @@ const Navigation = () => {
               <button
                 onClick={() => scrollToSection('#contact')}
                 className={`hidden lg:inline-flex px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-200 ${isScrolled
-                    ? 'bg-shefa-gold text-shefa-navy hover:bg-shefa-gold/90'
-                    : 'btn-primary text-sm py-3 px-6'
+                  ? 'bg-shefa-gold text-shefa-navy hover:bg-shefa-gold/90'
+                  : 'btn-primary text-sm py-3 px-6'
                   }`}
               >
-                Get a quote
+                Get Started
               </button>
 
               <button
@@ -106,7 +103,7 @@ const Navigation = () => {
             onClick={() => scrollToSection('#contact')}
             className="btn-primary mt-4"
           >
-            Get a quote
+            Get Started
           </button>
         </div>
       </div>

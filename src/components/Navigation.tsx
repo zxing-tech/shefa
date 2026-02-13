@@ -22,12 +22,8 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
   }, []);
 
   const navLinks: { label: string; page: Page }[] = [
-    { label: 'Home', page: 'home' },
-    { label: 'Services', page: 'services' },
-    { label: 'For Borrowers', page: 'borrowers' },
-    { label: 'For Lenders', page: 'lenders' },
-    { label: 'About', page: 'about' },
-    { label: 'Contact', page: 'contact' },
+    { label: 'Borrowers', page: 'borrowers' },
+    { label: 'Lenders', page: 'lenders' },
   ];
 
   const handleNavigate = (page: Page) => {
@@ -82,7 +78,7 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
                   : 'bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white/30'
                   }`}
               >
-                Get a Quote
+                Get Started
               </button>
 
               <button
@@ -117,7 +113,7 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
             onClick={() => handleNavigate('contact')}
             className="btn-primary mt-4"
           >
-            Get a Quote
+            Get Started
           </button>
         </div>
       </div>

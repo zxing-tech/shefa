@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MapPin, Phone, Mail, Send, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Send, Clock, Shield, CheckCircle } from 'lucide-react';
 
 const ContactFooter = () => {
   const [formData, setFormData] = useState({
@@ -115,6 +115,17 @@ const ContactFooter = () => {
                     placeholder="How can we help?"
                   />
                 </div>
+                <div className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    id="consent"
+                    required
+                    className="mt-1 w-4 h-4 text-shefa-gold border-gray-300 rounded focus:ring-shefa-gold"
+                  />
+                  <label htmlFor="consent" className="text-xs text-shefa-gray leading-tight">
+                    I agree to the <a href="#" className="underline">Privacy Policy</a> and consent to being contacted.
+                  </label>
+                </div>
                 <button
                   type="submit"
                   disabled={isSubmitting}
@@ -178,10 +189,10 @@ const ContactFooter = () => {
                       Email
                     </div>
                     <a
-                      href="mailto:enquiries@shefa.com.my"
+                      href="mailto:info@shefa-risk.com"
                       className="text-shefa-gray text-sm hover:text-shefa-gold transition-colors"
                     >
-                      enquiries@shefa.com.my
+                      info@shefa-risk.com
                     </a>
                   </div>
                 </div>
@@ -207,8 +218,32 @@ const ContactFooter = () => {
         </div>
       </div>
 
-      <div className="border-t border-[#E9ECEF]">
-        <div className="w-[86vw] mx-auto py-6">
+      <div className="bg-shefa-navy border-t border-white/10">
+        <div className="w-[86vw] mx-auto py-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 opacity-70 hover:opacity-100 transition-opacity">
+            <span className="text-white/60 text-sm font-medium tracking-wide uppercase">Recognized By</span>
+            <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12">
+              <div className="flex items-center gap-3">
+                <Shield className="w-5 h-5 text-white" />
+                <span className="text-white font-medium text-sm">Bank Negara Malaysia</span>
+              </div>
+              <div className="h-4 w-px bg-white/20 hidden md:block" />
+              <div className="flex items-center gap-3">
+                <CheckCircle className="w-5 h-5 text-white" />
+                <span className="text-white font-medium text-sm">MITBA Member</span>
+              </div>
+              <div className="h-4 w-px bg-white/20 hidden md:block" />
+              <div className="flex items-center gap-3">
+                <CheckCircle className="w-5 h-5 text-white" />
+                <span className="text-white font-medium text-sm">PIAM Member</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-shefa-navy border-t border-white/10">
+        <div className="w-[86vw] mx-auto py-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <img
@@ -218,18 +253,17 @@ const ContactFooter = () => {
               />
             </div>
 
-            <div className="flex items-center gap-6 text-sm text-shefa-gray">
-              <a href="#" className="hover:text-shefa-navy transition-colors">
+            <div className="flex items-center gap-6 text-sm text-white/50">
+              <a href="#" className="hover:text-white transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="hover:text-shefa-navy transition-colors">
+              <a href="#" className="hover:text-white transition-colors">
                 Terms of Service
               </a>
             </div>
 
-            <div className="text-sm text-shefa-gray">
-              &copy; {new Date().getFullYear()} Shefa Risk Management. All rights
-              reserved.
+            <div className="text-sm text-white/30">
+              &copy; {new Date().getFullYear()} Shefa Risk Management. All rights reserved.
             </div>
           </div>
         </div>
