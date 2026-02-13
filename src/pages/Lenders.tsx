@@ -202,6 +202,49 @@ const Lenders = () => {
         </div>
       </section>
 
+      {/* Technical FAQ */}
+      <section className="py-20 lg:py-32 bg-shefa-navy border-t border-white/5">
+        <div className="w-[86vw] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div>
+              <span className="font-mono text-shefa-gold text-sm tracking-widest uppercase mb-4 block">// FREQUENTLY ASKED QUESTIONS</span>
+              <h2 className="heading-lg text-white mb-6">
+                Technical <br />
+                <span className="text-shefa-gold">Insights</span>
+              </h2>
+              <p className="text-white/60 mb-8 max-w-sm">
+                Understanding the mechanics of trade credit insurance and risk transfer.
+              </p>
+              <a href="/contact" className="btn-outline text-sm">
+                Download Full Prospectus
+              </a>
+            </div>
+
+            <div className="col-span-1 lg:col-span-2 space-y-8">
+              {[
+                {
+                  q: 'What is "Protracted Default"?',
+                  a: 'It is the failure of a buyer to pay the contractual debt within a pre-defined period (the "Waiting Period") after the due date, even if they aren\'t legally bankrupt. Our insurance covers this specific event.'
+                },
+                {
+                  q: 'Is this a loan?',
+                  a: 'No. It is a factoring arrangement where you purchase the rights to an invoice. The "security" is the insured invoice itself, not the borrower\'s personal property. This isolates your risk to the specific trade transaction.'
+                },
+                {
+                  q: 'How is my investment protected?',
+                  a: 'Your principal is tied to invoices protected by Trade Credit Insurance. If the end-buyer defaults, the insurance payout (typically 90%) covers the loss, ensuring capital preservation.'
+                }
+              ].map((faq, idx) => (
+                <div key={idx} className="border-b border-white/10 pb-8 last:border-0 last:pb-0">
+                  <h3 className="font-mono text-lg text-shefa-gold mb-3">{faq.q}</h3>
+                  <p className="text-white/80 leading-relaxed font-light">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section id="invest" className="py-20 lg:py-32 bg-shefa-navy relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
