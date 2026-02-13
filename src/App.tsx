@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Navigation from './components/Navigation';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import Borrowers from './pages/Borrowers';
 import Lenders from './pages/Lenders';
@@ -22,7 +23,7 @@ function App() {
     };
 
     window.addEventListener('popstate', handlePopState);
-    
+
     // Check initial URL
     const path = window.location.pathname.slice(1) as Page;
     if (['home', 'borrowers', 'lenders', 'about', 'services', 'contact'].includes(path)) {
@@ -61,6 +62,7 @@ function App() {
     <div className="relative min-h-screen bg-shefa-white">
       <Navigation currentPage={currentPage} onNavigate={navigateTo} />
       {renderPage()}
+      <Footer onNavigate={navigateTo} />
     </div>
   );
 }
