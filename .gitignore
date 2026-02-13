@@ -26,5 +26,5 @@ dist-ssr
 # Build output
 assets/index-*.js
 assets/index-*.css
-index.html
+
 .vercel
