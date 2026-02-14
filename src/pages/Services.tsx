@@ -87,13 +87,13 @@ const Services = () => {
       <section className="relative py-20 lg:py-32 bg-shefa-navy">
         <div className="w-[86vw] mx-auto">
           <div className="max-w-4xl">
-            <span className="eyebrow block mb-4 text-white/60">Our Services</span>
+            <span className="eyebrow block mb-4 text-white/80">Our Services</span>
             <div className="gold-rule mb-6" />
             <h1 className="heading-xl text-white mb-6">
               Trade Credit Insurance &{" "}
               <span className="text-shefa-gold">Financing Solutions</span>
             </h1>
-            <p className="text-xl text-white/80 max-w-3xl">
+            <p className="text-xl text-white/90 max-w-3xl">
               Comprehensive protection and financing solutions designed for Malaysian businesses. From policy negotiation to claim settlement, we handle it all.
             </p>
           </div>
@@ -124,7 +124,7 @@ const Services = () => {
                   <ul className="space-y-3">
                     {service.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-3">
-                        <div className="w-1.5 h-1.5 rounded-full bg-shefa-gold mt-2 flex-shrink-0" />
+                        <div className="w-1.5 h-1.5 rounded-xl bg-shefa-gold mt-2 flex-shrink-0" />
                         <span className="text-shefa-navy/80">{feature}</span>
                       </li>
                     ))}
@@ -140,12 +140,12 @@ const Services = () => {
       <section className="py-20 lg:py-32 bg-shefa-navy">
         <div className="w-[86vw] mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow block mb-4 text-white/60">Coverage Options</span>
+            <span className="eyebrow block mb-4 text-white/80">Coverage Options</span>
             <div className="gold-rule mx-auto mb-6" />
             <h2 className="heading-lg text-white mb-4">
               Types of <span className="text-shefa-gold">Coverage</span>
             </h2>
-            <p className="text-white/70">
+            <p className="text-white/85">
               Choose the coverage that best fits your business needs and trading patterns.
             </p>
           </div>
@@ -154,12 +154,12 @@ const Services = () => {
             {coverageTypes.map((coverage) => {
               const Icon = coverage.icon;
               return (
-                <div key={coverage.title} className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:bg-white/10 transition-colors">
+                <div key={coverage.title} className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10 hover:bg-white/10 transition-colors">
                   <div className="w-12 h-12 rounded-xl bg-shefa-gold/20 flex items-center justify-center mb-6">
                     <Icon className="w-6 h-6 text-shefa-gold" />
                   </div>
                   <h3 className="font-heading text-xl font-medium text-white mb-4">{coverage.title}</h3>
-                  <p className="text-white/70">{coverage.description}</p>
+                  <p className="text-white/85">{coverage.description}</p>
                 </div>
               );
             })}
@@ -200,7 +200,7 @@ const Services = () => {
               },
             ].map((step) => (
               <div key={step.step} className="text-center">
-                <div className="w-16 h-16 rounded-full bg-shefa-gold flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 rounded-xl bg-shefa-gold flex items-center justify-center mx-auto mb-6">
                   <span className="font-heading text-2xl font-bold text-shefa-navy">{step.step}</span>
                 </div>
                 <h3 className="font-heading text-xl font-medium text-shefa-navy mb-4">{step.title}</h3>
@@ -223,11 +223,11 @@ const Services = () => {
                 With trade credit insurance, you gain peace of mind, knowing your profits, liquidity, and cash flow are protected, allowing you to expand your business confidently.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a href="/borrowers" className="inline-flex items-center px-8 py-4 bg-shefa-navy text-white font-medium rounded-full hover:bg-shefa-navy/90 transition-colors">
+                <a href="/borrowers" className="inline-flex items-center px-8 py-4 bg-shefa-navy text-white font-medium rounded-xl hover:bg-shefa-navy/90 transition-colors">
                   For Borrowers
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </a>
-                <a href="/lenders" className="inline-flex items-center px-8 py-4 bg-white text-shefa-navy font-medium rounded-full hover:bg-white/90 transition-colors">
+                <a href="/lenders" className="inline-flex items-center px-8 py-4 bg-white text-shefa-navy font-medium rounded-xl hover:bg-white/90 transition-colors">
                   For Lenders
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </a>

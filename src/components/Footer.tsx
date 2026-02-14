@@ -8,7 +8,7 @@ const Footer = ({ onNavigate }: { onNavigate: (page: any) => void }) => {
             <div className="border-b border-white/10">
                 <div className="w-[86vw] mx-auto py-8">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-6 opacity-80 hover:opacity-100 transition-opacity">
-                        <span className="text-white/60 text-sm font-medium tracking-wide uppercase">Recognized By</span>
+                        <span className="text-white/80 text-sm font-medium tracking-wide uppercase">Recognized By</span>
                         <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12">
                             <div className="flex items-center gap-3">
                                 <Shield className="w-5 h-5 text-white" />
@@ -35,11 +35,11 @@ const Footer = ({ onNavigate }: { onNavigate: (page: any) => void }) => {
                     {/* Brand */}
                     <div className="space-y-6">
                         <img
-                            src="/shefa-white-logo.png"
+                            src="/Logo-Shefa-Risk-Management-OL_Shefa-White.png"
                             alt="Shefa Risk Management"
                             className="h-10 w-auto"
                         />
-                        <p className="text-white/60 text-sm leading-relaxed">
+                        <p className="text-white/80 text-sm leading-relaxed">
                             Institutional-grade trade credit insurance and financing solutions for Southeast Asia's industrial backbone.
                         </p>
                     </div>
@@ -47,7 +47,7 @@ const Footer = ({ onNavigate }: { onNavigate: (page: any) => void }) => {
                     {/* Quick Links */}
                     <div>
                         <h4 className="font-heading font-medium text-lg mb-6 text-shefa-gold">Explore</h4>
-                        <ul className="space-y-3 text-sm text-white/70">
+                        <ul className="space-y-3 text-sm text-white/90">
                             <li>
                                 <button onClick={() => onNavigate('home')} className="hover:text-white transition-colors">Home</button>
                             </li>
@@ -66,7 +66,7 @@ const Footer = ({ onNavigate }: { onNavigate: (page: any) => void }) => {
                     {/* Contact */}
                     <div>
                         <h4 className="font-heading font-medium text-lg mb-6 text-shefa-gold">Contact</h4>
-                        <ul className="space-y-4 text-sm text-white/70">
+                        <ul className="space-y-4 text-sm text-white/90">
                             <li className="flex items-start gap-3">
                                 <MapPin className="w-5 h-5 text-shefa-gold shrink-0 mt-0.5" />
                                 <span>
@@ -88,7 +88,7 @@ const Footer = ({ onNavigate }: { onNavigate: (page: any) => void }) => {
                     {/* Legal */}
                     <div>
                         <h4 className="font-heading font-medium text-lg mb-6 text-shefa-gold">Legal</h4>
-                        <ul className="space-y-3 text-sm text-white/70">
+                        <ul className="space-y-3 text-sm text-white/90">
                             <li>
                                 <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
                             </li>

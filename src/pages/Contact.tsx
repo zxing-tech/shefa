@@ -65,12 +65,12 @@ const Contact = () => {
       <section className="relative py-20 lg:py-32 bg-shefa-navy">
         <div className="w-[86vw] mx-auto">
           <div className="max-w-4xl">
-            <span className="eyebrow block mb-4 text-white/60">Contact</span>
+            <span className="eyebrow block mb-4 text-white/80">Contact</span>
             <div className="gold-rule mb-6" />
             <h1 className="heading-xl text-white mb-6">
               Get in <span className="text-shefa-gold">Touch</span>
             </h1>
-            <p className="text-xl text-white/80 max-w-3xl">
+            <p className="text-xl text-white/95 max-w-3xl">
               Have questions about our services? Ready to protect your business or start investing? Our team is here to help.
             </p>
           </div>
@@ -121,7 +121,7 @@ const Contact = () => {
 
               {submitted ? (
                 <div className="card p-8 text-center">
-                  <div className="w-16 h-16 rounded-full bg-shefa-gold/20 flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 rounded-xl bg-shefa-gold/20 flex items-center justify-center mx-auto mb-4">
                     <CheckCircle className="w-8 h-8 text-shefa-gold" />
                   </div>
                   <h3 className="font-heading text-xl font-medium text-shefa-navy mb-2">
@@ -255,21 +255,21 @@ const Contact = () => {
       <section className="py-20 lg:py-32 bg-shefa-navy">
         <div className="w-[86vw] mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="eyebrow block mb-4 text-white/60">Location</span>
+            <span className="eyebrow block mb-4 text-white/80">Location</span>
             <div className="gold-rule mx-auto mb-6" />
             <h2 className="heading-lg text-white mb-4">
               Find Us in <span className="text-shefa-gold">Kuala Lumpur</span>
             </h2>
-            <p className="text-white/70">
+            <p className="text-white/90">
               Located in the heart of KL Eco City, easily accessible via public transport.
             </p>
           </div>
 
-          <div className="rounded-3xl overflow-hidden bg-white/5 border border-white/10 h-[400px] flex items-center justify-center">
+          <div className="rounded-xl overflow-hidden bg-white/5 border border-white/10 h-[400px] flex items-center justify-center">
             <div className="text-center p-8">
               <MapPin className="w-16 h-16 text-shefa-gold mx-auto mb-4" />
               <h3 className="font-heading text-xl font-medium text-white mb-2">Shefa Risk Management</h3>
-              <p className="text-white/70">
+              <p className="text-white/90">
                 Level 19, Boutique Office 1, Menara 2<br />
                 KL Eco City, 59200 Kuala Lumpur
               </p>
@@ -277,7 +277,7 @@ const Contact = () => {
                 href="https://maps.google.com/?q=KL+Eco+City"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center mt-6 px-6 py-3 bg-shefa-gold text-shefa-navy font-medium rounded-full hover:bg-shefa-gold/90 transition-colors"
+                className="inline-flex items-center mt-6 px-6 py-3 bg-shefa-gold text-shefa-navy font-medium rounded-xl hover:bg-shefa-gold/90 transition-colors"
               >
                 Open in Google Maps
               </a>

@@ -39,14 +39,14 @@ const Home = ({ navigateTo }: HomeProps) => {
               </span>
               <div className="hidden md:flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
                 <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                <span className="text-white/80 text-xs font-medium uppercase tracking-wider">Recognized by Bank Negara Malaysia</span>
+                <span className="text-white/90 text-xs font-medium uppercase tracking-wider">Recognized by Bank Negara Malaysia</span>
               </div>
             </div>
             <h1 className="heading-xl text-white mb-6">
               Protect Your Receivables.{" "}
               <span className="text-shefa-gold">Unlock Your Cash Flow.</span>
             </h1>
-            <p className="text-xl text-white/80 mb-8 max-w-2xl">
+            <p className="text-xl text-white/90 mb-8 max-w-2xl">
               Trade credit insurance and financing solutions that keep Malaysian businesses moving—backed by data, delivered with clarity.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -99,12 +99,12 @@ const Home = ({ navigateTo }: HomeProps) => {
       <section className="py-20 lg:py-32 bg-shefa-navy">
         <div className="w-[86vw] mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow block mb-4 text-white/60">The Process</span>
+            <span className="eyebrow block mb-4 text-white/80">The Process</span>
             <div className="gold-rule mx-auto mb-6" />
             <h2 className="heading-lg text-white mb-4">
               Three Steps to <span className="text-shefa-gold">Protected Revenue</span>
             </h2>
-            <p className="text-white/70">
+            <p className="text-white/85">
               From policy setup to first claim—simple, transparent, and fast.
             </p>
           </div>
@@ -132,7 +132,7 @@ const Home = ({ navigateTo }: HomeProps) => {
             ].map((item) => {
               const Icon = item.icon;
               return (
-                <div key={item.step} className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+                <div key={item.step} className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
                   <div className="flex items-start justify-between mb-6">
                     <span className="font-mono text-5xl font-bold text-shefa-gold/30">{item.step}</span>
                     <div className="w-12 h-12 rounded-full bg-shefa-gold/20 flex items-center justify-center">
@@ -140,7 +140,7 @@ const Home = ({ navigateTo }: HomeProps) => {
                     </div>
                   </div>
                   <h3 className="font-heading text-2xl font-medium text-white mb-4">{item.title}</h3>
-                  <p className="text-white/70">{item.desc}</p>
+                  <p className="text-white/85">{item.desc}</p>
                 </div>
               );
             })}
@@ -153,7 +153,7 @@ const Home = ({ navigateTo }: HomeProps) => {
         <div className="w-[86vw] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* For Borrowers */}
-            <div className="relative rounded-3xl overflow-hidden group cursor-pointer" onClick={() => navigateTo('borrowers')}>
+            <div className="relative rounded-xl overflow-hidden group cursor-pointer" onClick={() => navigateTo('borrowers')}>
               <img
                 src="/borrower_hero.jpg"
                 alt="For Borrowers"
@@ -167,7 +167,7 @@ const Home = ({ navigateTo }: HomeProps) => {
                 <h3 className="font-heading text-3xl font-medium text-white mb-4">
                   Need Insured Financing?
                 </h3>
-                <p className="text-white/80 mb-6">
+                <p className="text-white/90 mb-6">
                   Access working capital backed by trade credit insurance. Protect your business while you grow.
                 </p>
                 <button className="inline-flex items-center px-6 py-3 bg-shefa-gold text-shefa-navy font-medium rounded-full hover:bg-shefa-gold/90 transition-colors">
@@ -178,7 +178,7 @@ const Home = ({ navigateTo }: HomeProps) => {
             </div>
 
             {/* For Lenders */}
-            <div className="relative rounded-3xl overflow-hidden group cursor-pointer" onClick={() => navigateTo('lenders')}>
+            <div className="relative rounded-xl overflow-hidden group cursor-pointer" onClick={() => navigateTo('lenders')}>
               <img
                 src="/lender_hero.jpg"
                 alt="For Lenders"
@@ -192,7 +192,7 @@ const Home = ({ navigateTo }: HomeProps) => {
                 <h3 className="font-heading text-3xl font-medium text-white mb-4">
                   Want to Earn Returns?
                 </h3>
-                <p className="text-white/80 mb-6">
+                <p className="text-white/90 mb-6">
                   Invest in insurance-backed trade receivables. Secure, transparent, and competitive returns.
                 </p>
                 <button className="inline-flex items-center px-6 py-3 bg-shefa-gold text-shefa-navy font-medium rounded-full hover:bg-shefa-gold/90 transition-colors">
@@ -220,7 +220,7 @@ const Home = ({ navigateTo }: HomeProps) => {
             {industries.map((industry) => {
               const Icon = industry.icon;
               return (
-                <div key={industry.name} className="group relative h-[280px] rounded-3xl overflow-hidden cursor-pointer">
+                <div key={industry.name} className="group relative h-[280px] rounded-xl overflow-hidden cursor-pointer">
                   <img
                     src={industry.image}
                     alt={industry.name}
@@ -252,7 +252,7 @@ const Home = ({ navigateTo }: HomeProps) => {
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="font-heading text-4xl lg:text-5xl font-bold text-shefa-gold mb-2">{stat.value}</div>
-                <div className="text-white/70">{stat.label}</div>
+                <div className="text-white/85">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -262,7 +262,7 @@ const Home = ({ navigateTo }: HomeProps) => {
       {/* Final CTA */}
       <section className="py-20 lg:py-32 bg-shefa-white">
         <div className="w-[86vw] mx-auto">
-          <div className="relative rounded-3xl overflow-hidden">
+          <div className="relative rounded-xl overflow-hidden">
             <img
               src="/cta_container.jpg"
               alt="Get Started"
@@ -274,7 +274,7 @@ const Home = ({ navigateTo }: HomeProps) => {
                 <h2 className="heading-lg text-white mb-6">
                   Ready to Protect Your <span className="text-shefa-gold">Revenue?</span>
                 </h2>
-                <p className="text-white/80 text-lg mb-8">
+                <p className="text-white/90 text-lg mb-8">
                   Get a tailored indication in 48 hours. No obligation.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">

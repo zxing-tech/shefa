@@ -99,15 +99,15 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center px-8 py-4 bg-shefa-gold text-shefa-navy font-semibold rounded-[4px] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card;
+    @apply inline-flex items-center justify-center px-8 py-4 bg-shefa-gold text-shefa-navy font-semibold rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-shefa-gold text-shefa-navy font-semibold rounded-[4px] transition-all duration-200 hover:-translate-y-0.5 hover:bg-shefa-gold/5;
+    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-shefa-gold text-shefa-navy font-semibold rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:bg-shefa-gold/5;
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center px-8 py-4 border border-shefa-navy/20 text-shefa-navy font-medium rounded-pill transition-all duration-200 hover:-translate-y-0.5 hover:border-shefa-navy/40;
+    @apply inline-flex items-center justify-center px-8 py-4 border border-shefa-navy/20 text-shefa-navy font-medium rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:border-shefa-navy/40;
   }
 
   .card {
@@ -131,7 +131,7 @@
   }
 
   .image-card {
-    @apply rounded-3xl overflow-hidden;
+    @apply rounded-xl overflow-hidden;
   }
 
   .grain-overlay {

@@ -34,14 +34,14 @@ const Lenders = () => {
 
         <div className="relative z-10 w-full px-6 lg:px-12 py-20">
           <div className="max-w-3xl">
-            <span className="inline-block px-4 py-2 bg-shefa-gold/20 backdrop-blur-sm rounded-full text-shefa-gold text-sm font-medium mb-6">
+            <span className="inline-block px-4 py-2 bg-shefa-gold/20 backdrop-blur-sm rounded-xl text-shefa-gold text-sm font-medium mb-6">
               For Institutional & Accredited Investors
             </span>
             <h1 className="heading-xl text-white mb-6">
               Invest with an <br />
               <span className="text-shefa-gold">Insurance Shield.</span>
             </h1>
-            <p className="text-xl text-white/80 mb-8 max-w-2xl leading-relaxed">
+            <p className="text-xl text-white/90 mb-8 max-w-2xl leading-relaxed">
               Earn 8-15% annual returns on diversified SME portfolios backed by comprehensive trade credit insurance. Institutional-grade security for your capital.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -51,7 +51,7 @@ const Lenders = () => {
               </a>
               <a
                 href="mailto:enquiries@shefa.com.my"
-                className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-medium rounded-full border border-white/30 hover:bg-white/20 transition-all"
+                className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-medium rounded-xl border border-white/30 hover:bg-white/20 transition-all"
               >
                 Request Prospectus
               </a>
@@ -103,14 +103,14 @@ const Lenders = () => {
 
             <div className="relative">
               {/* Abstract Process Diagram Visualization */}
-              <div className="bg-shefa-navy rounded-3xl p-8 lg:p-12 text-white overflow-hidden relative">
+              <div className="bg-shefa-navy rounded-xl p-8 lg:p-12 text-white overflow-hidden relative">
                 <div className="absolute top-0 right-0 p-8 opacity-10">
                   <Lock className="w-40 h-40" />
                 </div>
 
                 <div className="space-y-8 relative z-10">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center border border-white/20">
+                    <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/20">
                       <TrendingUp className="w-5 h-5 text-shefa-gold" />
                     </div>
                     <div>
@@ -122,26 +122,26 @@ const Lenders = () => {
                   <div className="h-8 w-0.5 bg-gradient-to-b from-shefa-gold to-white/20 ml-6" />
 
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-shefa-gold flex items-center justify-center text-shefa-navy font-bold">
+                    <div className="w-12 h-12 rounded-xl bg-shefa-gold flex items-center justify-center text-shefa-navy font-bold">
                       S
                     </div>
                     <div>
                       <span className="font-mono text-xs text-shefa-gold mb-1 block">INTERMEDIARY</span>
                       <div className="font-heading text-lg">Shefa Platform</div>
-                      <div className="text-xs text-white/60">Risk Assessment & Allocation</div>
+                      <div className="text-xs text-white/80">Risk Assessment & Allocation</div>
                     </div>
                   </div>
 
                   <div className="h-8 w-0.5 bg-gradient-to-b from-white/20 to-shefa-gold ml-6" />
 
                   <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-shefa-gold/30">
-                    <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center border border-white/20">
+                    <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/20">
                       <Shield className="w-5 h-5 text-shefa-gold" />
                     </div>
                     <div>
                       <span className="font-mono text-xs text-shefa-gold mb-1 block">DESTINATION (SECURED)</span>
                       <div className="font-heading text-lg">Insured Borrower</div>
-                      <div className="text-xs text-white/60">Backed by A-Rated Insurance</div>
+                      <div className="text-xs text-white/80">Backed by A-Rated Insurance</div>
                     </div>
                   </div>
                 </div>
@@ -158,12 +158,12 @@ const Lenders = () => {
             {benefits.map((benefit) => {
               const Icon = benefit.icon;
               return (
-                <div key={benefit.title} className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-colors group">
+                <div key={benefit.title} className="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:bg-white/10 transition-colors group">
                   <div className="w-12 h-12 rounded-xl bg-shefa-gold/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     <Icon className="w-6 h-6 text-shefa-gold" />
                   </div>
                   <h3 className="font-heading text-xl font-medium mb-4">{benefit.title}</h3>
-                  <p className="text-white/70 leading-relaxed text-sm">{benefit.description}</p>
+                  <p className="text-white/85 leading-relaxed text-sm">{benefit.description}</p>
                 </div>
               );
             })}
@@ -212,7 +212,7 @@ const Lenders = () => {
                 Technical <br />
                 <span className="text-shefa-gold">Insights</span>
               </h2>
-              <p className="text-white/60 mb-8 max-w-sm">
+              <p className="text-white/80 mb-8 max-w-sm">
                 Understanding the mechanics of trade credit insurance and risk transfer.
               </p>
               <a href="/contact" className="btn-outline text-sm">
@@ -237,7 +237,7 @@ const Lenders = () => {
               ].map((faq, idx) => (
                 <div key={idx} className="border-b border-white/10 pb-8 last:border-0 last:pb-0">
                   <h3 className="font-mono text-lg text-shefa-gold mb-3">{faq.q}</h3>
-                  <p className="text-white/80 leading-relaxed font-light">{faq.a}</p>
+                  <p className="text-white/90 leading-relaxed font-light">{faq.a}</p>
                 </div>
               ))}
             </div>
@@ -257,7 +257,7 @@ const Lenders = () => {
           <h2 className="heading-lg text-white mb-6">
             Make Your Capital <span className="text-shefa-gold">Work Harder.</span>
           </h2>
-          <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
+          <p className="text-white/90 text-lg mb-10 max-w-2xl mx-auto">
             Join the smart money earning 8-15% yields backed by trade credit insurance.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -265,7 +265,7 @@ const Lenders = () => {
               Start Investing
               <ArrowRight className="ml-2 w-4 h-4" />
             </a>
-            <a href="mailto:enquiries@shefa.com.my" className="inline-flex items-center px-8 py-4 border border-white/20 text-white font-medium rounded-full hover:bg-white/10 transition-all">
+            <a href="mailto:enquiries@shefa.com.my" className="inline-flex items-center px-8 py-4 border border-white/20 text-white font-medium rounded-xl hover:bg-white/10 transition-all">
               Schedule a Call
             </a>
           </div>

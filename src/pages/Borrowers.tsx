@@ -55,14 +55,14 @@ const Borrowers = () => {
 
         <div className="relative z-10 w-full px-6 lg:px-12 py-20">
           <div className="max-w-3xl">
-            <span className="inline-block px-4 py-2 bg-shefa-gold/20 backdrop-blur-sm rounded-full text-shefa-gold text-sm font-medium mb-6">
+            <span className="inline-block px-4 py-2 bg-shefa-gold/20 backdrop-blur-sm rounded-xl text-shefa-gold text-sm font-medium mb-6">
               For SMEs & Aggregators
             </span>
             <h1 className="heading-xl text-white mb-6">
               Unlock Capital, <br />
               <span className="text-shefa-gold">Erase Risk.</span>
             </h1>
-            <p className="text-xl text-white/80 mb-8 max-w-2xl leading-relaxed">
+            <p className="text-xl text-white/90 mb-8 max-w-2xl leading-relaxed">
               Get up to 80% invoice financing with built-in protection against customer non-payment. Grow your business without betting the farm.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -97,10 +97,10 @@ const Borrowers = () => {
               const Icon = step.icon;
               return (
                 <div key={step.step} className="text-center group">
-                  <div className="w-20 h-20 mx-auto bg-white border border-shefa-gold/30 rounded-full flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-20 h-20 mx-auto bg-white border border-shefa-gold/30 rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <Icon className="w-8 h-8 text-shefa-gold" />
                   </div>
-                  <div className="bg-white p-8 rounded-3xl border border-[#E9ECEF] shadow-sm hover:shadow-card-hover transition-all h-full">
+                  <div className="bg-white p-8 rounded-xl border border-[#E9ECEF] shadow-sm hover:shadow-card-hover transition-all h-full">
                     <span className="font-mono text-shefa-gold text-sm font-bold tracking-widest mb-3 block">STEP {step.step}</span>
                     <h3 className="font-heading text-xl font-medium text-shefa-navy mb-4">{step.title}</h3>
                     <p className="body-base text-sm">{step.description}</p>
@@ -117,13 +117,13 @@ const Borrowers = () => {
         <div className="w-[86vw] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div>
-              <span className="eyebrow block mb-4 text-white/60">Why Shefa?</span>
+              <span className="eyebrow block mb-4 text-white/80">Why Shefa?</span>
               <div className="gold-rule mb-6" />
               <h2 className="heading-lg text-white mb-6">
                 Financing That <br />
                 <span className="text-shefa-gold">Actually Fits.</span>
               </h2>
-              <p className="text-lg text-white/70 mb-8 leading-relaxed">
+              <p className="text-lg text-white/85 mb-8 leading-relaxed">
                 Traditional banks ask for collateral you might not have. We look at the quality of your customers and the power of insurance to unlock the capital trapped in your invoices.
               </p>
               <ul className="space-y-4 mb-8">
@@ -134,7 +134,7 @@ const Borrowers = () => {
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-shefa-gold" />
-                    <span className="text-white/80">{item}</span>
+                    <span className="text-white/90">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -148,14 +148,14 @@ const Borrowers = () => {
               {benefits.map((benefit) => {
                 const Icon = benefit.icon;
                 return (
-                  <div key={benefit.title} className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
+                  <div key={benefit.title} className="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
                     <div className="flex items-start gap-4">
                       <div className="p-3 rounded-xl bg-shefa-gold/20 text-shefa-gold">
                         <Icon className="w-6 h-6" />
                       </div>
                       <div>
                         <h3 className="font-heading text-xl font-medium text-white mb-2">{benefit.title}</h3>
-                        <p className="text-white/70 text-sm leading-relaxed">{benefit.description}</p>
+                        <p className="text-white/85 text-sm leading-relaxed">{benefit.description}</p>
                       </div>
                     </div>
                   </div>

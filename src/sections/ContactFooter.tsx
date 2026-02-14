@@ -44,7 +44,7 @@ const ContactFooter = () => {
 
             {submitted ? (
               <div className="card p-8 text-center">
-                <div className="w-16 h-16 rounded-full bg-shefa-gold/20 flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 rounded-xl bg-shefa-gold/20 flex items-center justify-center mx-auto mb-4">
                   <Send className="w-8 h-8 text-shefa-gold" />
                 </div>
                 <h3 className="font-heading text-xl font-medium text-shefa-navy mb-2">
@@ -221,7 +221,7 @@ const ContactFooter = () => {
       <div className="bg-shefa-navy border-t border-white/10">
         <div className="w-[86vw] mx-auto py-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 opacity-70 hover:opacity-100 transition-opacity">
-            <span className="text-white/60 text-sm font-medium tracking-wide uppercase">Recognized By</span>
+            <span className="text-white/80 text-sm font-medium tracking-wide uppercase">Recognized By</span>
             <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12">
               <div className="flex items-center gap-3">
                 <Shield className="w-5 h-5 text-white" />

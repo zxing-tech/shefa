@@ -47,19 +47,19 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
               className="flex items-center gap-3"
             >
               <img
-                src="/shefa-white-logo.png"
+                src="/Logo-Shefa-Risk-Management-OL_Shefa-White.png"
                 alt="Shefa Risk Management"
                 className="h-10 lg:h-12 w-auto transition-all"
               />
             </button>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-8">
+            {/* Desktop Navigation Group - Moved to Right */}
+            <div className="hidden lg:flex items-center gap-12 ml-auto mr-8">
               {navLinks.map((link) => (
                 <button
                   key={link.page}
                   onClick={() => handleNavigate(link.page)}
-                  className={`text-sm font-medium transition-colors relative group ${currentPage === link.page ? 'text-shefa-gold' : 'text-white/90 hover:text-white'
+                  className={`text-base font-medium transition-colors relative group ${currentPage === link.page ? 'text-shefa-gold' : 'text-white/90 hover:text-white'
                     }`}
                 >
                   {link.label}
@@ -73,7 +73,7 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
             <div className="flex items-center gap-4">
               <button
                 onClick={() => handleNavigate('contact')}
-                className={`hidden lg:inline-flex px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-200 ${isScrolled
+                className={`hidden lg:inline-flex px-6 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 ${isScrolled
                   ? 'bg-shefa-gold text-shefa-navy hover:bg-shefa-gold/90'
                   : 'bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white/30'
                   }`}

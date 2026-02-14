@@ -54,8 +54,9 @@ export default {
           cobalt: "#0F43AD",
           navy: "#0a1f44",
           black: "#0B0D10",
-          white: "#F6F7FA",
-          gray: "#E5E7EB",
+          white: "#FFFFFF",
+          gray: "#52525B", // Darker gray for text (Zinc 600)
+          lighterGray: "#E5E7EB", // Kept original as lighterGray for borders/bg
         },
       },
       fontFamily: {

@@ -23,22 +23,22 @@ const About = () => {
     {
       name: 'Russell Boyd',
       title: 'Director / CEO',
-      image: '/team_1.jpg',
+      image: '/russell-boyd.png',
     },
     {
       name: 'Dr. Surendran Sanggarin',
       title: 'Director / COO',
-      image: '/team_3.jpg',
+      image: '/dr-surendran.png',
     },
     {
       name: 'Dato\' Chik Nazrin',
       title: 'Director / CRO',
-      image: '/team_2.jpg',
+      image: '/dato-chik.png',
     },
     {
       name: 'Laura Daniel',
       title: 'Advisor',
-      image: '/team_4.jpg',
+      image: '/laura-daniel.png',
     },
   ];
 
@@ -54,7 +54,7 @@ const About = () => {
               Institutional Security Meets{" "}
               <span className="text-shefa-gold">Economic Momentum</span>
             </h1>
-            <p className="text-xl text-white/80 max-w-3xl">
+            <p className="text-xl text-white/90 max-w-3xl">
               Shefa operates at the intersection of institutional capital and the industrial backbone of Southeast Asia, addressing systemic liquidity gaps in sectors responsible for 40% of Malaysia&apos;s GDP.
             </p>
           </div>
@@ -84,10 +84,10 @@ const About = () => {
               <h2 className="heading-lg text-white mb-6">
                 Building <span className="text-shefa-gold">Credit Infrastructure</span>
               </h2>
-              <p className="text-white/80 mb-6">
+              <p className="text-white/90 mb-6">
                 Through our proprietary FinHub platform, we transform trade receivables into high-conviction, insurance-backed assets; advancing up to 80% of invoice values against verified corporate obligations in resilient sectors.
               </p>
-              <p className="text-white/70">
+              <p className="text-white/85">
                 Our mandate is capital preservation through structural resilience: delivering institutional investors secured access to Southeast Asia&apos;s growth engines while building essential credit infrastructure for a liquid, resilient global economy.
               </p>
             </div>
@@ -166,7 +166,7 @@ const About = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((member) => (
               <div key={member.name} className="group">
-                <div className="relative aspect-[3/4] mb-5 rounded-3xl overflow-hidden bg-shefa-navy/5">
+                <div className="relative aspect-[3/4] mb-5 rounded-xl overflow-hidden bg-shefa-navy/5">
                   <img
                     src={member.image}
                     alt={member.name}
@@ -192,7 +192,7 @@ const About = () => {
               <h2 className="heading-lg text-white mb-6">
                 Get in <span className="text-shefa-gold">Touch</span>
               </h2>
-              <p className="text-white/70 mb-8">
+              <p className="text-white/90 mb-8">
                 Have questions about our services? Our team is here to help.
               </p>
             </div>
@@ -203,7 +203,7 @@ const About = () => {
                 </div>
                 <div>
                   <h4 className="font-heading text-lg font-medium text-white mb-1">Address</h4>
-                  <p className="text-white/70">
+                  <p className="text-white/85">
                     Level 19, Boutique Office 1, Menara 2<br />
                     No. 3, Jalan Bangsar, KL Eco City<br />
                     59200 Kuala Lumpur, Malaysia
@@ -216,7 +216,7 @@ const About = () => {
                 </div>
                 <div>
                   <h4 className="font-heading text-lg font-medium text-white mb-1">Email</h4>
-                  <a href="mailto:enquiries@shefa.com.my" className="text-white/70 hover:text-shefa-gold transition-colors">
+                  <a href="mailto:enquiries@shefa.com.my" className="text-white/85 hover:text-shefa-gold transition-colors">
                     enquiries@shefa.com.my
                   </a>
                 </div>
@@ -227,7 +227,7 @@ const About = () => {
                 </div>
                 <div>
                   <h4 className="font-heading text-lg font-medium text-white mb-1">Phone</h4>
-                  <a href="tel:+60327745254" className="text-white/70 hover:text-shefa-gold transition-colors">
+                  <a href="tel:+60327745254" className="text-white/85 hover:text-shefa-gold transition-colors">
                     +60 3-2774 5254
                   </a>
                 </div>
