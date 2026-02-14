@@ -1,109 +1,121 @@
-import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Globe } from 'lucide-react';
 
 const Footer = ({ onNavigate }: { onNavigate: (page: any) => void }) => {
     const currentYear = new Date().getFullYear();
 
-    const team = [
-        { name: 'Russell Boyd', title: 'CEO' },
-        { name: 'Dr. Surendran', title: 'COO' },
-        { name: 'Dato\' Chik Nazrin', title: 'CRO' },
-        { name: 'Laura Daniel', title: 'Advisor' },
+    const sections = [
+        {
+            title: 'Solutions',
+            links: [
+                { name: 'Borrowers', id: 'borrowers' },
+                { name: 'Lenders', id: 'lenders' },
+                { name: 'Industries', id: 'industries' },
+            ]
+        },
+        {
+            title: 'Company',
+            links: [
+                { name: 'About Us', id: 'about' },
+                { name: 'Services', id: 'services' },
+                { name: 'Contact', id: 'contact' },
+            ]
+        },
+        {
+            title: 'Legal',
+            links: [
+                { name: 'Privacy Policy', id: 'privacy' },
+                { name: 'Terms of Service', id: 'terms' },
+                { name: 'Risk Disclosure', id: 'risk' },
+            ]
+        }
     ];
 
     return (
-        <footer className="bg-shefa-navy border-t border-white/5 pt-24 pb-12 overflow-hidden relative">
-            <div className="w-[86vw] mx-auto space-y-24 relative z-10">
+        <footer className="bg-shefa-navy text-white pt-24 pb-12 relative overflow-hidden border-t border-white/5">
+            {/* Ambient Background Element */}
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-shefa-gold/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
 
-                {/* Top Section: CTA & Split Footer */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-24">
+            <div className="w-full px-6 lg:px-12 relative z-10">
+                <div className="max-w-[1400px] mx-auto space-y-24">
 
-                    {/* Column 1: Brand & Contact */}
-                    <div className="space-y-10">
-                        <div className="space-y-4">
-                            <h2 className="font-heading text-3xl font-medium text-white uppercase tracking-tighter">
-                                Shefa <span className="text-shefa-cobalt underline decoration-1 underline-offset-4">Risk Management.</span>
-                            </h2>
-                            <p className="text-shefa-silver/60 text-sm leading-relaxed max-w-xs">
-                                Institutional-grade trade finance and risk mitigation for Malaysia's industrial backbone.
-                            </p>
-                        </div>
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
 
-                        <div className="space-y-6">
-                            <div className="flex items-start gap-4 group">
-                                <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/5 group-hover:border-shefa-cobalt transition-colors">
-                                    <MapPin className="w-4 h-4 text-shefa-cobalt" />
+                        {/* Brand Section */}
+                        <div className="lg:col-span-5 space-y-12">
+                            <div className="space-y-6">
+                                <div className="flex items-center gap-4">
+                                    <div className="w-12 h-12 bg-shefa-gold rounded-xl flex items-center justify-center text-shefa-navy font-black text-2xl shadow-xl">S</div>
+                                    <span className="text-2xl font-heading font-extrabold uppercase tracking-tighter">Shefa <span className="text-shefa-gold">Risk Management</span></span>
                                 </div>
-                                <div className="text-sm text-shefa-silver/80 leading-relaxed font-mono uppercase tracking-tight">
-                                    Level 19, Menara 2,<br />
-                                    KL Eco City, Malaysia
-                                </div>
+                                <p className="text-white/60 text-lg leading-relaxed max-w-md">
+                                    Bridging the liquidity gap for Malaysia's industrial backbone through institutional-grade trade credit insurance.
+                                </p>
                             </div>
 
-                            <div className="flex items-center gap-4 group">
-                                <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/5 group-hover:border-shefa-cobalt transition-colors">
-                                    <Mail className="w-4 h-4 text-shefa-cobalt" />
+                            <div className="space-y-6 pt-4 border-t border-white/10">
+                                <div className="flex items-start gap-4 text-white/70 hover:text-white transition-colors group">
+                                    <MapPin className="text-shefa-gold mt-1 group-hover:scale-110 transition-transform" />
+                                    <span className="text-sm font-medium leading-relaxed">
+                                        Level 19, Menara 2, KL Eco City,<br />
+                                        59200 Kuala Lumpur, Malaysia
+                                    </span>
                                 </div>
-                                <a href="mailto:enquiries@shefa.com.my" className="text-sm text-shefa-silver/80 hover:text-white transition-colors font-mono">
-                                    enquiries@shefa.com.my
-                                </a>
-                            </div>
-
-                            <div className="flex items-center gap-4 group">
-                                <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/5 group-hover:border-shefa-cobalt transition-colors">
-                                    <Phone className="w-4 h-4 text-shefa-cobalt" />
+                                <div className="flex items-center gap-4 text-white/70 hover:text-white transition-colors group">
+                                    <Mail className="text-shefa-gold group-hover:scale-110 transition-transform" size={20} />
+                                    <a href="mailto:enquiries@shefa.com.my" className="text-sm font-bold uppercase tracking-wider">enquiries@shefa.com.my</a>
                                 </div>
-                                <a href="tel:+60327745254" className="text-sm text-shefa-silver/80 hover:text-white transition-colors font-mono">
-                                    +603.2774.5254
-                                </a>
+                                <div className="flex items-center gap-4 text-white/70 hover:text-white transition-colors group">
+                                    <Phone className="text-shefa-gold group-hover:scale-110 transition-transform" size={20} />
+                                    <a href="tel:+60327745254" className="text-sm font-bold uppercase tracking-wider">+603 2774 5254</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    {/* Column 2: Team (Text Only) */}
-                    <div className="space-y-8">
-                        <h3 className="font-mono text-xs text-shefa-cobalt uppercase tracking-[0.3em]">Leadership</h3>
-                        <div className="grid grid-cols-1 gap-6">
-                            {team.map((member) => (
-                                <div key={member.name} className="group cursor-default">
-                                    <div className="text-white font-medium group-hover:text-shefa-cobalt transition-colors">{member.name}</div>
-                                    <div className="text-[10px] text-shefa-silver/50 uppercase tracking-widest">{member.title}</div>
+                        {/* Links Grid */}
+                        <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-12 lg:gap-24">
+                            {sections.map((section) => (
+                                <div key={section.title} className="space-y-8">
+                                    <h3 className="text-shefa-gold font-black uppercase tracking-[0.2em] text-[10px]">{section.title}</h3>
+                                    <ul className="space-y-4">
+                                        {section.links.map((link) => (
+                                            <li key={link.name}>
+                                                <button
+                                                    onClick={() => onNavigate(link.id)}
+                                                    className="text-white/50 hover:text-shefa-gold transition-colors text-sm font-medium uppercase tracking-widest text-left"
+                                                >
+                                                    {link.name}
+                                                </button>
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </div>
                             ))}
                         </div>
                     </div>
 
-                    {/* Column 3: Quick Connect */}
-                    <div className="space-y-8">
-                        <h3 className="font-mono text-xs text-shefa-cobalt uppercase tracking-[0.3em]">Inquiries</h3>
-                        <div className="space-y-6">
-                            <p className="text-shefa-silver/60 text-sm">Experience the Shefa standard in trade finance velocity.</p>
-                            <button
-                                onClick={() => onNavigate('contact')}
-                                className="w-full btn-outline flex justify-between group"
-                            >
-                                Partner with us
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </button>
+                    {/* Bottom Utility Bar */}
+                    <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
+                        <div className="flex items-center gap-12">
+                            <div className="flex items-center gap-2 text-white/40">
+                                <Globe size={16} />
+                                <span className="text-[10px] font-bold uppercase tracking-widest">Global Operations Center</span>
+                            </div>
+                            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30">
+                                &copy; {currentYear} Shefa Risk Management Sendirian Berhad.
+                            </p>
+                        </div>
+
+                        <div className="flex items-center gap-8">
+                            <div className="flex items-center gap-3">
+                                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-shefa-gold">Audit & Risk Certified</span>
+                                <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                                    <Linkedin size={14} className="text-white/40" />
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                </div>
-
-                {/* Bottom Section: Legal & Copyright */}
-                <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
-                    <div className="flex gap-8 text-[10px] font-mono text-shefa-silver/40 uppercase tracking-widest">
-                        <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-                        <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-                        <a href="#" className="hover:text-white transition-colors">KLDX Regulated</a>
-                    </div>
-                    <p className="text-[10px] font-mono text-shefa-silver/30 uppercase tracking-[0.2em]">
-                        &copy; {currentYear} Shefa Risk Management. All rights reserved.
-                    </p>
                 </div>
             </div>
-
-            {/* Decorative architectural line */}
-            <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-shefa-cobalt/20 via-transparent to-transparent hidden lg:block" />
         </footer>
     );
 };

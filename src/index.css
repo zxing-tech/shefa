@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lato:wght@300;400;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,33 +6,24 @@
 
 @layer base {
   :root {
-    /* Brand Design Tokens */
-    --midnight-navy: #001F3F;
-    --electric-cobalt: #0047AB;
-    --brand-gold: #FCC008;
-
-    /* Semantic Mappings */
-    --background: 232 50% 12%;
-    /* Navy-ish background */
-    --foreground: 0 0% 100%;
-    --card: 232 50% 15%;
-    --card-foreground: 0 0% 90%;
-    --popover: 232 50% 15%;
-    --popover-foreground: 0 0% 90%;
-    --primary: 215 100% 34%;
-    /* Cobalt approx */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 48 97% 51%;
-    /* Gold approx */
-    --secondary-foreground: 232 50% 12%;
-    --muted: 232 30% 20%;
-    --muted-foreground: 0 0% 70%;
-    --accent: 48 97% 51%;
-    --accent-foreground: 232 50% 12%;
-    --border: 232 30% 25%;
-    --input: 232 30% 25%;
-    --ring: 215 100% 34%;
+    --background: #F5F7FA;
+    --foreground: #27337F;
+    --primary: #27337F;
+    --secondary: #FCC008;
+    --accent: #0F43AD;
+    --card: #FFFFFF;
+    --border: #E5E7EB;
     --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: #27337F;
+    --foreground: #FFFFFF;
+    --primary: #FCC008;
+    --secondary: #0F43AD;
+    --accent: #FCC008;
+    --card: #2e3a8c;
+    --border: rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -42,13 +33,12 @@
   }
 
   html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    @apply bg-shefa-navy text-shefa-silver font-sans;
+    @apply bg-background text-foreground font-sans transition-colors duration-300;
     overflow-x: hidden;
   }
 
@@ -58,122 +48,17 @@
   h4,
   h5,
   h6 {
-    @apply font-heading font-medium tracking-wider uppercase text-white;
-  }
-}
-
-@layer components {
-  .eyebrow {
-    @apply font-mono text-xs font-medium uppercase tracking-[0.14em] text-shefa-silver;
-  }
-
-  .heading-xl {
-    @apply font-heading text-white;
-    font-size: clamp(40px, 6vw, 84px);
-    line-height: 1.1;
-    letter-spacing: 0.05em;
-  }
-
-  .heading-lg {
-    @apply font-heading text-white;
-    font-size: clamp(32px, 4vw, 56px);
-    line-height: 1.2;
-    letter-spacing: 0.03em;
-  }
-
-  .heading-md {
-    @apply font-heading text-white;
-    font-size: clamp(24px, 3vw, 42px);
-    line-height: 1.2;
-    letter-spacing: 0.02em;
-  }
-
-  .body-lg {
-    @apply text-lg leading-relaxed text-shefa-silver;
-  }
-
-  .body-base {
-    @apply text-base leading-[1.55] text-shefa-silver;
-  }
-
-  .btn-primary {
-    @apply inline-flex items-center justify-center px-10 py-4 bg-shefa-cobalt text-white font-medium rounded-pill transition-all duration-300 hover:brightness-110 hover:shadow-glow;
-  }
-
-  .btn-outline {
-    @apply inline-flex items-center justify-center px-10 py-4 border border-white text-white font-medium rounded-pill transition-all duration-300 hover:bg-white hover:text-shefa-navy;
-  }
-
-  .card {
-    @apply bg-[#F6F7FA] rounded-xl border border-[#E5E7EB] p-8 transition-all duration-200;
-  }
-
-  .card-hover:hover {
-    @apply -translate-y-1 shadow-card-hover;
-  }
-
-  .gold-rule {
-    @apply w-[72px] h-[2px] bg-shefa-gold;
-  }
-
-  .section-light {
-    @apply bg-shefa-white;
-  }
-
-  .section-dark {
-    @apply bg-shefa-navy text-white;
-  }
-
-  .image-card {
-    @apply rounded-xl overflow-hidden;
-  }
-
-  .grain-overlay {
-    @apply fixed inset-0 pointer-events-none z-[9999] opacity-[0.06] mix-blend-multiply;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  }
-
-  .btn-gold {
-    @apply inline-flex items-center justify-center px-10 py-4 bg-shefa-gold text-shefa-navy font-bold rounded-pill transition-all duration-300 hover:brightness-110 hover:shadow-glow-gold;
-  }
-
-  .btn-gold-outline {
-    @apply inline-flex items-center justify-center px-10 py-4 border-2 border-shefa-gold text-shefa-gold font-bold rounded-pill transition-all duration-300 hover:bg-shefa-gold hover:text-shefa-navy;
-  }
-
-  .image-overlay {
-    @apply relative overflow-hidden;
-  }
-
-  .image-overlay::after {
-    content: '';
-    @apply absolute inset-0 bg-shefa-navy/60 transition-opacity duration-500;
-  }
-
-  .reveal-up {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  .reveal-up.active {
-    opacity: 1;
-    transform: translateY(0);
+    @apply font-heading uppercase tracking-tight text-foreground;
   }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .shadow-glow-gold {
+    box-shadow: 0 0 20px rgba(252, 192, 8, 0.3);
   }
 
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
+  .shadow-glow-cobalt {
+    box-shadow: 0 0 20px rgba(15, 67, 173, 0.3);
   }
 
   .animate-scroll {
@@ -190,51 +75,14 @@
     }
   }
 
-  .animate-grow-y {
-    animation: grow-y 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    transform-origin: bottom;
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  @keyframes grow-y {
-    from {
-      transform: scaleY(0);
-    }
-
-    to {
-      transform: scaleY(1);
-    }
-  }
-}
-
-/* Smooth scroll for GSAP */
-html.lenis {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto;
-}
-
-/* Selection color */
-::selection {
-  background-color: rgba(200, 163, 76, 0.3);
-  color: inherit;
-}
-
-/* Focus styles */
-:focus-visible {
-  outline: 2px solid #C8A34C;
-  outline-offset: 2px;
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  .reveal-up.active {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

@@ -1,4 +1,4 @@
-import { ArrowRight, Globe, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowRight, ShieldCheck, TrendingUp, Zap } from 'lucide-react';
 
 interface HomeProps {
   onNavigate: (page: any) => void;
@@ -6,136 +6,134 @@ interface HomeProps {
 
 const Home = ({ onNavigate }: HomeProps) => {
   return (
-    <main className="relative bg-shefa-navy transition-all duration-700">
-      {/* Cinematic Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Background Visual Element (Mock for cinematic video/image) */}
+    <main className="relative overflow-hidden">
+      {/* Hero Section */}
+      <section className="relative min-h-[90vh] flex items-center pt-20">
+        {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-tr from-shefa-navy via-shefa-navy/80 to-shefa-cobalt/20 z-10" />
-          {/* Subtle moving grid background */}
-          <div className="absolute inset-0 opacity-10"
-            style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '60px 60px' }}
+          <img
+            src="https://images.unsplash.com/photo-1541094891119-122e2098606c?q=80&w=2070&auto=format&fit=crop"
+            alt="Kuala Lumpur Skyline"
+            className="w-full h-full object-cover"
           />
-          {/* Ambient Blue Pulse */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[100vw] bg-shefa-cobalt/10 rounded-full blur-[120px] animate-pulse" />
+          <div className="absolute inset-0 bg-shefa-navy/70 dark:bg-shefa-navy/85 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
         </div>
 
-        <div className="w-[86vw] mx-auto relative z-20">
-          <div className="max-w-5xl space-y-12">
-            <div className="space-y-6">
-              <span className="font-mono text-xs tracking-[0.5em] text-shefa-gold uppercase reveal-up active">
-                Trade Finance // Global Strategy
-              </span>
-              <h1 className="font-heading text-6xl lg:text-[7.5rem] font-bold text-white leading-[0.9] tracking-tighter uppercase reveal-up active">
-                Structural <br />
-                <span className="text-shefa-gold drop-shadow-[0_0_15px_rgba(252,192,8,0.3)]">Resilience</span> <br />
-                <span className="text-[0.6em] tracking-normal font-medium text-white/90">For the Global Economy.</span>
-              </h1>
-            </div>
+        <div className="w-full px-6 lg:px-12 relative z-10">
+          <div className="max-w-[1400px] mx-auto">
+            <div className="max-w-4xl space-y-8 reveal-up active">
+              <div className="space-y-4">
+                <span className="inline-block bg-shefa-gold/10 border border-shefa-gold/30 text-shefa-gold px-4 py-1.5 rounded text-[10px] font-black uppercase tracking-[0.3em]">
+                  Brand Guide Rev1 // Malaysian Trade Credit
+                </span>
+                <h1 className="text-5xl lg:text-[7rem] font-heading font-extrabold text-white leading-[0.9] tracking-tighter uppercase">
+                  Institutional Security.<br />
+                  <span className="text-shefa-gold">Economic Momentum.</span>
+                </h1>
+              </div>
 
-            <p className="text-xl lg:text-2xl text-shefa-silver/80 max-w-2xl leading-relaxed reveal-up active">
-              We structure trade finance solutions that bridge the gap between
-              traditional banking limitations and the practical needs of industrial reality.
-            </p>
+              <p className="text-xl lg:text-2xl text-white/80 max-w-2xl leading-relaxed">
+                Bridging the liquidity gap for Malaysia's industrial backbone.
+                Structured trade finance backed by AA-rated insurance.
+              </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-6 reveal-up active">
-              <button
-                onClick={() => onNavigate('borrowers')}
-                className="btn-gold px-12 py-5 text-[11px] tracking-[0.2em] w-full sm:w-auto"
-              >
-                I Need Funding
-                <Zap className="w-5 h-5 ml-3" />
-              </button>
-              <button
-                onClick={() => onNavigate('lenders')}
-                className="btn-gold-outline px-12 py-5 text-[11px] tracking-[0.2em] w-full sm:w-auto"
-              >
-                I Want To Invest
-                <ArrowRight className="w-5 h-5 ml-3" />
-              </button>
+              <div className="flex flex-col sm:flex-row items-center gap-6 pt-4">
+                <button
+                  onClick={() => onNavigate('borrowers')}
+                  className="w-full sm:w-auto bg-shefa-gold text-shefa-navy px-12 py-5 rounded font-black uppercase tracking-[0.2em] text-sm hover:brightness-105 transition-all shadow-2xl flex items-center justify-center gap-3"
+                >
+                  Get Funded <ArrowRight size={18} />
+                </button>
+                <button
+                  onClick={() => onNavigate('lenders')}
+                  className="w-full sm:w-auto border-2 border-white text-white px-12 py-5 rounded font-black uppercase tracking-[0.2em] text-sm hover:bg-white hover:text-shefa-navy transition-all"
+                >
+                  For Lenders
+                </button>
+              </div>
             </div>
           </div>
         </div>
-
-        {/* Floating Abstract Element */}
-        <div className="absolute right-[-10vw] top-[20vh] w-[40vw] h-[40vw] border border-white/5 rounded-full pointer-events-none hidden lg:block" />
       </section>
 
-      {/* Trust Ticker (Marquee) */}
-      <section className="py-12 bg-black/40 border-y border-white/5 relative z-30">
-        <div className="flex animate-scroll whitespace-nowrap items-center">
-          {[1, 2, 3].map(i => (
-            <div key={i} className="flex gap-20 px-10 items-center">
-              <div className="flex items-center gap-4 group">
-                <Globe className="w-5 h-5 text-shefa-gold" />
-                <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-white">USD 300M+ Trade Finance Structured</span>
-              </div>
-              <div className="w-1.5 h-1.5 bg-shefa-gold rounded-full opacity-30" />
-              <div className="flex items-center gap-4">
-                <ShieldCheck className="w-5 h-5 text-shefa-gold" />
-                <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-white">15+ Years Experience</span>
-              </div>
-              <div className="w-1.5 h-1.5 bg-shefa-gold rounded-full opacity-30" />
-              <div className="flex items-center gap-4">
-                <Zap className="w-5 h-5 text-shefa-gold" />
-                <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-white">0% Default Rate on Insured Notes</span>
-              </div>
-              <div className="w-1.5 h-1.5 bg-shefa-gold rounded-full opacity-30" />
-              <div className="flex items-center gap-8">
-                <span className="text-[10px] uppercase font-mono text-shefa-silver/40">Partners:</span>
-                <span className="text-[11px] font-black uppercase text-white/20">Coface</span>
-                <span className="text-[11px] font-black uppercase text-white/20">Allianz</span>
-                <span className="text-[11px] font-black uppercase text-white/20">Atradius</span>
-              </div>
-              <div className="w-1.5 h-1.5 bg-shefa-gold rounded-full opacity-30" />
+      {/* Stats Bar */}
+      <section className="relative z-20 -mt-16 sm:-mt-20">
+        <div className="w-full px-6 lg:px-12">
+          <div className="max-w-[1400px] mx-auto bg-card border border-border rounded-2xl shadow-2xl overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border">
+              {[
+                { label: 'Trade Finance Structured', value: 'USD 300M+', icon: TrendingUp },
+                { label: 'Risk Management Experience', value: '15+ Years', icon: ShieldCheck },
+                { label: 'Target Default on Insured Notes', value: '0%', icon: Zap },
+              ].map((stat, i) => (
+                <div key={i} className="p-8 lg:p-12 flex items-center gap-8 group hover:bg-shefa-gold/5 transition-colors">
+                  <div className="w-16 h-16 rounded-full bg-shefa-gold/10 flex items-center justify-center text-shefa-gold group-hover:scale-110 transition-transform">
+                    <stat.icon size={32} />
+                  </div>
+                  <div className="space-y-1">
+                    <div className="text-3xl lg:text-4xl font-extrabold text-foreground tracking-tighter">{stat.value}</div>
+                    <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-foreground/50">{stat.label}</div>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </section>
 
-      {/* Second Section: Value Proposition */}
-      <section className="py-32 relative bg-shefa-navy overflow-hidden">
-        <div className="w-[86vw] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-            <div className="space-y-12">
-              <div className="space-y-6">
-                <h2 className="font-heading text-4xl lg:text-5xl font-bold text-white uppercase leading-tight reveal-up active">
-                  Digital Assets. <br />
-                  <span className="text-shefa-gold">Real-World</span> Integration.
-                </h2>
-                <div className="w-24 h-1 bg-shefa-gold" />
-              </div>
-              <p className="text-lg text-shefa-silver/70 leading-relaxed reveal-up active">
-                Financing Southeast Asia's industrial growth by digitizing trade assets.
-                Our platform connects institutional liquidity with resilient supply chains,
-                creating a secure ecosystem for global trade.
+      {/* Trust Section */}
+      <section className="py-24 lg:py-32">
+        <div className="w-full px-6 lg:px-12">
+          <div className="max-w-[1400px] mx-auto text-center space-y-16">
+            <div className="space-y-4 max-w-2xl mx-auto">
+              <h2 className="text-4xl lg:text-5xl font-heading font-extrabold text-foreground uppercase tracking-tight">
+                Secure. Transparent. <span className="text-shefa-gold">Regulated.</span>
+              </h2>
+              <p className="text-foreground/70 text-lg">
+                We combine institutional-grade credit insurance with regulated capital markets infrastructure to deliver unparalleled security.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 reveal-up active">
-                <div className="p-6 border-l border-shefa-gold/30 bg-white/5 rounded-r-xl">
-                  <div className="text-2xl font-bold text-white mb-2 underline decoration-shefa-gold decoration-2 underline-offset-4 tracking-tighter">Secured</div>
-                  <p className="text-xs text-shefa-silver/60 uppercase font-mono tracking-widest">AA-Rated Insurance Protection</p>
-                </div>
-                <div className="p-6 border-l border-shefa-gold/30 bg-white/5 rounded-r-xl">
-                  <div className="text-2xl font-bold text-white mb-2 underline decoration-shefa-gold decoration-2 underline-offset-4 tracking-tighter">Regulated</div>
-                  <p className="text-xs text-shefa-silver/60 uppercase font-mono tracking-widest">KLDX Exchange Listed</p>
-                </div>
-              </div>
             </div>
 
-            <div className="relative group reveal-up active">
-              <div className="aspect-square bg-white/5 backdrop-blur-3xl rounded-[40px] border border-white/10 relative overflow-hidden flex items-center justify-center">
-                {/* Visualizing "Secured" with an animated isometric box or similar */}
-                <div className="absolute inset-0 z-0 opacity-10 bg-[url('/Logo-Shefa-Risk-Management-OL_Shefa-Icon.png')] bg-center bg-no-repeat bg-contain transform scale-50" />
-                <div className="w-[60%] h-[60%] border border-shefa-gold/30 rotate-45 group-hover:rotate-[225deg] transition-transform duration-1000 p-8">
-                  <div className="w-full h-full border border-shefa-gold/30 rotate-45" />
-                </div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-10">
-                  <span className="font-heading text-6xl font-black text-white group-hover:text-shefa-gold transition-colors">12%</span>
-                  <div className="text-[10px] font-bold uppercase tracking-[0.4em] text-shefa-silver">Target Yield</div>
-                </div>
+            <div className="flex flex-wrap items-center justify-center gap-12 lg:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all">
+              {/* Placeholders for partner logos */}
+              <span className="text-3xl font-black text-foreground/40 uppercase tracking-widest">Coface</span>
+              <span className="text-3xl font-black text-foreground/40 uppercase tracking-widest">Allianz</span>
+              <span className="text-3xl font-black text-foreground/40 uppercase tracking-widest">Atradius</span>
+              <span className="text-3xl font-black text-foreground/40 uppercase tracking-widest">KLDX</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Value Prop Section */}
+      <section className="py-24 lg:py-32 bg-shefa-navy text-white">
+        <div className="w-full px-6 lg:px-12">
+          <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div className="space-y-12">
+              <div className="space-y-6">
+                <h2 className="text-4xl lg:text-6xl font-heading font-extrabold text-white uppercase leading-tight">
+                  Malaysia's <br />
+                  <span className="text-shefa-gold">Growth Engine</span>
+                </h2>
+                <div className="w-24 h-1.5 bg-shefa-gold rounded-full" />
               </div>
-              {/* Gold Glow Behind */}
-              <div className="absolute inset-0 bg-shefa-gold/5 blur-[100px] rounded-full z-[-1] opacity-0 group-hover:opacity-100 transition-opacity" />
+              <p className="text-xl text-white/70 leading-relaxed">
+                By digitizing trade receivables, we unlock liquidity for Southeast Asia's critical sectors—ensuring SMEs and Industrial giants have the capital to scale at the pace of global trade.
+              </p>
+              <button onClick={() => onNavigate('borrowers')} className="flex items-center gap-4 text-shefa-gold font-bold uppercase tracking-widest group border-b-2 border-shefa-gold pb-2 hover:gap-6 transition-all">
+                Explore Solutions <ArrowRight />
+              </button>
+            </div>
+            <div className="grid grid-cols-2 gap-6">
+              <div className="aspect-square bg-white/5 rounded-3xl border border-white/10 p-8 flex flex-col justify-end gap-4 hover:bg-white/10 transition-colors">
+                <div className="text-4xl font-black text-white">$300M</div>
+                <div className="text-xs uppercase font-bold tracking-widest text-shefa-gold">Assets Under Processing</div>
+              </div>
+              <div className="aspect-square bg-white/5 rounded-3xl border border-white/10 p-8 flex flex-col justify-end gap-4 hover:bg-white/10 transition-colors">
+                <div className="text-4xl font-black text-white">12%</div>
+                <div className="text-xs uppercase font-bold tracking-widest text-shefa-gold">Target Yield for Lenders</div>
+              </div>
             </div>
           </div>
         </div>

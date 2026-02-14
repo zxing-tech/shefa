@@ -6,92 +6,85 @@ const Industries = () => {
             name: 'Oil & Gas Services',
             icon: Fuel,
             desc: 'Capital intensive projects requiring bridge financing for offshore and downstream supply chains.',
-            color: '#0047AB'
+            highlight: 'RM 100M+ Funded'
         },
         {
             name: 'Manufacturing',
             icon: Factory,
             desc: 'Raw material procurement funding for diverse production cycles and inventory management.',
-            color: '#FCC008'
+            highlight: '48h Approval'
         },
         {
             name: 'FMCG & Food',
             icon: ShoppingCart,
             desc: 'High volume, short cycle receivable management for rapid inventory turnover and logistics.',
-            color: '#FFFFFF'
+            highlight: 'Dynamic Limits'
         },
         {
             name: 'Construction',
             icon: HardHat,
             desc: 'Project progress claim financing to maintain operational momentum across complex timelines.',
-            color: '#0047AB'
+            highlight: 'Progress Claims'
         },
         {
             name: 'Technology',
             icon: Monitor,
             desc: 'Hardware procurement and contract financing for fast-scaling digital infrastructure projects.',
-            color: '#FCC008'
+            highlight: 'Contract Based'
         }
     ];
 
     return (
-        <main className="min-h-screen bg-shefa-navy pt-24 overflow-hidden transition-all duration-700">
+        <main className="pt-20">
             {/* Hero Section */}
-            <section className="py-20 lg:py-32 relative">
-                <div className="w-[86vw] mx-auto">
-                    <div className="max-w-4xl space-y-6">
-                        <span className="font-mono text-xs tracking-[0.3em] text-shefa-gold uppercase reveal-up active">
-                            Sector Specialization // Expertise
-                        </span>
-                        <h1 className="font-heading text-5xl lg:text-7xl font-bold text-white uppercase leading-tight reveal-up active">
-                            Deep <br />
-                            <span className="text-shefa-gold underline decoration-1 underline-offset-[12px]">Industry</span> Integration.
+            <section className="bg-shefa-navy text-white py-24 lg:py-32 overflow-hidden relative">
+                <div className="absolute inset-0 opacity-10">
+                    <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_100%_0%,rgba(15,67,173,0.4),transparent_50%)]" />
+                </div>
+
+                <div className="w-full px-6 lg:px-12 relative z-10">
+                    <div className="max-w-[1400px] mx-auto text-center space-y-8">
+                        <span className="text-shefa-gold font-bold uppercase tracking-[0.3em] text-xs">Sector Expertise // Global Trade</span>
+                        <h1 className="text-5xl lg:text-7xl font-heading font-extrabold uppercase leading-[0.9] tracking-tighter">
+                            Deep <span className="text-shefa-gold">Industry</span><br />
+                            Integration.
                         </h1>
-                        <p className="text-xl text-shefa-silver/80 max-w-2xl leading-relaxed reveal-up active">
-                            We understand the nuances of the real economy. Our solutions are custom-built
-                            for the specific capital cycles of Southeast Asia's critical sectors.
+                        <p className="text-xl text-white/70 max-w-2xl mx-auto">
+                            We bridge the capital gap for Malaysia's industrial backbone across five core sectors.
                         </p>
                     </div>
                 </div>
             </section>
 
-            {/* Masonry Grid Simulation */}
-            <section className="py-12 pb-32">
-                <div className="w-[86vw] mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Industries Grid */}
+            <section className="py-24 lg:py-32">
+                <div className="w-full px-6 lg:px-12">
+                    <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
                         {industries.map((industry, index) => {
                             const Icon = industry.icon;
                             return (
                                 <div
                                     key={industry.name}
-                                    className={`relative h-[400px] rounded-3xl overflow-hidden group border border-white/5 reveal-up active ${index === 0 ? 'lg:col-span-2' : ''
-                                        }`}
-                                    style={{ transitionDelay: `${index * 100}ms` }}
+                                    className="group p-8 lg:p-12 bg-card border border-border rounded-[32px] hover:border-shefa-gold transition-all duration-500 shadow-xl hover:shadow-2xl flex flex-col justify-between min-h-[400px]"
                                 >
-                                    {/* Background Mock Overlay (Simulating Cinematic Photography) */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-shefa-navy via-shefa-navy/40 to-transparent z-10" />
-                                    <div className={`absolute inset-0 z-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700 bg-[${industry.color}]`} />
-
-                                    {/* Content Overlay */}
-                                    <div className="absolute inset-0 z-20 p-8 lg:p-12 flex flex-col justify-end">
-                                        <div className="space-y-4 transform transition-transform duration-500 group-hover:-translate-y-4">
-                                            <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/10 group-hover:bg-shefa-gold group-hover:border-shefa-gold transition-all duration-500">
-                                                <Icon className="w-6 h-6 text-white group-hover:text-shefa-navy transition-colors" />
-                                            </div>
-                                            <h3 className="font-heading text-3xl font-bold text-white uppercase tracking-tight">
+                                    <div className="space-y-6">
+                                        <div className="w-16 h-16 rounded-2xl bg-shefa-gold/10 flex items-center justify-center text-shefa-gold group-hover:bg-shefa-gold group-hover:text-shefa-navy transition-all duration-500">
+                                            <Icon size={32} />
+                                        </div>
+                                        <div className="space-y-4">
+                                            <h3 className="text-3xl font-heading font-extrabold uppercase text-foreground leading-tight">
                                                 {industry.name}
                                             </h3>
-                                            <p className="text-sm text-shefa-silver/0 group-hover:text-shefa-silver/80 opacity-0 group-hover:opacity-100 transition-all duration-500 max-w-sm line-clamp-3">
+                                            <p className="text-foreground/60 leading-relaxed">
                                                 {industry.desc}
                                             </p>
-                                            <button className="flex items-center gap-2 text-shefa-gold pt-2 group-hover:gap-4 transition-all uppercase text-[10px] font-bold tracking-widest">
-                                                Learn More <ArrowRight size={14} />
-                                            </button>
                                         </div>
                                     </div>
 
-                                    {/* Modern Wireframe Grid Border */}
-                                    <div className="absolute inset-0 border border-white/10 group-hover:border-shefa-gold/30 rounded-3xl transition-colors duration-500 pointer-events-none" />
+                                    <div className="pt-8 border-t border-border mt-8 flex justify-between items-center">
+                                        <span className="text-[10px] font-black uppercase tracking-widest text-shefa-gold">{industry.highlight}</span>
+                                        <ArrowRight size={20} className="text-foreground/20 group-hover:text-shefa-gold group-hover:translate-x-2 transition-all" />
+                                    </div>
                                 </div>
                             );
                         })}
@@ -99,17 +92,15 @@ const Industries = () => {
                 </div>
             </section>
 
-            {/* Global Impact Strips */}
-            <section className="py-24 border-t border-white/5 bg-black/40">
-                <div className="w-full">
-                    <div className="flex animate-scroll whitespace-nowrap">
-                        {[1, 2, 3].map(i => (
-                            <div key={i} className="flex gap-12 px-6 items-center">
-                                <span className="font-heading text-6xl lg:text-8xl font-black text-white/5 uppercase select-none">Global Logistics</span>
-                                <span className="font-heading text-6xl lg:text-8xl font-black text-shefa-gold/10 uppercase select-none tracking-widest">Bridging The Gap</span>
-                                <span className="font-heading text-6xl lg:text-8xl font-black text-white/5 uppercase select-none">Industrial Reality</span>
-                            </div>
-                        ))}
+            {/* Contact Shortcut */}
+            <section className="pb-32">
+                <div className="w-full px-6 lg:px-12">
+                    <div className="max-w-[1400px] mx-auto bg-foreground text-background p-12 lg:p-24 rounded-[40px] flex flex-col lg:flex-row justify-between items-center gap-12">
+                        <div className="space-y-4 text-center lg:text-left">
+                            <h2 className="text-4xl lg:text-5xl font-heading font-extrabold uppercase">Not in these sectors?</h2>
+                            <p className="text-background/60 text-lg">We evaluate complex industrial logic across all B2B trades.</p>
+                        </div>
+                        <button className="bg-shefa-gold text-shefa-navy px-12 py-5 rounded-xl font-black uppercase tracking-widest text-sm shadow-xl hover:brightness-110 transition-all">Discuss Your Case</button>
                     </div>
                 </div>
             </section>

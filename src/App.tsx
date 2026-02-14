@@ -9,6 +9,8 @@ import Services from './pages/Services';
 import Industries from './pages/Industries';
 import Contact from './pages/Contact';
 
+import { ThemeProvider } from './context/ThemeContext';
+
 type Page = 'home' | 'borrowers' | 'lenders' | 'about' | 'services' | 'industries' | 'contact';
 
 function App() {
@@ -62,11 +64,13 @@ function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-shefa-navy">
-      <Navigation currentPage={currentPage} onNavigate={navigateTo} />
-      {renderPage()}
-      {currentPage !== 'home' && <Footer onNavigate={navigateTo} />}
-    </div>
+    <ThemeProvider>
+      <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+        <Navigation currentPage={currentPage} onNavigate={navigateTo} />
+        {renderPage()}
+        <Footer onNavigate={navigateTo} />
+      </div>
+    </ThemeProvider>
   );
 }
 

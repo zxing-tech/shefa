@@ -1,79 +1,103 @@
+import { Linkedin } from 'lucide-react';
+
 const About = () => {
+  const team = [
+    {
+      name: "Russell Boyd",
+      role: "Director / CEO",
+      bio: "MBA INSEAD. 20+ years in private equity and credit structuring (Navis Capital, Creador).",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2000&auto=format&fit=crop", // Placeholder: Portrait of Caucasian man
+    },
+    {
+      name: "Dr. Surendran Sanggarin",
+      role: "Director / COO",
+      bio: "18+ years in financial instruments and business strategy.",
+      image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?q=80&w=2000&auto=format&fit=crop", // Placeholder: Portrait of Indian man
+    },
+    {
+      name: "Dato' Chik Nazrin",
+      role: "Director / CRO",
+      bio: "Ex-PWC & Shell. 13 years in audit and risk compliance.",
+      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=2000&auto=format&fit=crop", // Placeholder: Portrait of Malay man
+    }
+  ];
+
   return (
-    <main className="min-h-screen bg-shefa-navy pt-24">
+    <main className="pt-20">
       {/* Hero */}
-      <section className="py-20 lg:py-32 bg-black/20">
-        <div className="w-[86vw] mx-auto">
-          <div className="max-w-4xl space-y-6">
-            <span className="font-mono text-xs tracking-[0.3em] text-shefa-cobalt uppercase">
-              Corporate Intelligence // Overview
-            </span>
-            <h1 className="font-heading text-5xl lg:text-7xl font-medium text-white uppercase leading-tight">
-              Institutional <br />
-              <span className="text-shefa-cobalt underline decoration-1 underline-offset-8">Integrity.</span>
+      <section className="bg-shefa-navy text-white py-24 lg:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_120%,rgba(252,192,8,0.2),transparent_50%)]" />
+        </div>
+
+        <div className="w-full px-6 lg:px-12 relative z-10">
+          <div className="max-w-[1400px] mx-auto text-center space-y-8">
+            <h1 className="text-5xl lg:text-[7rem] font-heading font-extrabold uppercase leading-[0.9] tracking-tighter">
+              Stewards <br /> Of <span className="text-shefa-gold">Capital.</span>
             </h1>
-            <p className="text-xl text-shefa-silver/80 max-w-2xl leading-relaxed">
-              Shefa Risk Management specializes in credit-wrapped trade finance facilities,
-              providing sophisticated investors with secured yields while empowering real
-              economy SMEs in Malaysia.
+            <p className="text-xl text-white/70 max-w-2xl mx-auto">
+              A leadership team forged in private equity, risk compliance, and industrial operations.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Philosophy Section - Wireframe Grid */}
-      <section className="py-20 lg:py-32 relative">
-        <div className="w-[86vw] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center">
-          <div className="space-y-8 relative z-10">
-            <div className="space-y-4">
-              <h2 className="font-heading text-4xl font-medium text-white uppercase">The Shefa Paradigm.</h2>
-              <div className="w-16 h-1 bg-shefa-cobalt" />
-            </div>
-            <p className="text-shefa-silver/70 leading-relaxed text-lg">
-              We leverage proprietary risk assessment models alongside global credit insurance
-              standards to create a "triple-protected" asset class. By converting trade receivables
-              into high-yield investment notes, we solve the liquidity paradox for high-growth SMEs.
-            </p>
-          </div>
-
-          {/* Abstract Wireframe Box */}
-          <div className="aspect-square border border-white/10 rounded-3xl relative overflow-hidden bg-white/5 backdrop-blur-sm group">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-40 h-40 border-2 border-shefa-cobalt/40 rotate-45 transform group-hover:rotate-90 transition-transform duration-1000" />
-              <div className="absolute w-60 h-60 border border-white/10 -rotate-12 transition-transform duration-1000 group-hover:rotate-0" />
-              <div className="absolute w-80 h-80 border border-white/5 rotate-12 transition-transform duration-1000 group-hover:rotate-45" />
-            </div>
-            <div className="absolute bottom-10 left-10 space-y-2">
-              <div className="text-[10px] font-mono text-shefa-cobalt uppercase tracking-[0.4em]">Proprietary Model</div>
-              <div className="text-white font-heading text-xl uppercase tracking-widest">SRM-Risk-S1</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Background contour lines */}
-        <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
-          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,100 C150,50 350,150 500,100 C650,50 850,150 1000,100" fill="none" stroke="#fff" strokeWidth="1" />
-            <path d="M0,150 C150,100 350,200 500,150 C650,100 850,200 1000,150" fill="none" stroke="#fff" strokeWidth="1" />
-          </svg>
-        </div>
-      </section>
-
-      {/* Metric Grid Extension */}
-      <section className="py-20 lg:py-32 bg-black/10 border-t border-white/5">
-        <div className="w-[86vw] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { label: 'Asset Under Admin', value: 'USD 300M+' },
-              { label: 'Insured Coverage', value: '100%' },
-              { label: 'Default Rate', value: '0%' },
-              { label: 'Avg Duration', value: '14 Months' },
-            ].map((stat) => (
-              <div key={stat.label} className="p-8 border-l border-white/10 space-y-2">
-                <div className="text-3xl font-bold text-white tracking-tighter">{stat.value}</div>
-                <div className="text-[10px] uppercase font-mono tracking-widest text-shefa-cobalt">{stat.label}</div>
+      {/* Leadership Grid */}
+      <section className="py-24 lg:py-32">
+        <div className="w-full px-6 lg:px-12">
+          <div className="max-w-[1400px] mx-auto space-y-24">
+            <div className="flex flex-col md:flex-row justify-between items-end gap-12">
+              <div className="space-y-4">
+                <h2 className="text-4xl lg:text-5xl font-heading font-extrabold uppercase text-foreground">Leadership</h2>
+                <div className="w-24 h-1.5 bg-shefa-gold" />
               </div>
-            ))}
+              <p className="text-foreground/60 text-lg max-w-xl">
+                Our directors bring institutional rigor to Malaysia's trade finance sector, ensuring every note is structured for maximum stability.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
+              {team.map((member, i) => (
+                <div key={i} className="group space-y-8">
+                  <div className="aspect-[4/5] relative overflow-hidden rounded-2xl bg-card border border-border shadow-2xl">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-shefa-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <button className="absolute bottom-6 right-6 w-12 h-12 bg-shefa-gold text-shefa-navy rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0 shadow-xl">
+                      <Linkedin size={20} />
+                    </button>
+                  </div>
+
+                  <div className="space-y-4 p-2">
+                    <div className="space-y-1">
+                      <h3 className="text-2xl font-heading font-extrabold uppercase text-foreground">{member.name}</h3>
+                      <div className="text-shefa-gold font-bold uppercase tracking-widest text-xs">{member.role}</div>
+                    </div>
+                    <p className="text-foreground/70 text-sm leading-relaxed">
+                      {member.bio}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Philosophy */}
+      <section className="py-24 lg:py-32 bg-card border-y border-border">
+        <div className="w-full px-6 lg:px-12">
+          <div className="max-w-4xl mx-auto text-center space-y-12">
+            <h2 className="text-4xl font-heading font-extrabold uppercase text-foreground">Our Philosophy</h2>
+            <p className="text-2xl text-foreground font-light leading-relaxed">
+              "We believe that <span className="text-shefa-gold font-bold">transparency</span> and <span className="text-shefa-gold font-bold">institutional-grade risk mapping</span> are the only ways to build a truly resilient trade finance ecosystem."
+            </p>
+            <div className="flex justify-center">
+              <span className="w-16 h-1 bg-shefa-gold rounded-full" />
+            </div>
           </div>
         </div>
       </section>
