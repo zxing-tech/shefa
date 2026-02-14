@@ -6,9 +6,10 @@ import Borrowers from './pages/Borrowers';
 import Lenders from './pages/Lenders';
 import About from './pages/About';
 import Services from './pages/Services';
+import Industries from './pages/Industries';
 import Contact from './pages/Contact';
 
-type Page = 'home' | 'borrowers' | 'lenders' | 'about' | 'services' | 'contact';
+type Page = 'home' | 'borrowers' | 'lenders' | 'about' | 'services' | 'industries' | 'contact';
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -17,7 +18,7 @@ function App() {
   useEffect(() => {
     const handlePopState = () => {
       const path = window.location.pathname.slice(1) as Page;
-      if (['home', 'borrowers', 'lenders', 'about', 'services', 'contact'].includes(path)) {
+      if (['home', 'borrowers', 'lenders', 'about', 'services', 'industries', 'contact'].includes(path)) {
         setCurrentPage(path);
       }
     };
@@ -26,7 +27,7 @@ function App() {
 
     // Check initial URL
     const path = window.location.pathname.slice(1) as Page;
-    if (['home', 'borrowers', 'lenders', 'about', 'services', 'contact'].includes(path)) {
+    if (['home', 'borrowers', 'lenders', 'about', 'services', 'industries', 'contact'].includes(path)) {
       setCurrentPage(path);
     }
 
@@ -51,6 +52,8 @@ function App() {
         return <About />;
       case 'services':
         return <Services />;
+      case 'industries':
+        return <Industries />;
       case 'contact':
         return <Contact />;
       default:

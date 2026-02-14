@@ -132,6 +132,34 @@
     @apply fixed inset-0 pointer-events-none z-[9999] opacity-[0.06] mix-blend-multiply;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center px-10 py-4 bg-shefa-gold text-shefa-navy font-bold rounded-pill transition-all duration-300 hover:brightness-110 hover:shadow-glow-gold;
+  }
+
+  .btn-gold-outline {
+    @apply inline-flex items-center justify-center px-10 py-4 border-2 border-shefa-gold text-shefa-gold font-bold rounded-pill transition-all duration-300 hover:bg-shefa-gold hover:text-shefa-navy;
+  }
+
+  .image-overlay {
+    @apply relative overflow-hidden;
+  }
+
+  .image-overlay::after {
+    content: '';
+    @apply absolute inset-0 bg-shefa-navy/60 transition-opacity duration-500;
+  }
+
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal-up.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @layer utilities {
@@ -159,6 +187,21 @@
 
     100% {
       transform: translateX(-50%);
+    }
+  }
+
+  .animate-grow-y {
+    animation: grow-y 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    transform-origin: bottom;
+  }
+
+  @keyframes grow-y {
+    from {
+      transform: scaleY(0);
+    }
+
+    to {
+      transform: scaleY(1);
     }
   }
 }
