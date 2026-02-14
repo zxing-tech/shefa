@@ -95,6 +95,25 @@ const Home = ({ navigateTo }: HomeProps) => {
         </div>
       </section>
 
+      {/* Statistics Bar (Verified Data) */}
+      <section className="py-24 border-t border-white/5 bg-shefa-navy">
+        <div className="w-full px-6 lg:px-12">
+          <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-24">
+            {[
+              { value: 'USD 300M+', label: 'Trade Finance Structured', desc: 'Across resilient Southeast Asian sectors.' },
+              { value: '15+ Years', label: 'Trade Finance & Insurance Experience', desc: 'Proven expertise in risk mitigation.' },
+              { value: '0%', label: 'Target Default Rate on Insured Notes', desc: 'Credit insurance-backed performance.' }
+            ].map((stat) => (
+              <div key={stat.label} className="group">
+                <div className="font-heading text-4xl lg:text-5xl text-white mb-2 group-hover:text-shefa-gold transition-colors">{stat.value}</div>
+                <div className="text-xs tracking-[0.2em] font-heading text-shefa-cobalt uppercase mb-4">{stat.label}</div>
+                <p className="text-sm text-shefa-silver leading-relaxed">{stat.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Trust Bar */}
       <section className="py-12 border-t border-white/5 bg-black/20">
         <div className="w-full px-6 lg:px-12">
@@ -105,7 +124,7 @@ const Home = ({ navigateTo }: HomeProps) => {
                 <span key={partner} className="font-heading text-lg lg:text-xl tracking-[0.2em] text-white/50">{partner}</span>
               ))}
             </div>
-            <span className="text-[10px] tracking-[0.2em] font-sans text-white/30 hidden lg:block">REGULATED BY SECURITIES COMMISSION MALAYSIA</span>
+            <span className="text-[10px] tracking-[0.2em] font-sans text-white/30 hidden lg:block uppercase">Regulated by Securities Commission Malaysia</span>
           </div>
         </div>
       </section>

@@ -21,7 +21,7 @@ const Lenders = () => {
             <span className="text-shefa-cobalt">Insurance-Backed Assets.</span>
           </h1>
           <p className="body-lg text-shefa-silver mb-12 max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-200">
-            Participate in Malaysia's supply chain resilience. Earn fixed returns secured by verified trade receivables.
+            Access fixed-income investment notes regulated by SC Malaysia, issued via the KLDX Platform.
           </p>
 
           <div className="mb-12 animate-in fade-in zoom-in duration-1000 delay-300">
@@ -47,10 +47,10 @@ const Lenders = () => {
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
             {[
+              { label: 'Target Yield', title: 'YIELD', value: 'Up to 12% p.a.', icon: Activity },
               { label: 'Short Duration', title: 'TENURE', value: '12 - 18 Months', icon: Clock },
-              { label: 'Coupon Distribution', title: 'PAYOUT', value: 'Quarterly', icon: CircleDollarSign },
-              { label: 'Self-Liquidating Assets', title: 'ASSET CLASS', value: 'Trade Receivables', icon: Activity },
-              { label: 'Asset-Backed Coverage', title: 'SECURITY', value: '> 100%', icon: ShieldCheck }
+              { label: 'Asset-Backed Coverage', title: 'SECURITY', value: '≥ 100%', icon: ShieldCheck },
+              { label: 'Coupon Distribution', title: 'PAYOUT', value: 'Quarterly', icon: CircleDollarSign }
             ].map((metric) => {
               const Icon = metric.icon;
               return (

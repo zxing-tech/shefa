@@ -52,6 +52,7 @@ export default {
         shefa: {
           navy: "#001F3F",
           cobalt: "#0047AB",
+          gold: "#FCC008",
           white: "#FFFFFF",
           silver: "#C0C0C0",
         },

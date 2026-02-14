@@ -7,33 +7,32 @@
 @layer base {
   :root {
     /* Brand Design Tokens */
-    --heritage-gold: #C8A34C;
-    --midnight-navy: #0A1F44;
-    --electric-cobalt: #0F43AD;
+    --midnight-navy: #001F3F;
+    --electric-cobalt: #0047AB;
+    --brand-gold: #FCC008;
 
     /* Semantic Mappings */
-    --background: 230 20% 97%;
-    --foreground: 220 30% 5%;
-    --card: 0 0% 100%;
-    --card-foreground: 220 30% 5%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 30% 5%;
-    --primary: 43 55% 54%;
-    /* Heritage Gold approx in HSL */
-    --primary-foreground: 0 0% 98%;
-    --secondary: 218 73% 15%;
-    /* Midnight Navy approx in HSL */
-    --secondary-foreground: 0 0% 98%;
-    --muted: 230 20% 96%;
-    --muted-foreground: 220 5% 45%;
-    --accent: 43 55% 54%;
-    --accent-foreground: 220 30% 5%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 220 10% 88%;
-    --input: 220 10% 88%;
-    --ring: 43 55% 54%;
-    --radius: 0.625rem;
+    --background: 232 50% 12%;
+    /* Navy-ish background */
+    --foreground: 0 0% 100%;
+    --card: 232 50% 15%;
+    --card-foreground: 0 0% 90%;
+    --popover: 232 50% 15%;
+    --popover-foreground: 0 0% 90%;
+    --primary: 215 100% 34%;
+    /* Cobalt approx */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 48 97% 51%;
+    /* Gold approx */
+    --secondary-foreground: 232 50% 12%;
+    --muted: 232 30% 20%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 48 97% 51%;
+    --accent-foreground: 232 50% 12%;
+    --border: 232 30% 25%;
+    --input: 232 30% 25%;
+    --ring: 215 100% 34%;
+    --radius: 0.75rem;
   }
 }
 

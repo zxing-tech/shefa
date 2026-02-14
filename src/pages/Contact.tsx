@@ -35,8 +35,8 @@ const Contact = () => {
       icon: MapPin,
       title: 'Visit Us',
       details: [
-        'Level 19, Boutique Office 1, Menara 2',
-        'No. 3, Jalan Bangsar, KL Eco City',
+        'Level 19, Menara 2',
+        'KL Eco City',
         '59200 Kuala Lumpur, Malaysia',
       ],
     },

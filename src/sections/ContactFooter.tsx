@@ -31,7 +31,7 @@ const ContactFooter = () => {
   return (
     <footer
       id="contact"
-      className="relative w-full bg-shefa-white"
+      className="relative w-full bg-shefa-navy border-t border-white/5"
     >
       <div className="w-[86vw] mx-auto py-20 lg:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-[4vw]">
@@ -181,18 +181,18 @@ const ContactFooter = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-shefa-navy/5 flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-shefa-cobalt/20 flex items-center justify-center flex-shrink-0">
                     <Mail className="w-5 h-5 text-shefa-gold" />
                   </div>
                   <div>
-                    <div className="font-medium text-shefa-navy mb-1">
+                    <div className="font-medium text-white mb-1 uppercase tracking-widest text-xs">
                       Email
                     </div>
                     <a
-                      href="mailto:info@shefa-risk.com"
-                      className="text-shefa-gray text-sm hover:text-shefa-gold transition-colors"
+                      href="mailto:enquiries@shefa.com.my"
+                      className="text-shefa-silver text-sm hover:text-shefa-gold transition-colors"
                     >
-                      info@shefa-risk.com
+                      enquiries@shefa.com.my
                     </a>
                   </div>
                 </div>

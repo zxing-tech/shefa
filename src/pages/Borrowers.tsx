@@ -76,7 +76,7 @@ const Borrowers = () => {
                   step: '03',
                   title: 'FUND',
                   icon: Zap,
-                  desc: 'Receive up to 80% of the invoice value in cash within 48 hours of verification.'
+                  desc: 'Receive Up to 80% Advance of the invoice value in cash within 48 hours of verification.'
                 },
                 {
                   step: '04',

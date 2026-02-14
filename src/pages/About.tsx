@@ -1,4 +1,4 @@
-import { Shield, Award, Target, Globe, Mail, Phone } from 'lucide-react';
+import { Shield, Target, Globe, Mail, Phone, MapPin } from 'lucide-react';
 
 const About = () => {
   const values = [
@@ -22,17 +22,17 @@ const About = () => {
   const team = [
     {
       name: 'Russell Boyd',
-      title: 'Director / CEO',
+      title: 'Director/CEO',
       image: '/russell-boyd.png',
     },
     {
       name: 'Dr. Surendran Sanggarin',
-      title: 'Director / COO',
+      title: 'Director/COO',
       image: '/dr-surendran.png',
     },
     {
       name: 'Dato\' Chik Nazrin',
-      title: 'Director / CRO',
+      title: 'Director/CRO',
       image: '/dato-chik.png',
     },
     {
@@ -130,19 +130,18 @@ const About = () => {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-20 lg:py-32 bg-shefa-gold">
+      {/* Stats (Verified Data) */}
+      <section className="py-20 lg:py-32 bg-black/40 border-y border-white/5">
         <div className="w-[86vw] mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
             {[
-              { value: '40+', label: 'Years Combined Experience' },
-              { value: 'MYR 2.8B+', label: 'Receivables Under Coverage' },
-              { value: '500+', label: 'Businesses Supported' },
-              { value: '94%', label: 'Client Satisfaction' },
+              { value: 'USD 300M+', label: 'Trade Finance Structured' },
+              { value: '15+ Years', label: 'Trade Finance & Insurance Experience' },
+              { value: '0%', label: 'Target Default Rate on Insured Notes' },
             ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="font-heading text-4xl lg:text-5xl font-bold text-shefa-navy mb-2">{stat.value}</div>
-                <div className="text-shefa-navy/70">{stat.label}</div>
+              <div key={stat.label}>
+                <div className="font-heading text-4xl lg:text-5xl font-bold text-white mb-2">{stat.value}</div>
+                <div className="text-[10px] tracking-[0.3em] font-heading text-shefa-cobalt uppercase">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -187,47 +186,46 @@ const About = () => {
         <div className="w-[86vw] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <span className="eyebrow block mb-4 text-white/60">Contact</span>
-              <div className="gold-rule mb-6" />
-              <h2 className="heading-lg text-white mb-6">
+              <span className="eyebrow block mb-4 text-white/60 uppercase tracking-[0.3em]">Contact</span>
+              <div className="w-12 h-1 bg-shefa-gold mb-6" />
+              <h2 className="heading-lg text-white mb-6 uppercase">
                 Get in <span className="text-shefa-gold">Touch</span>
               </h2>
               <p className="text-white/90 mb-8">
                 Have questions about our services? Our team is here to help.
               </p>
             </div>
-            <div className="space-y-6">
+            <div className="space-y-6 text-left">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-shefa-gold/20 flex items-center justify-center">
-                  <Award className="w-5 h-5 text-shefa-gold" />
+                <div className="w-12 h-12 rounded-full bg-shefa-cobalt/20 flex items-center justify-center">
+                  <MapPin className="w-5 h-5 text-shefa-gold" />
                 </div>
                 <div>
-                  <h4 className="font-heading text-lg font-medium text-white mb-1">Address</h4>
-                  <p className="text-white/85">
-                    Level 19, Boutique Office 1, Menara 2<br />
-                    No. 3, Jalan Bangsar, KL Eco City<br />
+                  <h4 className="font-heading text-lg font-medium text-white mb-1 uppercase tracking-widest">Address</h4>
+                  <p className="text-white/85 text-sm uppercase tracking-wider">
+                    Level 19, Menara 2, KL Eco City<br />
                     59200 Kuala Lumpur, Malaysia
                   </p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-shefa-gold/20 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-shefa-cobalt/20 flex items-center justify-center">
                   <Mail className="w-5 h-5 text-shefa-gold" />
                 </div>
                 <div>
-                  <h4 className="font-heading text-lg font-medium text-white mb-1">Email</h4>
-                  <a href="mailto:enquiries@shefa.com.my" className="text-white/85 hover:text-shefa-gold transition-colors">
+                  <h4 className="font-heading text-lg font-medium text-white mb-1 uppercase tracking-widest">Email</h4>
+                  <a href="mailto:enquiries@shefa.com.my" className="text-white/85 hover:text-shefa-gold transition-colors text-sm">
                     enquiries@shefa.com.my
                   </a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-shefa-gold/20 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-shefa-cobalt/20 flex items-center justify-center">
                   <Phone className="w-5 h-5 text-shefa-gold" />
                 </div>
                 <div>
-                  <h4 className="font-heading text-lg font-medium text-white mb-1">Phone</h4>
-                  <a href="tel:+60327745254" className="text-white/85 hover:text-shefa-gold transition-colors">
+                  <h4 className="font-heading text-lg font-medium text-white mb-1 uppercase tracking-widest">Phone</h4>
+                  <a href="tel:+60327745254" className="text-white/85 hover:text-shefa-gold transition-colors text-sm">
                     +60 3-2774 5254
                   </a>
                 </div>
