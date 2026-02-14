@@ -55,6 +55,8 @@ export default {
           gold: "#FCC008",
           white: "#FFFFFF",
           silver: "#C0C0C0",
+          gray: "#C0C0C0", // Alias for silver to support legacy/common naming
+          black: "#000000",
         },
       },
       fontFamily: {

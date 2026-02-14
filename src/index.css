@@ -64,7 +64,7 @@
 
 @layer components {
   .eyebrow {
-    @apply font-mono text-xs font-medium uppercase tracking-[0.14em] text-shefa-gray;
+    @apply font-mono text-xs font-medium uppercase tracking-[0.14em] text-shefa-silver;
   }
 
   .heading-xl {
@@ -89,11 +89,11 @@
   }
 
   .body-lg {
-    @apply text-lg leading-relaxed text-shefa-gray;
+    @apply text-lg leading-relaxed text-shefa-silver;
   }
 
   .body-base {
-    @apply text-base leading-[1.55] text-shefa-gray;
+    @apply text-base leading-[1.55] text-shefa-silver;
   }
 
   .btn-primary {
@@ -121,7 +121,7 @@
   }
 
   .section-dark {
-    @apply bg-shefa-black text-shefa-white;
+    @apply bg-shefa-navy text-white;
   }
 
   .image-card {
