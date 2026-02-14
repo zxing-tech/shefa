@@ -6,10 +6,6 @@ interface FooterProps {
 
 const Footer = ({ onNavigate }: FooterProps) => {
 
-    const getLogoSrc = () => {
-        return "/Logo-Shefa-Risk-Management-OL_Shefa-White.png";
-    };
-
     return (
         <footer className="bg-[#1A2255] text-white pt-24 pb-12 overflow-hidden relative">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary to-primary" />
@@ -24,12 +20,11 @@ const Footer = ({ onNavigate }: FooterProps) => {
                         {/* Brand Section */}
                         <div className="lg:col-span-5 space-y-12">
                             <div className="space-y-6">
-                                <div className="flex items-center gap-4">
-                                    <img
-                                        src={getLogoSrc()}
-                                        alt="Shefa Risk Management"
-                                        className="h-10 w-auto object-contain"
-                                    />
+                                <div className="flex flex-col items-start group">
+                                    <span className="font-heading font-black text-2xl tracking-[2px] uppercase text-white leading-none">
+                                        <span className="border-b-4 border-secondary pb-0.5">SHEFA</span>
+                                    </span>
+                                    <span className="text-[8px] font-black uppercase tracking-[0.4em] mt-1.5 text-secondary">Risk Management</span>
                                 </div>
                                 <p className="text-white/50 text-xl font-light leading-relaxed max-w-md">
                                     Institutional trade finance & risk management. Bridging the liquidity gap for Malaysia's industrial backbone with AA-rated insurance protection.

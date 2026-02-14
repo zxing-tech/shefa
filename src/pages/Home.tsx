@@ -69,8 +69,30 @@ const Home = ({ onNavigate }: HomeProps) => {
         </div>
       </section>
 
+      {/* Partner logos / Trust Strip */}
+      <section className="py-12 border-y border-border bg-card/10">
+        <div className="w-full px-6 lg:px-12">
+          <div className="max-w-[1400px] mx-auto">
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
+              {partners.map((partner, index) => (
+                <div key={partner} className="flex items-center gap-8 md:gap-16">
+                  <div className="flex flex-col items-center group">
+                    <span className="text-xl md:text-2xl font-black uppercase tracking-[0.2em] text-foreground opacity-60 group-hover:opacity-100 transition-all cursor-default">
+                      {partner}
+                    </span>
+                  </div>
+                  {index < partners.length - 1 && (
+                    <div className="h-8 w-px bg-border hidden sm:block" />
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Social Proof Ticker */}
-      <section className="relative z-20 -mt-24 sm:-mt-28">
+      <section className="py-12 lg:py-24">
         <div className="w-full px-6 lg:px-12">
           <div className="max-w-[1400px] mx-auto glass-card rounded-[32px] overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border">
@@ -84,20 +106,6 @@ const Home = ({ onNavigate }: HomeProps) => {
                     <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-foreground/40">{stat.label}</div>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Partners Section */}
-      <section className="py-24 lg:py-32">
-        <div className="w-full px-6 lg:px-12">
-          <div className="max-w-[1400px] mx-auto text-center space-y-12">
-            <h2 className="text-xs font-black uppercase tracking-[0.4em] text-foreground/30">Strategic Institutional Partners</h2>
-            <div className="flex flex-wrap items-center justify-center gap-12 lg:gap-24 opacity-50 grayscale hover:grayscale-0 transition-all">
-              {partners.map(partner => (
-                <span key={partner} className="text-3xl lg:text-4xl font-black text-foreground tracking-widest uppercase">{partner}</span>
               ))}
             </div>
           </div>

@@ -53,10 +53,7 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
     setActiveDropdown(null);
   };
 
-  const getLogoSrc = () => {
-    if (theme === 'light') return "/Logo-Shefa-Risk-Management-OL_Shefa-Colour.png";
-    return "/Logo-Shefa-Risk-Management-OL_Shefa-White.png";
-  };
+
 
   return (
     <>
@@ -68,13 +65,12 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
           {/* Logo */}
           <button
             onClick={() => handleNavigate('home')}
-            className="flex items-center gap-3 active:scale-95 transition-transform"
+            className="flex flex-col items-start active:scale-95 transition-transform group"
           >
-            <img
-              src={getLogoSrc()}
-              alt="Shefa Risk Management"
-              className="h-10 lg:h-12 w-auto object-contain"
-            />
+            <span className="font-heading font-black text-2xl tracking-[2px] uppercase text-foreground leading-none">
+              <span className="border-b-4 border-secondary pb-0.5">SHEFA</span>
+            </span>
+            <span className={`text-[8px] font-black uppercase tracking-[0.4em] mt-1.5 ${theme === 'dark' ? 'text-secondary' : 'text-primary'}`}>Risk Management</span>
           </button>
 
           {/* Desktop Navigation */}
