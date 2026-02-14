@@ -47,7 +47,7 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
               className="flex items-center gap-3"
             >
               <img
-                src="/Logo-Shefa-Risk-Management-OL_Shefa-White.png"
+                src="/shefa-white-logo.png"
                 alt="Shefa Risk Management"
                 className="h-10 lg:h-12 w-auto transition-all"
               />

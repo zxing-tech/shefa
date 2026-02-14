@@ -35,7 +35,7 @@ const Footer = ({ onNavigate }: { onNavigate: (page: any) => void }) => {
                     {/* Brand */}
                     <div className="space-y-6">
                         <img
-                            src="/Logo-Shefa-Risk-Management-OL_Shefa-White.png"
+                            src="/shefa-white-logo.png"
                             alt="Shefa Risk Management"
                             className="h-10 w-auto"
                         />
