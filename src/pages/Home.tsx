@@ -12,8 +12,8 @@ const Home = ({ onNavigate }: HomeProps) => {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1541094891119-122e2098606c?q=80&w=2070&auto=format&fit=crop"
-            alt="Kuala Lumpur Skyline"
+            src="/hero_main.jpg"
+            alt="Shefa Risk Management"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-shefa-navy/70 dark:bg-shefa-navy/85 mix-blend-multiply" />

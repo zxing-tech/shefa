@@ -18,10 +18,17 @@ const Lenders = () => {
   return (
     <main className="pt-20">
       {/* Hero Section */}
-      <section className="bg-shefa-navy text-white py-24 lg:py-40 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+      <section className="bg-shefa-navy text-white py-24 lg:py-48 relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/lender_hero.jpg"
+            alt="Lenders"
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-shefa-navy via-shefa-navy/50 to-transparent" />
+        </div>
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] border border-white rounded-full animate-pulse" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40vw] h-[40vw] border border-shefa-gold rounded-full" />
         </div>
 
         <div className="w-full px-6 lg:px-12 relative z-10">

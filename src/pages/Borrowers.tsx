@@ -8,8 +8,16 @@ const Borrowers = () => {
   return (
     <main className="pt-20">
       {/* Hero Section */}
-      <section className="bg-shefa-navy text-white py-24 lg:py-32">
-        <div className="w-full px-6 lg:px-12">
+      <section className="relative bg-shefa-navy text-white py-24 lg:py-48 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/borrower_hero.jpg"
+            alt="Borrowers"
+            className="w-full h-full object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-shefa-navy via-shefa-navy/50 to-transparent" />
+        </div>
+        <div className="w-full px-6 lg:px-12 relative z-10">
           <div className="max-w-[1400px] mx-auto text-center space-y-8">
             <h1 className="text-5xl lg:text-7xl font-heading font-extrabold uppercase tracking-tight">
               Liquidity <span className="text-shefa-gold">Accelerated.</span>

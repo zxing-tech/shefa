@@ -6,24 +6,44 @@
 
 @layer base {
   :root {
-    --background: #F5F7FA;
-    --foreground: #27337F;
-    --primary: #27337F;
-    --secondary: #FCC008;
-    --accent: #0F43AD;
-    --card: #FFFFFF;
-    --border: #E5E7EB;
+    --background: 210 20% 97%;
+    /* #F5F7FA */
+    --foreground: 232 53% 33%;
+    /* #27337F */
+    --primary: 232 53% 33%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 45 97% 51%;
+    /* #FCC008 */
+    --secondary-foreground: 232 53% 33%;
+    --accent: 220 84% 37%;
+    /* #0F43AD */
+    --accent-foreground: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 232 53% 33%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 232 53% 33%;
     --radius: 0.75rem;
   }
 
   .dark {
-    --background: #27337F;
-    --foreground: #FFFFFF;
-    --primary: #FCC008;
-    --secondary: #0F43AD;
-    --accent: #FCC008;
-    --card: #2e3a8c;
-    --border: rgba(255, 255, 255, 0.1);
+    --background: 232 53% 33%;
+    /* #27337F */
+    --foreground: 0 0% 100%;
+    --primary: 45 97% 51%;
+    /* #FCC008 */
+    --primary-foreground: 232 53% 33%;
+    --secondary: 220 84% 37%;
+    /* #0F43AD */
+    --secondary-foreground: 0 0% 100%;
+    --accent: 45 97% 51%;
+    --accent-foreground: 232 53% 33%;
+    --card: 232 53% 38%;
+    /* Slightly lighter navy */
+    --card-foreground: 0 0% 100%;
+    --border: 232 53% 43%;
+    --input: 232 53% 43%;
+    --ring: 45 97% 51%;
   }
 }
 
@@ -54,11 +74,11 @@
 
 @layer utilities {
   .shadow-glow-gold {
-    box-shadow: 0 0 20px rgba(252, 192, 8, 0.3);
+    box-shadow: 0 0 20px hsla(45, 97%, 51%, 0.3);
   }
 
   .shadow-glow-cobalt {
-    box-shadow: 0 0 20px rgba(15, 67, 173, 0.3);
+    box-shadow: 0 0 20px hsla(220, 84%, 37%, 0.3);
   }
 
   .animate-scroll {

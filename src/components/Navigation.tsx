@@ -35,8 +35,6 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
       ]
     },
     { label: 'Lenders', page: 'lenders' },
-    { label: 'Industries', page: 'industries' },
-    { label: 'About', page: 'about' },
   ];
 
   const handleNavigate = (page: Page, hash?: string) => {

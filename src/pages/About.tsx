@@ -6,19 +6,25 @@ const About = () => {
       name: "Russell Boyd",
       role: "Director / CEO",
       bio: "MBA INSEAD. 20+ years in private equity and credit structuring (Navis Capital, Creador).",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2000&auto=format&fit=crop", // Placeholder: Portrait of Caucasian man
+      image: "/russell-boyd.png",
     },
     {
       name: "Dr. Surendran Sanggarin",
       role: "Director / COO",
       bio: "18+ years in financial instruments and business strategy.",
-      image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?q=80&w=2000&auto=format&fit=crop", // Placeholder: Portrait of Indian man
+      image: "/dr-surendran.png",
     },
     {
       name: "Dato' Chik Nazrin",
       role: "Director / CRO",
       bio: "Ex-PWC & Shell. 13 years in audit and risk compliance.",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=2000&auto=format&fit=crop", // Placeholder: Portrait of Malay man
+      image: "/dato-chik.png",
+    },
+    {
+      name: "Laura Daniel",
+      role: "Advisor",
+      bio: "Strategic advisor with deep expertise in Malaysian trade and financial governance.",
+      image: "/laura-daniel.png",
     }
   ];
 
@@ -56,27 +62,27 @@ const About = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
               {team.map((member, i) => (
-                <div key={i} className="group space-y-8">
-                  <div className="aspect-[4/5] relative overflow-hidden rounded-2xl bg-card border border-border shadow-2xl">
+                <div key={i} className="group space-y-6">
+                  <div className="aspect-[4/5] relative overflow-hidden rounded-2xl bg-card border border-border shadow-xl">
                     <img
                       src={member.image}
                       alt={member.name}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-shefa-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <button className="absolute bottom-6 right-6 w-12 h-12 bg-shefa-gold text-shefa-navy rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0 shadow-xl">
-                      <Linkedin size={20} />
+                    <button className="absolute bottom-6 right-6 w-10 h-10 bg-shefa-gold text-shefa-navy rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0 shadow-xl">
+                      <Linkedin size={16} />
                     </button>
                   </div>
 
-                  <div className="space-y-4 p-2">
+                  <div className="space-y-3 p-2">
                     <div className="space-y-1">
-                      <h3 className="text-2xl font-heading font-extrabold uppercase text-foreground">{member.name}</h3>
-                      <div className="text-shefa-gold font-bold uppercase tracking-widest text-xs">{member.role}</div>
+                      <h3 className="text-xl font-heading font-extrabold uppercase text-foreground leading-tight">{member.name}</h3>
+                      <div className="text-shefa-gold font-bold uppercase tracking-widest text-[10px]">{member.role}</div>
                     </div>
-                    <p className="text-foreground/70 text-sm leading-relaxed">
+                    <p className="text-foreground/70 text-xs leading-relaxed line-clamp-4">
                       {member.bio}
                     </p>
                   </div>
