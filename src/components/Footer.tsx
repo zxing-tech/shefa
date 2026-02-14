@@ -44,8 +44,11 @@ const Footer = ({ onNavigate }: { onNavigate: (page: any) => void }) => {
                         <div className="lg:col-span-5 space-y-12">
                             <div className="space-y-6">
                                 <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 bg-shefa-gold rounded-xl flex items-center justify-center text-shefa-navy font-black text-2xl shadow-xl">S</div>
-                                    <span className="text-2xl font-heading font-extrabold uppercase tracking-tighter">Shefa <span className="text-shefa-gold">Risk Management</span></span>
+                                    <img
+                                        src="/Logo-Shefa-Risk-Management-OL_Shefa-White.png"
+                                        alt="Shefa Risk Management"
+                                        className="h-10 w-auto object-contain"
+                                    />
                                 </div>
                                 <p className="text-white/60 text-lg leading-relaxed max-w-md">
                                     Bridging the liquidity gap for Malaysia's industrial backbone through institutional-grade trade credit insurance.

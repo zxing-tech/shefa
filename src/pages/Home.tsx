@@ -107,8 +107,16 @@ const Home = ({ onNavigate }: HomeProps) => {
       </section>
 
       {/* Value Prop Section */}
-      <section className="py-24 lg:py-32 bg-shefa-navy text-white">
-        <div className="w-full px-6 lg:px-12">
+      <section className="py-24 lg:py-48 bg-shefa-navy text-white relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/why_meeting.jpg"
+            alt="Collaboration"
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-shefa-navy via-shefa-navy/40 to-transparent" />
+        </div>
+        <div className="w-full px-6 lg:px-12 relative z-10">
           <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <div className="space-y-12">
               <div className="space-y-6">

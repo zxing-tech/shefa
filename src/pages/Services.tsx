@@ -25,8 +25,15 @@ const Services = () => {
   return (
     <main className="min-h-screen bg-shefa-navy pt-24 transition-all duration-700">
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-shefa-cobalt/5" />
+      <section className="py-24 lg:py-48 relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/approach_handshake.jpg"
+            alt="Services"
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-shefa-navy via-shefa-navy/60 to-transparent" />
+        </div>
         <div className="w-[86vw] mx-auto relative z-10">
           <div className="max-w-4xl space-y-6">
             <span className="font-mono text-xs tracking-[0.3em] text-shefa-gold uppercase reveal-up active">

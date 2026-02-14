@@ -65,15 +65,11 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
             onClick={() => handleNavigate('home')}
             className="flex items-center gap-3 active:scale-95 transition-transform"
           >
-            <div className="w-11 h-11 bg-shefa-gold rounded-xl flex items-center justify-center font-black text-shefa-navy text-2xl shadow-xl">
-              S
-            </div>
-            <div className="flex flex-col items-start">
-              <span className="font-heading font-black text-xl tracking-tighter text-foreground leading-none">
-                SHEFA
-              </span>
-              <span className="text-[8px] font-black uppercase tracking-[0.3em] text-shefa-gold">Risk Management</span>
-            </div>
+            <img
+              src={isScrolled ? "/Logo-Shefa-Risk-Management-OL_Shefa-Colour.png" : "/Logo-Shefa-Risk-Management-OL_Shefa-White.png"}
+              alt="Shefa Risk Management"
+              className="h-12 w-auto object-contain"
+            />
           </button>
 
           {/* Desktop Navigation */}

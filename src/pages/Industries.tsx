@@ -1,4 +1,4 @@
-import { Factory, Fuel, ShoppingCart, HardHat, Monitor, ArrowRight } from 'lucide-react';
+import { Factory, Fuel, ShoppingCart, HardHat, Monitor, ArrowRight, Stethoscope } from 'lucide-react';
 
 const Industries = () => {
     const industries = [
@@ -21,7 +21,7 @@ const Industries = () => {
             icon: ShoppingCart,
             desc: 'High volume, short cycle receivable management for rapid inventory turnover and logistics.',
             highlight: 'Dynamic Limits',
-            image: '/protection_wharf_cargo.jpg'
+            image: '/coverage_agriculture.jpg'
         },
         {
             name: 'Construction',
@@ -36,6 +36,13 @@ const Industries = () => {
             desc: 'Hardware procurement and contract financing for fast-scaling digital infrastructure projects.',
             highlight: 'Contract Based',
             image: '/industry_tech.jpg'
+        },
+        {
+            name: 'Healthcare',
+            icon: Stethoscope,
+            desc: 'Medical supply chain and pharmaceutical distribution financing for private and public sector vendors.',
+            highlight: 'Medical Supply',
+            image: '/industry_healthcare.jpg'
         }
     ];
 

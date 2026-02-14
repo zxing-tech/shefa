@@ -127,11 +127,21 @@ const Lenders = () => {
       {/* Bottom CTA */}
       <section className="py-32 bg-background">
         <div className="w-full px-6 lg:px-12">
-          <div className="max-w-4xl mx-auto bg-shefa-navy rounded-[40px] p-12 lg:p-24 text-center space-y-12 shadow-3xl text-white relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-shefa-gold" />
-            <h2 className="text-4xl lg:text-6xl font-heading font-extrabold uppercase leading-tight text-white">Ready to Invest In <br /><span className="text-shefa-gold">Malaysian Trade?</span></h2>
-            <p className="text-xl text-white/70 max-w-2xl mx-auto italic">"Securing your returns while powering the industrial backbone of the economy."</p>
-            <button className="bg-shefa-gold text-shefa-navy px-16 py-6 rounded font-black uppercase tracking-[0.3em] text-sm shadow-2xl hover:brightness-110 active:scale-95 transition-all">Go to KLDX Platform</button>
+          <div className="max-w-4xl mx-auto bg-shefa-navy rounded-[40px] p-12 lg:p-24 text-center space-y-12 shadow-3xl text-white relative overflow-hidden group">
+            <div className="absolute inset-0 z-0">
+              <img
+                src="/claims_warehouse.jpg"
+                alt="Logistics"
+                className="w-full h-full object-cover opacity-20 transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-shefa-navy/60 backdrop-blur-sm" />
+            </div>
+            <div className="relative z-10 space-y-12">
+              <div className="absolute top-0 left-0 w-full h-1 bg-shefa-gold" />
+              <h2 className="text-4xl lg:text-6xl font-heading font-extrabold uppercase leading-tight text-white">Ready to Invest In <br /><span className="text-shefa-gold">Malaysian Trade?</span></h2>
+              <p className="text-xl text-white/70 max-w-2xl mx-auto italic">"Securing your returns while powering the industrial backbone of the economy."</p>
+              <button className="bg-shefa-gold text-shefa-navy px-16 py-6 rounded font-black uppercase tracking-[0.3em] text-sm shadow-2xl hover:brightness-110 active:scale-95 transition-all">Go to KLDX Platform</button>
+            </div>
           </div>
         </div>
       </section>

@@ -242,7 +242,7 @@ const Contact = () => {
 
             <div className="image-card h-[400px] lg:h-auto overflow-hidden">
               <img
-                src="/hero_main.jpg"
+                src="/hero_team_office.jpg"
                 alt="Shefa Office"
                 className="w-full h-full object-cover"
               />
