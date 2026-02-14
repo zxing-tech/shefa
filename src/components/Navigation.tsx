@@ -30,7 +30,7 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
       page: 'borrowers' as Page,
       dropdown: [
         { label: 'Invoice Financing', hash: '#invoice-financing' },
-        { label: 'Supply Chain Financing', hash: '#scf' }
+        { label: 'Supply Chain Financing', hash: '#supply-chain' }
       ]
     },
     { label: 'Lenders', page: 'lenders' as Page },

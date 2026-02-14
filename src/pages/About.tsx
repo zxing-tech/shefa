@@ -31,17 +31,18 @@ const About = () => {
   return (
     <main className="pt-20">
       {/* Hero */}
-      <section id="about" className="bg-background text-foreground py-24 lg:py-48 relative overflow-hidden border-b border-border">
-        <div className="absolute inset-0 z-0 opacity-10">
-          <img src="/hero_team_office.jpg" className="w-full h-full object-cover grayscale" alt="Shefa HQ" />
+      <section id="about" className="bg-background text-foreground py-24 lg:py-48 relative overflow-hidden border-b border-border scroll-mt-32">
+        <div className="absolute inset-0 z-0">
+          <img src="/hero_team_office.jpg" className="w-full h-full object-cover brightness-[0.4]" alt="Shefa HQ" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
         </div>
         <div className="w-full px-6 lg:px-12 relative z-10">
           <div className="max-w-[1400px] mx-auto text-center space-y-10">
             <span className="text-secondary font-black uppercase tracking-[0.4em] text-[10px]">Stewards of Capital</span>
-            <h1 className="text-6xl lg:text-[9rem] font-heading font-extrabold uppercase leading-[0.85] tracking-tighter">
+            <h1 className="text-6xl lg:text-[9rem] font-heading font-extrabold uppercase leading-[0.85] tracking-tighter text-white">
               BRED IN <br /> <span className="text-secondary">RISK.</span>
             </h1>
-            <p className="text-xl lg:text-3xl text-foreground/70 max-w-4xl mx-auto font-light leading-relaxed">
+            <p className="text-xl lg:text-3xl text-white/70 max-w-4xl mx-auto font-light leading-relaxed">
               A leadership team forged in private equity, audit rigor, and industrial operations.
               We don't just facilitate trade; we protect it.
             </p>
@@ -50,12 +51,12 @@ const About = () => {
       </section>
 
       {/* Leadership Grid */}
-      <section id="leadership" className="py-24 lg:py-40">
+      <section id="leadership" className="py-24 lg:py-40 scroll-mt-32">
         <div className="w-full px-6 lg:px-12">
           <div className="max-w-[1400px] mx-auto space-y-32">
             <div className="flex flex-col md:flex-row justify-between items-end gap-12">
               <div className="space-y-6">
-                <h2 className="text-4xl lg:text-7xl font-heading font-extrabold uppercase tracking-tight">THE DIRECTORY OF <br /><span className="text-secondary">AUTHORITY.</span></h2>
+                <h2 className="text-4xl lg:text-7xl font-heading font-extrabold uppercase tracking-tight text-foreground">THE DIRECTORY OF <br /><span className="text-secondary">AUTHORITY.</span></h2>
                 <div className="w-32 h-2 bg-secondary" />
               </div>
               <p className="text-xl text-foreground/60 max-w-xl font-light leading-relaxed">
@@ -95,12 +96,12 @@ const About = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 lg:py-40 bg-card/30 border-t border-border">
+      <section id="contact" className="py-24 lg:py-40 bg-card/30 border-t border-border scroll-mt-32">
         <div className="w-full px-6 lg:px-12">
           <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
             <div className="space-y-16">
               <div className="space-y-6">
-                <h2 className="text-4xl lg:text-7xl font-heading font-extrabold uppercase tracking-tight">ENGAGE <br /><span className="text-secondary">US directly.</span></h2>
+                <h2 className="text-4xl lg:text-7xl font-heading font-extrabold uppercase tracking-tight text-foreground">ENGAGE <br /><span className="text-secondary">US directly.</span></h2>
                 <div className="w-32 h-2 bg-secondary" />
               </div>
 
@@ -111,7 +112,7 @@ const About = () => {
                   </div>
                   <div className="space-y-2">
                     <div className="text-[10px] font-black uppercase tracking-widest opacity-40">Headquarters</div>
-                    <p className="text-xl font-bold leading-relaxed">
+                    <p className="text-xl font-bold leading-relaxed text-foreground">
                       Level 19, Menara 2, KL Eco City,<br />
                       59200 Kuala Lumpur, Malaysia
                     </p>
@@ -123,7 +124,7 @@ const About = () => {
                   </div>
                   <div className="space-y-2">
                     <div className="text-[10px] font-black uppercase tracking-widest opacity-40">Correspondence</div>
-                    <p className="text-xl font-bold leading-relaxed">enquiries@shefa.com.my</p>
+                    <p className="text-xl font-bold leading-relaxed text-foreground">enquiries@shefa.com.my</p>
                   </div>
                 </div>
                 <div className="flex gap-8 group">
@@ -132,19 +133,20 @@ const About = () => {
                   </div>
                   <div className="space-y-2">
                     <div className="text-[10px] font-black uppercase tracking-widest opacity-40">Global Switchboard</div>
-                    <p className="text-xl font-bold leading-relaxed">+603 2774 5254</p>
+                    <p className="text-xl font-bold leading-relaxed text-foreground">+603 2774 5254</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="glass-card rounded-[48px] overflow-hidden min-h-[500px] border-white/5 relative">
+            <div className="glass-card rounded-[48px] overflow-hidden min-h-[500px] border-white/5 relative shadow-3xl">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15935.590112952402!2d101.669!3d3.118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4988e4e93d8b%3A0xc3af87c7112b322a!2sKL%20Eco%20City!5e0!3m2!1sen!2smy!4v1715421234567!5m2!1sen!2smy"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.912345678901!2d101.6734567!3d3.1189012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc49a8c1f0b0b1%3A0x12b0b1c1f0b0b1c!2sKL%20Eco%20City!5e0!3m2!1sen!2smy!4v1715421234567!5m2!1sen!2smy"
                 className="absolute inset-0 w-full h-full grayscale invert opacity-50 contrast-125"
                 style={{ border: 0 }}
                 allowFullScreen={true}
                 loading="lazy"
+                title="Shefa Map Location"
               ></iframe>
             </div>
           </div>

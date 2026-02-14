@@ -37,11 +37,11 @@ const Home = ({ onNavigate }: HomeProps) => {
                 </span>
                 <h1 className="text-5xl lg:text-[7.5rem] font-heading font-extrabold text-white leading-[0.85] tracking-tighter uppercase mb-6">
                   INSTITUTIONAL <br />
-                  <span className="text-secondary">SECURITY.</span>
+                  <span className="text-secondary opacity-100">SECURITY.</span>
                 </h1>
                 <h1 className="text-5xl lg:text-[7.5rem] font-heading font-extrabold text-white leading-[0.85] tracking-tighter uppercase">
                   ECONOMIC <br />
-                  <span className="text-secondary">MOMENTUM.</span>
+                  <span className="text-secondary opacity-100">MOMENTUM.</span>
                 </h1>
               </div>
 

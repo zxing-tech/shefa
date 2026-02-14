@@ -52,7 +52,7 @@ const Footer = ({ onNavigate }: FooterProps) => {
                                 <div className="text-[10px] font-black uppercase tracking-[0.4em] text-secondary">Solutions</div>
                                 <ul className="space-y-4">
                                     <li><button onClick={() => onNavigate('borrowers', '#invoice-financing')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all">Invoice Financing</button></li>
-                                    <li><button onClick={() => onNavigate('borrowers', '#scf')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all">Supply Chain Finance</button></li>
+                                    <li><button onClick={() => onNavigate('borrowers', '#supply-chain')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all">Supply Chain Finance</button></li>
                                     <li><button onClick={() => onNavigate('industries')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all">Sector Expertise</button></li>
                                 </ul>
                             </div>

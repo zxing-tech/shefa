@@ -1,9 +1,27 @@
 import { useState } from 'react';
-import { ArrowRight, Zap, BarChart3, Clock, FastForward, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Zap, BarChart3, Clock, FastForward, CheckCircle2, FileText, ShieldCheck } from 'lucide-react';
 
 const Borrowers = () => {
   const [invoiceAmount, setInvoiceAmount] = useState(500000);
   const eligibleAdvance = invoiceAmount * 0.80;
+
+  const steps = [
+    {
+      icon: FileText,
+      title: "Step 1: Invoice Issued",
+      desc: "You deliver goods/services and issue an invoice to your blue-chip customer."
+    },
+    {
+      icon: ShieldCheck,
+      title: "Step 2: Shefa Verifies",
+      desc: "We verify the trade flow and wrap the invoice with AA-rated credit insurance."
+    },
+    {
+      icon: Zap,
+      title: "Step 3: 80% Cash Advance",
+      desc: "Receive liquidity within 48 hours. No collateral, no banking jargon."
+    }
+  ];
 
   return (
     <main className="pt-20">
@@ -30,8 +48,37 @@ const Borrowers = () => {
         </div>
       </section>
 
-      {/* Section A: The Pain Point */}
-      <section className="py-24 lg:py-40 bg-card/30">
+      {/* Step-by-Step Flowchart */}
+      <section className="py-24 lg:py-32 bg-card/10">
+        <div className="w-full px-6 lg:px-12 text-center space-y-16">
+          <div className="space-y-4">
+            <span className="text-secondary font-black uppercase tracking-widest text-xs">The Efficiency Standard</span>
+            <h2 className="text-4xl lg:text-6xl font-heading font-extrabold uppercase tracking-tight">How it <span className="text-secondary">Works</span></h2>
+          </div>
+
+          <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+            <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-border -translate-y-1/2 z-0" />
+
+            {steps.map((step, i) => {
+              const Icon = step.icon;
+              return (
+                <div key={i} className="relative z-10 space-y-8 group">
+                  <div className="w-24 h-24 bg-card border border-secondary rounded-full flex items-center justify-center mx-auto shadow-glow-gold hover:scale-110 transition-transform bg-background">
+                    <Icon className="text-secondary" size={40} />
+                  </div>
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-black uppercase tracking-tight text-foreground">{step.title}</h3>
+                    <p className="text-foreground/60 max-w-sm mx-auto font-light leading-relaxed">{step.desc}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Section A: Invoicing Section */}
+      <section id="invoice-financing" className="py-24 lg:py-40 bg-card/30 scroll-mt-32">
         <div className="w-full px-6 lg:px-12">
           <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <div className="space-y-10">
@@ -41,7 +88,7 @@ const Borrowers = () => {
                 </h2>
                 <div className="w-24 h-1.5 bg-secondary" />
               </div>
-              <p className="text-xl text-foreground/70 leading-relaxed">
+              <p className="text-xl text-foreground/70 leading-relaxed font-light">
                 Most businesses in Malaysia are forced to wait 90 days for payment.
                 This shouldn't be your burden. We convert your receivables into immediate momentum.
               </p>
@@ -122,7 +169,7 @@ const Borrowers = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center pt-16 border-t border-border relative z-10">
                 <div className="space-y-3">
-                  <span className="text-xs font-black uppercase tracking-widest opacity-40">Potential Liquidity Injection</span>
+                  <span className="text-xs font-black uppercase tracking-widest opacity-40">Potential Liquidity Injection (80%)</span>
                   <div className="text-4xl lg:text-6xl font-black text-secondary tracking-tighter">
                     RM {eligibleAdvance.toLocaleString()}
                   </div>
@@ -134,8 +181,8 @@ const Borrowers = () => {
         </div>
       </section>
 
-      {/* Section C: The Solutions */}
-      <section className="py-24 lg:py-40 bg-card/20 border-t border-border">
+      {/* Section C: Solutions Grid */}
+      <section id="supply-chain" className="py-24 lg:py-40 bg-card/20 border-t border-border scroll-mt-32">
         <div className="w-full px-6 lg:px-12">
           <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
             {/* RPF Card */}
@@ -144,11 +191,11 @@ const Borrowers = () => {
                 <Zap size={40} />
               </div>
               <div className="space-y-6">
-                <h3 className="text-3xl lg:text-4xl font-heading font-extrabold uppercase tracking-tight">Receivable Purchase <br />Financing (RPF)</h3>
-                <p className="text-foreground/60 leading-relaxed text-lg">Convert invoices to cash instantly. You deliver goods; we advance up to 80%. We wait for payment; you focus on global growth.</p>
+                <h3 className="text-3xl lg:text-4xl font-heading font-extrabold uppercase tracking-tight leading-none">Receivable Purchase <br />Financing (RPF)</h3>
+                <p className="text-foreground/60 leading-relaxed text-lg font-light">Convert invoices to cash instantly. You deliver goods; we advance up to 80%. We wait for payment; you focus on global growth.</p>
               </div>
               <div className="mt-12 pt-8 border-t border-border flex justify-between items-center">
-                <span className="text-[10px] font-black uppercase tracking-widest text-secondary">Section A // Direct</span>
+                <span className="text-[10px] font-black uppercase tracking-widest text-secondary">Section A // Direct Advance</span>
                 <ArrowRight className="text-foreground/20 group-hover:text-secondary group-hover:translate-x-2 transition-all" />
               </div>
             </div>
@@ -159,11 +206,11 @@ const Borrowers = () => {
                 <BarChart3 size={40} />
               </div>
               <div className="space-y-6">
-                <h3 className="text-3xl lg:text-4xl font-heading font-extrabold uppercase tracking-tight">Supply Chain <br />Financing (SCF)</h3>
-                <p className="text-foreground/60 leading-relaxed text-lg">Strengthen your ecosystem. We pay your suppliers early on your behalf; you settle with us at maturity. Optimized payables.</p>
+                <h3 className="text-3xl lg:text-4xl font-heading font-extrabold uppercase tracking-tight leading-none">Supply Chain <br />Financing (SCF)</h3>
+                <p className="text-foreground/60 leading-relaxed text-lg font-light">Strengthen your ecosystem. We pay your suppliers early on your behalf; you settle with us at maturity. Optimized accounts payable.</p>
               </div>
               <div className="mt-12 pt-8 border-t border-border flex justify-between items-center">
-                <span className="text-[10px] font-black uppercase tracking-widest text-secondary">Section B // Ecosystem</span>
+                <span className="text-[10px] font-black uppercase tracking-widest text-secondary">Section B // Supply Chain</span>
                 <ArrowRight className="text-foreground/20 group-hover:text-secondary group-hover:translate-x-2 transition-all" />
               </div>
             </div>
