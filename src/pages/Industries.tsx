@@ -60,7 +60,7 @@ const Industries = () => {
             <section className="py-24 lg:py-32">
                 <div className="w-full px-6 lg:px-12">
                     <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-                        {industries.map((industry, index) => {
+                        {industries.map((industry) => {
                             const Icon = industry.icon;
                             return (
                                 <div
