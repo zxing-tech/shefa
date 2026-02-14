@@ -74,6 +74,7 @@ module.exports = {
                 xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
                 card: "0 18px 50px rgba(11,13,16,0.10)",
                 "card-hover": "0 24px 60px rgba(11,13,16,0.14)",
+                glow: "0 0 30px #0047AB66",
             },
             keyframes: {
                 "accordion-down": {
