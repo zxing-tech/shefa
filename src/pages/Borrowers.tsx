@@ -1,99 +1,122 @@
-import { ArrowRight, FileText, ShieldCheck, Zap, Handshake, CheckCircle2, Factory, Droplets, ShoppingCart, HardHat, Monitor, Package } from 'lucide-react';
+import { ArrowRight, Zap, CheckCircle2, Clock, Landmark, Factory, Fuel, ShoppingCart, HardHat, Monitor } from 'lucide-react';
 
 const Borrowers = () => {
-  return (
-    <main className="bg-shefa-navy min-h-screen pt-20">
-      {/* Hero Section */}
-      <section className="relative w-full px-6 lg:px-12 py-24 lg:py-32">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="animate-in fade-in slide-in-from-left-8 duration-1000">
-            <h1 className="heading-xl mb-6">
-              Don't Wait 90 Days.<br />
-              <span className="text-shefa-cobalt">Get Paid Today.</span>
-            </h1>
-            <p className="body-lg max-w-xl text-shefa-silver mb-10">
-              Convert your outstanding invoices into immediate working capital. Up to 80% cash advance, wrapped by AA-rated credit insurance.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center gap-6">
-              <button className="btn-primary w-full sm:w-auto px-12">
-                Check Eligibility
-              </button>
-              <a href="#mechanism" className="text-xs tracking-[0.2em] uppercase text-white/40 hover:text-white transition-colors flex items-center gap-2">
-                See how it works <ArrowRight className="w-3 h-3 rotate-90" />
-              </a>
-            </div>
-          </div>
+  const timeline = [
+    { time: '0 Hours', label: 'Invoice Issued', desc: 'SME issues invoice to customer.', icon: Clock },
+    { time: '24 Hours', label: 'Security Wrap', desc: 'Shefa verification & insurance placement.', icon: CheckCircle2 },
+    { time: '48 Hours', label: 'Disbursement', desc: '80% Cash Advance disbursed.', icon: Zap, highlight: true },
+    { time: 'Maturity', label: 'Settlement', desc: 'Customer pays; balance settled.', icon: Landmark },
+  ];
 
-          <div className="relative h-[400px] hidden lg:block animate-in fade-in slide-in-from-right-8 duration-1000">
-            {/* Abstract "Flow" Visualization */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-full h-px bg-gradient-to-r from-transparent via-shefa-cobalt to-transparent opacity-50" />
-              {[...Array(5)].map((_, i) => (
-                <div
-                  key={i}
-                  className="absolute w-2 h-2 bg-shefa-cobalt rounded-full animate-pulse"
-                  style={{
-                    left: `${20 * i}%`,
-                    animationDelay: `${i * 0.2}s`,
-                    boxShadow: '0 0 20px #0047AB'
-                  }}
-                />
-              ))}
-              <div className="absolute inset-0 border border-white/5 rounded-3xl" style={{ transform: 'skewY(-6deg)' }} />
-              <div className="absolute inset-0 border border-shefa-cobalt/10 rounded-3xl translate-x-4 -translate-y-4" style={{ transform: 'skewY(-6deg)' }} />
-            </div>
+  const industries = [
+    { name: 'Manufacturing', icon: Factory },
+    { name: 'Oil & Gas', icon: Fuel },
+    { name: 'FMCG', icon: ShoppingCart },
+    { name: 'Construction', icon: HardHat },
+    { name: 'Technology', icon: Monitor },
+  ];
+
+  return (
+    <main className="min-h-screen bg-shefa-navy pt-24 overflow-x-hidden">
+      {/* Hero Section */}
+      <section className="py-20 lg:py-32">
+        <div className="w-[86vw] mx-auto">
+          <div className="max-w-4xl space-y-8">
+            <span className="font-mono text-xs tracking-[0.3em] text-shefa-cobalt uppercase animate-in fade-in slide-in-from-bottom duration-700">
+              Liquidity Optimized
+            </span>
+            <h1 className="font-heading text-5xl lg:text-8xl font-medium text-white uppercase leading-[0.9] tracking-tighter animate-in fade-in slide-in-from-bottom duration-1000 delay-100">
+              The Speed <br />
+              <span className="text-shefa-cobalt underline decoration-1 underline-offset-[12px]">Engine.</span>
+            </h1>
+            <p className="text-xl lg:text-2xl text-shefa-silver/80 max-w-2xl leading-relaxed animate-in fade-in slide-in-from-bottom duration-1000 delay-200">
+              Turn your unpaid invoices into immediate working capital. No debt, no equity dilution, just cash flow velocity.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* The Mechanism */}
-      <section id="mechanism" className="py-24 border-t border-white/5 relative overflow-hidden">
-        <div className="w-full px-6 lg:px-12">
-          <div className="text-center mb-20">
-            <h2 className="heading-lg mb-4">The Mechanism</h2>
-            <div className="w-24 h-1 bg-shefa-cobalt mx-auto" />
+      {/* Section A: The Funding Timeline */}
+      <section className="py-20 lg:py-32 bg-black/10 border-y border-white/5 relative">
+        <div className="w-[86vw] mx-auto space-y-20">
+          <div className="flex flex-col md:flex-row justify-between items-end gap-6">
+            <div className="space-y-4">
+              <h2 className="font-heading text-3xl font-medium text-white uppercase">Funding Velocity</h2>
+              <p className="text-shefa-silver/60 font-mono text-sm uppercase tracking-widest">Efficiency Benchmark: 48 Hours</p>
+            </div>
+            <div className="hidden md:block h-px flex-grow bg-gradient-to-r from-shefa-cobalt to-transparent mx-12 mb-4" />
           </div>
 
-          <div className="max-w-[1200px] mx-auto relative">
-            {/* Thin Architectural Line */}
-            <div className="hidden lg:block absolute top-1/2 left-0 w-full h-px bg-white/10 -translate-y-24" />
+          <div className="relative">
+            {/* Connecting Line */}
+            <div className="absolute top-[48px] left-0 w-full h-px bg-white/10 hidden lg:block" />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-              {[
-                {
-                  step: '01',
-                  title: 'INVOICE',
-                  icon: FileText,
-                  desc: 'You deliver goods or services to your client and issue an invoice (30-120 days).'
-                },
-                {
-                  step: '02',
-                  title: 'PROTECT',
-                  icon: ShieldCheck,
-                  desc: 'Shefa wraps the invoice with Trade Credit Insurance from providers like Coface/Allianz.'
-                },
-                {
-                  step: '03',
-                  title: 'FUND',
-                  icon: Zap,
-                  desc: 'Receive Up to 80% Advance of the invoice value in cash within 48 hours of verification.'
-                },
-                {
-                  step: '04',
-                  title: 'SETTLE',
-                  icon: Handshake,
-                  desc: 'Client pays at maturity. We remit the remaining balance minus a small fee.'
-                }
-              ].map((item) => {
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
+              {timeline.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.step} className="relative z-10 flex flex-col items-center text-center">
-                    <div className="w-16 h-16 bg-shefa-navy border border-white/10 rounded-xl mb-8 flex items-center justify-center group-hover:border-shefa-cobalt transition-colors duration-500">
-                      <Icon className="w-8 h-8 text-shefa-silver" />
+                  <div key={item.time} className={`space-y-6 group ${item.highlight ? 'lg:-translate-y-4' : ''}`}>
+                    <div className="flex flex-col space-y-4">
+                      <div className="font-mono text-2xl text-white font-bold opacity-30 group-hover:opacity-100 transition-opacity">
+                        {item.time}
+                      </div>
+                      <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 border-2 ${item.highlight
+                        ? 'bg-shefa-cobalt border-shefa-cobalt shadow-[0_0_20px_#0047AB]'
+                        : 'bg-shefa-navy border-white/10 group-hover:border-shefa-cobalt'
+                        }`}>
+                        <Icon className={`w-5 h-5 ${item.highlight ? 'text-white' : 'text-shefa-silver group-hover:text-shefa-cobalt'}`} />
+                      </div>
                     </div>
-                    <span className="text-[10px] tracking-[0.4em] font-heading text-shefa-cobalt uppercase mb-2">Step {item.step}</span>
-                    <h3 className="font-heading text-xl text-white mb-4">{item.title}</h3>
-                    <p className="body-base text-sm text-shefa-silver">{item.desc}</p>
+
+                    <div className={`p-6 rounded-2xl border transition-all duration-300 ${item.highlight
+                      ? 'bg-white/10 border-shefa-cobalt/30 backdrop-blur-xl'
+                      : 'bg-white/5 border-white/5'
+                      }`}>
+                      <h3 className={`font-heading text-lg font-medium mb-2 ${item.highlight ? 'text-shefa-cobalt' : 'text-white'}`}>
+                        {item.label}
+                      </h3>
+                      <p className="text-sm text-shefa-silver/70 leading-relaxed">
+                        {item.desc}
+                      </p>
+                      {item.highlight && (
+                        <div className="mt-4 inline-block px-3 py-1 bg-shefa-cobalt/20 text-shefa-cobalt text-[10px] font-bold uppercase tracking-widest rounded">
+                          Critical Milestone
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        {/* Background Architectural Grid */}
+        <div className="absolute inset-0 z-[-1] opacity-5 pointer-events-none">
+          <div className="w-full h-full" style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '100px 100px' }} />
+        </div>
+      </section>
+
+      {/* Section B: Targeted Industries */}
+      <section className="py-20 lg:py-32 overflow-hidden">
+        <div className="w-[86vw] mx-auto flex flex-col items-center">
+          <div className="text-center space-y-4 mb-20 px-6">
+            <span className="font-mono text-xs text-shefa-cobalt uppercase tracking-[0.3em]">Sector Focus</span>
+            <h2 className="font-heading text-4xl font-medium text-white uppercase tracking-tight">Industrial Integration</h2>
+          </div>
+
+          {/* Industry Ticker */}
+          <div className="w-screen flex overflow-hidden group">
+            <div className="flex animate-scroll whitespace-nowrap py-10">
+              {[...industries, ...industries, ...industries].map((industry, i) => {
+                const Icon = industry.icon;
+                return (
+                  <div key={i} className="flex items-center gap-6 mx-12 text-shefa-silver/30 hover:text-shefa-cobalt transition-colors duration-500 cursor-default">
+                    <Icon className="w-12 h-12" />
+                    <span className="font-heading text-5xl lg:text-7xl font-bold uppercase tracking-tighter">
+                      {industry.name}
+                    </span>
+                    <span className="text-4xl mx-8 opacity-20">/</span>
                   </div>
                 );
               })}
@@ -102,105 +125,25 @@ const Borrowers = () => {
         </div>
       </section>
 
-      {/* Why Shefa? */}
-      <section className="py-24 bg-black/20 border-t border-white/5">
-        <div className="w-full px-6 lg:px-12">
-          <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div>
-              <h2 className="heading-lg mb-8">Why Shefa?</h2>
-              <p className="body-lg text-shefa-silver mb-12">
-                Our liquidity solutions are built for speed and security, bypassing traditional banking hurdles.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {[
-                  { title: 'NO HARD COLLATERAL', body: 'Stop pledging property. Your invoice and buyer credit are the security.' },
-                  { title: 'BALANCE SHEET EFFICIENT', body: 'Improve your cash conversion cycle without adding heavy debt loads.' },
-                  { title: 'INSURED SECURITY', body: 'Mitigate non-payment risk. Policy kicks in if your buyer goes insolvent.' },
-                  { title: 'FAST APPROVAL', body: 'Bureaucracy-free. We focus on receivable quality, not just your history.' }
-                ].map((card) => (
-                  <div key={card.title} className="p-8 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-colors">
-                    <h4 className="font-heading text-sm text-shefa-cobalt tracking-widest uppercase mb-4">{card.title}</h4>
-                    <p className="body-base text-xs text-shefa-silver leading-relaxed">{card.body}</p>
-                  </div>
-                ))}
-              </div>
+      {/* CTA Section */}
+      <section className="py-20 lg:py-32 bg-black/40 border-t border-white/5">
+        <div className="w-[86vw] mx-auto text-center">
+          <div className="max-w-3xl mx-auto space-y-12">
+            <h2 className="font-heading text-3xl lg:text-4xl font-medium text-white uppercase">
+              Ready to <span className="text-shefa-cobalt">Unlock</span> Your Invoices?
+            </h2>
+            <div className="flex justify-center">
+              <button className="btn-primary group px-12 py-5 text-lg">
+                Submit Funding Application
+                <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
+              </button>
             </div>
-
-            <div className="bg-shefa-cobalt/5 border border-shefa-cobalt/20 rounded-3xl p-12 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-shefa-cobalt/10 blur-[100px]" />
-              <h3 className="font-heading text-lg text-white mb-8 tracking-widest uppercase">Target Industries</h3>
-              <div className="grid grid-cols-2 gap-x-8 gap-y-10">
-                {[
-                  { name: 'Manufacturing', icon: Factory },
-                  { name: 'Oil & Gas', icon: Droplets },
-                  { name: 'FMCG & Food', icon: ShoppingCart },
-                  { name: 'Construction', icon: HardHat },
-                  { name: 'IT & Technology', icon: Monitor },
-                  { name: 'Commodities', icon: Package }
-                ].map((industry) => {
-                  const Icon = industry.icon;
-                  return (
-                    <div key={industry.name} className="flex items-center gap-4 group">
-                      <div className="p-3 bg-white/5 rounded-lg group-hover:bg-shefa-cobalt/20 transition-colors">
-                        <Icon className="w-5 h-5 text-shefa-cobalt" />
-                      </div>
-                      <span className="text-xs font-medium tracking-widest uppercase text-shefa-silver group-hover:text-white transition-colors">{industry.name}</span>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+            <p className="text-shefa-silver/50 text-xs uppercase tracking-[0.5em]">
+              Decisioning within 24 hours
+            </p>
           </div>
         </div>
       </section>
-
-      {/* Ticker Tape */}
-      <div className="py-6 border-y border-white/5 bg-black/40 overflow-hidden whitespace-nowrap">
-        <div className="flex animate-scroll hover:pause">
-          {[...Array(3)].map((_, i) => (
-            <div key={i} className="flex items-center gap-12 px-6">
-              <span className="text-[10px] tracking-[0.5em] font-heading text-shefa-cobalt uppercase">SERVING MALAYSIA'S CRITICAL SECTORS:</span>
-              <span className="text-[10px] tracking-[0.2em] text-white/40">MANUFACTURING | OIL & GAS SERVICES | FMCG & FOOD | CONSTRUCTION SUPPLIES | IT & TECHNOLOGY | COMMODITIES</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Documentation Requirements */}
-      <section className="py-24 w-full px-6 lg:px-12">
-        <div className="max-w-3xl mx-auto text-center">
-          <h3 className="font-heading text-xl text-white mb-12 tracking-[0.2em] uppercase">Ready to apply? Have these ready:</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-            {[
-              'Company Profile & SSM',
-              'Past 6 months Bank Statements',
-              'Aged Receivables List',
-              'Sample Invoices & Contracts'
-            ].map((doc) => (
-              <div key={doc} className="flex items-center gap-4 p-4 border border-white/5 rounded-xl bg-white/5">
-                <CheckCircle2 className="w-5 h-5 text-shefa-cobalt" />
-                <span className="text-sm text-shefa-silver tracking-wider uppercase">{doc}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Bottom CTA */}
-      <section className="py-32 border-t border-white/5">
-        <div className="text-center px-6">
-          <h2 className="heading-xl mb-12">Fuel Your Growth Engine.</h2>
-          <button className="btn-primary py-5 px-16 text-lg tracking-[0.2em]">
-            Apply For Funding
-          </button>
-        </div>
-      </section>
-
-      {/* Simple Footer Copy */}
-      <footer className="py-8 opacity-20 text-center">
-        <p className="text-[10px] tracking-widest uppercase">Institutional Trade Finance | Shefa Risk Management</p>
-      </footer>
     </main>
   );
 };

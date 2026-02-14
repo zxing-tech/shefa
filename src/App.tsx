@@ -42,7 +42,7 @@ function App() {
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
-        return <Home navigateTo={navigateTo} />;
+        return <Home onNavigate={navigateTo} />;
       case 'borrowers':
         return <Borrowers />;
       case 'lenders':
@@ -54,7 +54,7 @@ function App() {
       case 'contact':
         return <Contact />;
       default:
-        return <Home navigateTo={navigateTo} />;
+        return <Home onNavigate={navigateTo} />;
     }
   };
 

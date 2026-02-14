@@ -1,145 +1,209 @@
-import { ArrowRight, Factory, ShieldCheck } from 'lucide-react';
+import { ArrowRight, TrendingUp, Shield } from 'lucide-react';
 
 type Page = 'home' | 'borrowers' | 'lenders' | 'about' | 'services' | 'contact';
 
 interface HomeProps {
-  navigateTo: (page: Page) => void;
+  onNavigate: (page: Page) => void;
 }
 
-const Home = ({ navigateTo }: HomeProps) => {
+const Home = ({ onNavigate }: HomeProps) => {
   return (
-    <main className="bg-shefa-navy min-h-screen pt-20 overflow-hidden">
-      {/* Hero Header */}
-      <section className="relative z-10 pt-20 pb-12 text-center px-6">
-        <h1 className="heading-xl mb-6 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-          Institutional Security.<br />
-          <span className="text-shefa-cobalt">Economic Momentum.</span>
-        </h1>
-        <p className="body-lg max-w-2xl mx-auto text-shefa-silver animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-200">
-          Bridging the liquidity gap for Malaysia's industrial backbone with insurance-backed private credit solutions.
-        </p>
-      </section>
+    <main className="relative">
+      {/* Animated Contour Background */}
+      <div className="fixed inset-0 z-0 overflow-hidden bg-shefa-navy">
+        <svg className="absolute w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="contour" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+              <path d="M0,50 Q25,30 50,50 T100,50" fill="none" stroke="#0047AB" strokeWidth="0.5" opacity="0.3" />
+              <path d="M0,60 Q25,40 50,60 T100,60" fill="none" stroke="#0047AB" strokeWidth="0.5" opacity="0.2" />
+              <path d="M0,70 Q25,50 50,70 T100,70" fill="none" stroke="#0047AB" strokeWidth="0.5" opacity="0.1" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#contour)" />
+        </svg>
+      </div>
 
-      {/* Split Cards Section */}
-      <section className="relative z-10 w-full px-6 lg:px-12 pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-[1400px] mx-auto">
+      {/* SECTION A: Split-Screen Hero */}
+      <section className="relative z-10 min-h-screen flex items-center">
+        <div className="w-full px-6 lg:px-12 py-32">
+          <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
 
-          {/* LEFT PANEL: Borrowers */}
-          <div
-            onClick={() => navigateTo('borrowers')}
-            className="group relative h-[600px] bg-white/5 border border-white/10 rounded-2xl overflow-hidden cursor-pointer hover:border-shefa-cobalt/50 transition-all duration-700 hover:shadow-[0_0_80px_rgba(0,71,171,0.15)]"
-          >
-            {/* Architectural Grid Background */}
-            <div className="absolute inset-0 opacity-20 pointer-events-none">
-              <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0)', backgroundSize: '40px 40px' }} />
-              <div className="absolute top-0 right-0 w-full h-full bg-[linear-gradient(45deg,transparent_45%,rgba(0,119,182,0.1)_50%,transparent_55%)] bg-[length:100px_100px]" />
+            {/* Left Side: Text */}
+            <div className="space-y-8 animate-in fade-in slide-in-from-left duration-1000">
+              <div className="space-y-4">
+                <span className="font-mono text-xs tracking-[0.3em] text-shefa-cobalt uppercase block">
+                  Trade Finance Solutions
+                </span>
+                <h1 className="font-heading text-5xl lg:text-7xl font-medium text-white leading-[1.1] tracking-tight uppercase">
+                  Institutional Security.<br />
+                  <span className="text-shefa-cobalt">Economic Momentum.</span>
+                </h1>
+              </div>
+              <p className="text-xl lg:text-2xl text-shefa-silver/90 leading-relaxed max-w-2xl">
+                Bridging the liquidity gap for Malaysia's industrial backbone.
+              </p>
             </div>
 
-            <div className="relative h-full p-12 flex flex-col items-center text-center justify-between">
-              <div className="w-20 h-20 rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform duration-500">
-                <Factory className="w-10 h-10 text-shefa-silver group-hover:text-white transition-colors" />
+            {/* Right Side: Glass Cards Selector */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 animate-in fade-in slide-in-from-right duration-1000 delay-200">
+
+              {/* Card 1: BORROWERS */}
+              <button
+                onClick={() => onNavigate('borrowers')}
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 lg:p-12 transition-all duration-500 hover:scale-[1.02] hover:bg-white/10 hover:border-shefa-cobalt/50 hover:shadow-glow"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-shefa-cobalt/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                <div className="relative space-y-6">
+                  <div className="w-16 h-16 rounded-xl bg-shefa-cobalt/20 flex items-center justify-center group-hover:bg-shefa-cobalt/30 transition-colors">
+                    <TrendingUp className="w-8 h-8 text-shefa-cobalt" />
+                  </div>
+
+                  <div className="space-y-2">
+                    <h3 className="font-heading text-xl lg:text-2xl font-medium text-white uppercase tracking-wider">
+                      Borrowers
+                    </h3>
+                    <p className="text-sm text-shefa-silver/80 leading-relaxed">
+                      Unlock Working Capital
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-2 text-shefa-cobalt group-hover:gap-4 transition-all">
+                    <span className="text-sm font-medium uppercase tracking-wider">Learn More</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
+                </div>
+              </button>
+
+              {/* Card 2: LENDERS */}
+              <button
+                onClick={() => onNavigate('lenders')}
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 lg:p-12 transition-all duration-500 hover:scale-[1.02] hover:bg-white/10 hover:border-shefa-gold/50 hover:shadow-[0_0_30px_#FCC00866]"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-shefa-gold/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                <div className="relative space-y-6">
+                  <div className="w-16 h-16 rounded-xl bg-shefa-gold/20 flex items-center justify-center group-hover:bg-shefa-gold/30 transition-colors">
+                    <Shield className="w-8 h-8 text-shefa-gold" />
+                  </div>
+
+                  <div className="space-y-2">
+                    <h3 className="font-heading text-xl lg:text-2xl font-medium text-white uppercase tracking-wider">
+                      Lenders
+                    </h3>
+                    <p className="text-sm text-shefa-silver/80 leading-relaxed">
+                      Earn Secured Yields
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-2 text-shefa-gold group-hover:gap-4 transition-all">
+                    <span className="text-sm font-medium uppercase tracking-wider">Learn More</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
+                </div>
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION B: Key Metrics Ticker */}
+      <section className="relative z-10 py-16 border-t border-white/5 bg-black/40 backdrop-blur-sm">
+        <div className="w-full px-6 lg:px-12">
+          <div className="max-w-[1600px] mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-24">
+
+              {/* Metric 1 */}
+              <div className="group text-center md:text-left space-y-3">
+                <div className="font-heading text-5xl lg:text-6xl font-bold text-white group-hover:text-shefa-cobalt transition-colors duration-300">
+                  USD 300M+
+                </div>
+                <div className="space-y-1">
+                  <div className="text-xs tracking-[0.3em] font-heading text-shefa-cobalt uppercase">
+                    Trade Finance Structured
+                  </div>
+                  <p className="text-sm text-shefa-silver/70 leading-relaxed">
+                    Across resilient Southeast Asian sectors.
+                  </p>
+                </div>
               </div>
 
-              <div>
-                <span className="text-xs tracking-[0.3em] font-heading text-shefa-cobalt uppercase mb-4 block">For MSMEs & Corporates</span>
-                <h2 className="heading-lg mb-6 group-hover:text-shefa-cobalt transition-colors">Unlock Working<br />Capital</h2>
-                <p className="body-base max-w-sm mx-auto text-shefa-silver group-hover:text-white transition-colors">
-                  Don't wait 90 days. Convert your invoices into immediate cash. 80% advance rate with non-recourse insurance protection.
-                </p>
+              {/* Metric 2 */}
+              <div className="group text-center md:text-left space-y-3">
+                <div className="font-heading text-5xl lg:text-6xl font-bold text-white group-hover:text-shefa-cobalt transition-colors duration-300">
+                  15+ Years
+                </div>
+                <div className="space-y-1">
+                  <div className="text-xs tracking-[0.3em] font-heading text-shefa-cobalt uppercase">
+                    Expertise In Trade Finance
+                  </div>
+                  <p className="text-sm text-shefa-silver/70 leading-relaxed">
+                    Proven track record in risk mitigation.
+                  </p>
+                </div>
               </div>
 
-              <button className="btn-outline w-full max-w-xs group-hover:bg-white group-hover:text-shefa-navy">
-                Get Funded
-                <ArrowRight className="ml-3 w-4 h-4" />
+              {/* Metric 3 */}
+              <div className="group text-center md:text-left space-y-3">
+                <div className="font-heading text-5xl lg:text-6xl font-bold text-white group-hover:text-shefa-gold transition-colors duration-300">
+                  0%
+                </div>
+                <div className="space-y-1">
+                  <div className="text-xs tracking-[0.3em] font-heading text-shefa-gold uppercase">
+                    Target Default On Insured Notes
+                  </div>
+                  <p className="text-sm text-shefa-silver/70 leading-relaxed">
+                    Credit insurance-backed performance.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Value Proposition Section */}
+      <section className="relative z-10 py-32 bg-shefa-navy">
+        <div className="w-full px-6 lg:px-12">
+          <div className="max-w-[1400px] mx-auto text-center space-y-12">
+            <div className="space-y-4">
+              <span className="font-mono text-xs tracking-[0.3em] text-shefa-cobalt uppercase">
+                Our Mission
+              </span>
+              <h2 className="font-heading text-4xl lg:text-5xl font-medium text-white leading-tight uppercase">
+                Powering Malaysia's<br />
+                <span className="text-shefa-cobalt">Growth Engine</span>
+              </h2>
+            </div>
+
+            <p className="text-xl text-shefa-silver/90 leading-relaxed max-w-3xl mx-auto">
+              Shefa combines institutional-grade credit insurance with digital capital markets infrastructure
+              to unlock working capital for Malaysia's industrial sectors while delivering superior risk-adjusted
+              returns to sophisticated investors.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
+              <button
+                onClick={() => onNavigate('borrowers')}
+                className="btn-primary"
+              >
+                For Borrowers
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </button>
+              <button
+                onClick={() => onNavigate('lenders')}
+                className="btn-outline"
+              >
+                For Lenders
+                <ArrowRight className="w-5 h-5 ml-2" />
               </button>
             </div>
-
-            {/* Glowing Accent */}
-            <div className="absolute bottom-0 left-0 w-full h-1 bg-shefa-cobalt/0 group-hover:bg-shefa-cobalt/100 transition-all duration-700" />
-          </div>
-
-          {/* RIGHT PANEL: Lenders */}
-          <div
-            onClick={() => navigateTo('lenders')}
-            className="group relative h-[600px] bg-white/5 border border-white/10 rounded-2xl overflow-hidden cursor-pointer hover:border-shefa-cobalt/50 transition-all duration-700 hover:shadow-[0_0_80px_rgba(0,71,171,0.2)]"
-          >
-            {/* Blueprint Motif Background */}
-            <div className="absolute inset-0 opacity-20 pointer-events-none">
-              <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(rgba(0,71,171,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(0,71,171,0.1)_1px,transparent_1px)', backgroundSize: '80px 80px' }} />
-              <div className="absolute bottom-0 left-0 w-64 h-64 bg-shefa-cobalt/10 blur-[120px]" />
-            </div>
-
-            <div className="relative h-full p-12 flex flex-col items-center text-center justify-between">
-              <div className="w-20 h-20 rounded-2xl bg-shefa-cobalt/20 flex items-center justify-center border border-shefa-cobalt/30 group-hover:scale-110 transition-transform duration-500">
-                <ShieldCheck className="w-10 h-10 text-white" />
-              </div>
-
-              <div>
-                <span className="text-xs tracking-[0.3em] font-heading text-shefa-cobalt uppercase mb-4 block">For Sophisticated Investors</span>
-                <h2 className="heading-lg mb-6 group-hover:text-shefa-cobalt transition-colors">Earn Secured<br />Yields</h2>
-                <p className="body-base max-w-sm mx-auto text-shefa-silver group-hover:text-white transition-colors">
-                  Access private credit assets backed by trade insurance. Target returns of up to 12% p.a. with short 12-18 month tenures.
-                </p>
-              </div>
-
-              <button className="btn-primary w-full max-w-xs">
-                Start Investing
-                <ArrowRight className="ml-3 w-4 h-4" />
-              </button>
-            </div>
-
-            {/* Glowing Accent */}
-            <div className="absolute bottom-0 left-0 w-full h-1 bg-white/0 group-hover:bg-white/100 transition-all duration-700" />
-          </div>
-
-        </div>
-      </section>
-
-      {/* Statistics Bar (Verified Data) */}
-      <section className="py-24 border-t border-white/5 bg-shefa-navy">
-        <div className="w-full px-6 lg:px-12">
-          <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-24">
-            {[
-              { value: 'USD 300M+', label: 'Trade Finance Structured', desc: 'Across resilient Southeast Asian sectors.' },
-              { value: '15+ Years', label: 'Trade Finance & Insurance Experience', desc: 'Proven expertise in risk mitigation.' },
-              { value: '0%', label: 'Target Default Rate on Insured Notes', desc: 'Credit insurance-backed performance.' }
-            ].map((stat) => (
-              <div key={stat.label} className="group">
-                <div className="font-heading text-4xl lg:text-5xl text-white mb-2 group-hover:text-shefa-gold transition-colors">{stat.value}</div>
-                <div className="text-xs tracking-[0.2em] font-heading text-shefa-cobalt uppercase mb-4">{stat.label}</div>
-                <p className="text-sm text-shefa-silver leading-relaxed">{stat.desc}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
 
-      {/* Trust Bar */}
-      <section className="py-12 border-t border-white/5 bg-black/20">
-        <div className="w-full px-6 lg:px-12">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 opacity-50 hover:opacity-100 transition-opacity duration-500">
-            <span className="text-[10px] tracking-[0.5em] font-heading text-white uppercase whitespace-nowrap">Secured by partnerships with</span>
-            <div className="flex flex-wrap items-center justify-center gap-12 lg:gap-20">
-              {['Coface', 'Allianz', 'Atradius', 'KLDX'].map((partner) => (
-                <span key={partner} className="font-heading text-lg lg:text-xl tracking-[0.2em] text-white/50">{partner}</span>
-              ))}
-            </div>
-            <span className="text-[10px] tracking-[0.2em] font-sans text-white/30 hidden lg:block uppercase">Regulated by Securities Commission Malaysia</span>
-          </div>
-        </div>
-      </section>
-
-      {/* Simple Footer */}
-      <footer className="py-8 border-t border-white/5">
-        <div className="w-full px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-6">
-            <button onClick={() => navigateTo('about')} className="text-[10px] tracking-widest uppercase text-white/40 hover:text-white transition-colors">About Us</button>
-            <button onClick={() => navigateTo('contact')} className="text-[10px] tracking-widest uppercase text-white/40 hover:text-white transition-colors">Contact</button>
-            <a href="#" className="text-[10px] tracking-widest uppercase text-white/40 hover:text-white transition-colors">Privacy Policy</a>
-          </div>
-          <p className="text-[10px] tracking-widest uppercase text-white/20">© 2026 Shefa Risk Management. All Rights Reserved.</p>
-        </div>
-      </footer>
     </main>
   );
 };
