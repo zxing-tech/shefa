@@ -36,10 +36,20 @@ function App() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  const navigateTo = (page: Page) => {
+  const navigateTo = (page: Page, hash?: string) => {
     setCurrentPage(page);
-    window.history.pushState({}, '', page === 'home' ? '/' : `/${page}`);
-    window.scrollTo(0, 0);
+    window.history.pushState({}, '', page === 'home' ? '/' : `/${page}${hash || ''}`);
+
+    if (hash) {
+      setTimeout(() => {
+        const element = document.getElementById(hash.replace('#', ''));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
   };
 
   const renderPage = () => {

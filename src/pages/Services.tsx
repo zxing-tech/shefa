@@ -23,27 +23,28 @@ const Services = () => {
   ];
 
   return (
-    <main className="min-h-screen bg-shefa-navy pt-24 transition-all duration-700">
+    <main className="min-h-screen bg-background pt-24 transition-all duration-700">
       {/* Hero Section */}
-      <section className="py-24 lg:py-48 relative overflow-hidden">
+      <section className="py-24 lg:py-48 relative overflow-hidden bg-background">
         <div className="absolute inset-0 z-0">
           <img
             src="/approach_handshake.jpg"
             alt="Services"
             className="w-full h-full object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-shefa-navy via-shefa-navy/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         </div>
         <div className="w-[86vw] mx-auto relative z-10">
-          <div className="max-w-4xl space-y-6">
-            <span className="font-mono text-xs tracking-[0.3em] text-shefa-gold uppercase reveal-up active">
-              Our Expertise // Solutions
+          <div className="max-w-4xl space-y-8">
+            <span className="text-secondary font-black uppercase tracking-[0.4em] text-[10px] reveal-up active">
+              Our Expertise // Global Solutions
             </span>
-            <h1 className="font-heading text-5xl lg:text-7xl font-bold text-white uppercase leading-tight reveal-up active">
+            <h1 className="text-5xl lg:text-8xl font-heading font-extrabold text-foreground uppercase leading-[0.9] tracking-tighter reveal-up active">
               Strategic <br />
-              <span className="text-shefa-gold underline decoration-1 underline-offset-[12px]">Financial</span> Engineering.
+              <span className="text-secondary">Financial</span> Engineering.
             </h1>
-            <p className="text-xl text-shefa-silver/80 max-w-2xl leading-relaxed reveal-up active">
+            <div className="w-24 h-1.5 bg-secondary reveal-up active" />
+            <p className="text-xl lg:text-2xl text-foreground/70 max-w-2xl leading-relaxed font-light reveal-up active">
               We structure complex trade finance solutions that bridge the gap between
               traditional banking limitations and the practical needs of industrial giants.
             </p>
@@ -52,38 +53,38 @@ const Services = () => {
       </section>
 
       {/* Services Breakdown */}
-      <section className="py-20 lg:py-32 bg-black/20">
+      <section className="py-20 lg:py-40 bg-card/20">
         <div className="w-[86vw] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
                 <div
                   key={service.title}
-                  className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 lg:p-12 space-y-8 hover:border-shefa-gold/30 hover:shadow-glow-gold transition-all duration-500 group reveal-up active"
-                  style={{ transitionDelay: `${index * 100}ms` }}
+                  className="glass-card rounded-[40px] p-8 lg:p-14 space-y-10 hover:border-secondary transition-all duration-500 group reveal-up active border border-border/50"
+                  style={{ transitionDelay: `${index * 150}ms` }}
                 >
-                  <div className="w-16 h-16 rounded-2xl bg-shefa-gold/10 flex items-center justify-center group-hover:bg-shefa-gold/20 transition-colors">
-                    <Icon className="w-8 h-8 text-shefa-gold" />
+                  <div className="w-20 h-20 rounded-2xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary group-hover:text-secondary-foreground transition-all">
+                    <Icon className="w-10 h-10" />
                   </div>
-                  <div className="space-y-4">
-                    <h3 className="font-heading text-2xl font-bold text-white uppercase leading-tight">
+                  <div className="space-y-6">
+                    <h3 className="text-2xl lg:text-3xl font-heading font-black text-foreground uppercase leading-tight tracking-tight">
                       {service.title}
                     </h3>
-                    <p className="text-sm text-shefa-silver/70 leading-relaxed">
+                    <p className="text-sm lg:text-base text-foreground/60 leading-relaxed font-light">
                       {service.desc}
                     </p>
                   </div>
-                  <ul className="space-y-3">
+                  <ul className="space-y-4 pt-6 border-t border-border/30">
                     {service.features.map(feature => (
-                      <li key={feature} className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-shefa-silver/50">
-                        <div className="w-1 h-1 bg-shefa-gold rounded-full" />
+                      <li key={feature} className="flex items-center gap-4 text-[10px] font-black uppercase tracking-widest text-foreground/40">
+                        <div className="w-1.5 h-1.5 bg-secondary rounded-full shadow-glow-gold" />
                         {feature}
                       </li>
                     ))}
                   </ul>
-                  <button className="pt-4 flex items-center gap-2 text-shefa-gold group-hover:gap-4 transition-all">
-                    <span className="text-[10px] font-bold uppercase tracking-widest">Inquire Now</span>
+                  <button className="pt-6 flex items-center gap-4 text-secondary group-hover:gap-6 transition-all">
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em]">Structure Enquiry</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
@@ -93,16 +94,16 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Trust Quote */}
-      <section className="py-24 bg-shefa-navy text-center border-t border-white/5">
-        <div className="w-[86vw] mx-auto">
-          <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="font-heading text-3xl lg:text-4xl italic text-white/90 leading-snug">
+      {/* Quote */}
+      <section className="py-32 bg-background text-center border-t border-border">
+        <div className="w-full px-6 lg:px-12">
+          <div className="max-w-4xl mx-auto space-y-10">
+            <h2 className="font-heading text-3xl lg:text-5xl italic text-foreground/90 leading-snug font-light">
               "We don't just provide funding; we engineer the structural resilience required for the global economy."
             </h2>
-            <div className="flex flex-col items-center">
-              <div className="w-12 h-px bg-shefa-gold mb-4" />
-              <div className="font-mono text-xs text-shefa-gold uppercase tracking-[0.3em]">Shefa Strategy Board</div>
+            <div className="flex flex-col items-center gap-6">
+              <div className="w-16 h-1 bg-secondary" />
+              <div className="font-black text-[10px] text-secondary uppercase tracking-[0.5em]">Shefa Strategy Board</div>
             </div>
           </div>
         </div>

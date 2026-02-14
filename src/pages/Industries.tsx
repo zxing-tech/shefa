@@ -47,34 +47,34 @@ const Industries = () => {
     ];
 
     return (
-        <main className="pt-20">
+        <main className="pt-20 bg-background transition-colors duration-500">
             {/* Hero Section */}
-            <section className="bg-shefa-navy text-white py-24 lg:py-48 overflow-hidden relative">
-                <div className="absolute inset-0 z-0">
+            <section className="bg-background text-foreground py-24 lg:py-48 overflow-hidden relative">
+                <div className="absolute inset-0 z-0 opacity-20">
                     <img
                         src="/coverage_agriculture.jpg"
                         alt="Industries"
-                        className="w-full h-full object-cover opacity-20"
+                        className="w-full h-full object-cover grayscale"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-shefa-navy via-shefa-navy/50 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
                 </div>
 
                 <div className="w-full px-6 lg:px-12 relative z-10">
-                    <div className="max-w-[1400px] mx-auto text-center space-y-8">
-                        <span className="text-shefa-gold font-bold uppercase tracking-[0.3em] text-xs">Sector Expertise // Global Trade</span>
-                        <h1 className="text-5xl lg:text-7xl font-heading font-extrabold uppercase leading-[0.9] tracking-tighter">
-                            Deep <span className="text-shefa-gold">Industry</span><br />
-                            Integration.
+                    <div className="max-w-[1400px] mx-auto text-center space-y-10">
+                        <span className="text-secondary font-black uppercase tracking-[0.4em] text-[10px]">Sector Expertise // Trade Logic</span>
+                        <h1 className="text-6xl lg:text-[9rem] font-heading font-extrabold uppercase leading-[0.85] tracking-tighter">
+                            THE SECTOR <br /><span className="text-secondary">INTEGRATION.</span>
                         </h1>
-                        <p className="text-xl text-white/70 max-w-2xl mx-auto">
-                            We bridge the capital gap for Malaysia's industrial backbone across five core sectors.
+                        <p className="text-xl lg:text-3xl text-foreground/70 max-w-4xl mx-auto font-light leading-relaxed">
+                            We bridge the capital gap for Malaysia's industrial backbone across six core sectors
+                            critical to national infrastructure and food security.
                         </p>
                     </div>
                 </div>
             </section>
 
             {/* Industries Grid */}
-            <section className="py-24 lg:py-32">
+            <section className="py-24 lg:py-40 border-t border-border">
                 <div className="w-full px-6 lg:px-12">
                     <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
                         {industries.map((industry) => {
@@ -82,33 +82,33 @@ const Industries = () => {
                             return (
                                 <div
                                     key={industry.name}
-                                    className="group p-0 bg-card border border-border rounded-[32px] hover:border-shefa-gold transition-all duration-500 shadow-xl hover:shadow-2xl flex flex-col justify-between min-h-[500px] overflow-hidden"
+                                    className="group bg-card border border-border rounded-[48px] hover:border-secondary transition-all duration-500 shadow-xl hover:shadow-2xl flex flex-col justify-between min-h-[550px] overflow-hidden"
                                 >
-                                    <div className="relative h-48 overflow-hidden">
+                                    <div className="relative h-64 overflow-hidden">
                                         <img
                                             src={industry.image}
                                             alt={industry.name}
-                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
                                         />
-                                        <div className="absolute inset-0 bg-shefa-navy/40 mix-blend-multiply" />
-                                        <div className="absolute top-6 left-6 w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center text-white border border-white/20">
-                                            <Icon size={24} />
+                                        <div className="absolute inset-0 bg-background/20" />
+                                        <div className="absolute top-8 left-8 w-16 h-16 rounded-2xl bg-background/80 backdrop-blur-md flex items-center justify-center text-secondary border border-white/10 shadow-xl">
+                                            <Icon size={32} />
                                         </div>
                                     </div>
 
-                                    <div className="p-8 lg:p-12 flex-grow flex flex-col justify-between">
-                                        <div className="space-y-4">
-                                            <h3 className="text-3xl font-heading font-extrabold uppercase text-foreground leading-tight">
+                                    <div className="p-10 lg:p-14 flex-grow flex flex-col justify-between space-y-8">
+                                        <div className="space-y-6">
+                                            <h3 className="text-3xl font-heading font-black uppercase text-foreground leading-tight tracking-tight">
                                                 {industry.name}
                                             </h3>
-                                            <p className="text-foreground/60 leading-relaxed text-sm">
+                                            <p className="text-foreground/60 leading-relaxed font-light">
                                                 {industry.desc}
                                             </p>
                                         </div>
 
-                                        <div className="pt-8 border-t border-border mt-8 flex justify-between items-center">
-                                            <span className="text-[10px] font-black uppercase tracking-widest text-shefa-gold">{industry.highlight}</span>
-                                            <ArrowRight size={20} className="text-foreground/20 group-hover:text-shefa-gold group-hover:translate-x-2 transition-all" />
+                                        <div className="pt-8 border-t border-border mt-auto flex justify-between items-center">
+                                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-secondary">{industry.highlight}</span>
+                                            <ArrowRight size={20} className="text-foreground/20 group-hover:text-secondary group-hover:translate-x-2 transition-all" />
                                         </div>
                                     </div>
                                 </div>
@@ -119,17 +119,17 @@ const Industries = () => {
             </section>
 
             {/* Contact Shortcut */}
-            <section className="pb-32">
+            <section className="pb-40">
                 <div className="w-full px-6 lg:px-12">
-                    <div className="max-w-[1400px] mx-auto bg-foreground text-background p-12 lg:p-24 rounded-[40px] flex flex-col lg:flex-row justify-between items-center gap-12 relative overflow-hidden">
-                        <div className="absolute inset-0 opacity-10">
-                            <img src="/cta_container.jpg" className="w-full h-full object-cover" />
+                    <div className="max-w-[1400px] mx-auto glass-card border-white/5 rounded-[60px] p-12 lg:p-24 flex flex-col lg:flex-row justify-between items-center gap-16 relative overflow-hidden group">
+                        <div className="absolute inset-0 opacity-10 pointer-events-none">
+                            <img src="/cta_container.jpg" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Trade Logistics" />
                         </div>
-                        <div className="space-y-4 text-center lg:text-left relative z-10">
-                            <h2 className="text-4xl lg:text-5xl font-heading font-extrabold uppercase">Not in these sectors?</h2>
-                            <p className="text-background/60 text-lg">We evaluate complex industrial logic across all B2B trades.</p>
+                        <div className="space-y-6 text-center lg:text-left relative z-10 max-w-2xl">
+                            <h2 className="text-4xl lg:text-7xl font-heading font-black uppercase tracking-tight leading-none">Not in these <br /><span className="text-secondary">sectors?</span></h2>
+                            <p className="text-foreground/60 text-xl font-light">We evaluate complex industrial logic across all B2B trades. Discuss your case with our risk committee.</p>
                         </div>
-                        <button className="bg-shefa-gold text-shefa-navy px-12 py-5 rounded-xl font-black uppercase tracking-widest text-sm shadow-xl hover:brightness-110 transition-all relative z-10">Discuss Your Case</button>
+                        <button className="bg-secondary text-secondary-foreground px-16 py-8 rounded-2xl font-black uppercase tracking-[0.3em] text-sm shadow-3xl hover:brightness-110 active:scale-95 transition-all relative z-10 whitespace-nowrap">DISCUSS YOUR CASE</button>
                     </div>
                 </div>
             </section>
