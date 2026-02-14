@@ -59,10 +59,10 @@ function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-shefa-white">
+    <div className="relative min-h-screen bg-shefa-navy">
       <Navigation currentPage={currentPage} onNavigate={navigateTo} />
       {renderPage()}
-      <Footer onNavigate={navigateTo} />
+      {currentPage !== 'home' && <Footer onNavigate={navigateTo} />}
     </div>
   );
 }

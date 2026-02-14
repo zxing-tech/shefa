@@ -48,20 +48,17 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Shefa Brand Colors
+        // Shefa Brand Colors (Karta.io Style)
         shefa: {
-          gold: "#C8A34C",
-          cobalt: "#0F43AD",
-          navy: "#0a1f44",
-          black: "#0B0D10",
+          navy: "#001F3F",
+          cobalt: "#0047AB",
           white: "#FFFFFF",
-          gray: "#52525B", // Darker gray for text (Zinc 600)
-          lighterGray: "#E5E7EB", // Kept original as lighterGray for borders/bg
+          silver: "#C0C0C0",
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        heading: ['Space Grotesk', 'system-ui', 'sans-serif'],
+        sans: ['Lato', 'system-ui', 'sans-serif'],
+        heading: ['Cinzel', 'serif'],
         mono: ['IBM Plex Mono', 'monospace'],
       },
       borderRadius: {

@@ -14,7 +14,7 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -34,88 +34,80 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 ${isScrolled
-          ? 'bg-shefa-navy/95 backdrop-blur-xl shadow-lg border-b border-white/10'
-          : 'bg-gradient-to-b from-black/50 to-transparent'
+        className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 ${isScrolled
+          ? 'bg-shefa-navy/80 backdrop-blur-xl border-b border-white/10 py-4'
+          : 'bg-transparent py-8'
           }`}
       >
         <div className="w-full px-6 lg:px-12">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between">
             {/* Logo */}
             <button
               onClick={() => handleNavigate('home')}
-              className="flex items-center gap-3"
+              className="flex items-center gap-3 group"
             >
-              <img
-                src="/shefa-white-logo.png"
-                alt="Shefa Risk Management"
-                className="h-10 lg:h-12 w-auto transition-all"
-              />
+              <div className="w-10 h-10 bg-shefa-cobalt rounded-lg flex items-center justify-center group-hover:rotate-45 transition-transform duration-500">
+                <div className="w-5 h-5 border-2 border-white" />
+              </div>
+              <span className="font-heading text-2xl tracking-widest text-white">SHEFA</span>
             </button>
 
-            {/* Desktop Navigation Group - Moved to Right */}
-            <div className="hidden lg:flex items-center gap-12 ml-auto mr-8">
-              {navLinks.map((link) => (
-                <button
-                  key={link.page}
-                  onClick={() => handleNavigate(link.page)}
-                  className={`text-base font-medium transition-colors relative group ${currentPage === link.page ? 'text-shefa-gold' : 'text-white/90 hover:text-white'
-                    }`}
-                >
-                  {link.label}
-                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-shefa-gold transition-all duration-300 ${currentPage === link.page ? 'w-full' : 'w-0 group-hover:w-full'
-                    }`} />
-                </button>
-              ))}
-            </div>
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center gap-12">
+              <div className="flex items-center gap-10">
+                {navLinks.map((link) => (
+                  <button
+                    key={link.page}
+                    onClick={() => handleNavigate(link.page)}
+                    className={`text-sm tracking-widest uppercase font-medium transition-all relative group ${currentPage === link.page ? 'text-white' : 'text-shefa-silver hover:text-white'
+                      }`}
+                  >
+                    {link.label}
+                    <span className={`absolute -bottom-2 left-0 h-[1px] bg-shefa-cobalt transition-all duration-300 ${currentPage === link.page ? 'w-full' : 'w-0 group-hover:w-full'
+                      }`} />
+                  </button>
+                ))}
+              </div>
 
-            {/* CTA + Mobile Menu */}
-            <div className="flex items-center gap-4">
               <button
                 onClick={() => handleNavigate('contact')}
-                className={`hidden lg:inline-flex px-6 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 ${isScrolled
-                  ? 'bg-shefa-gold text-shefa-navy hover:bg-shefa-gold/90'
-                  : 'bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white/30'
-                  }`}
+                className="btn-primary py-3 px-8 text-xs tracking-widest uppercase"
               >
                 Get Started
               </button>
-
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className={`lg:hidden p-2 rounded-lg transition-colors text-white`}
-                aria-label="Toggle menu"
-              >
-                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
             </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden p-2 text-white"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
         </div>
       </nav>
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 z-[999] bg-shefa-navy/98 backdrop-blur-xl transition-transform duration-300 lg:hidden ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed inset-0 z-[999] bg-shefa-navy transition-all duration-500 flex flex-col items-center justify-center gap-8 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
           }`}
       >
-        <div className="flex flex-col items-center justify-center h-full gap-6 pt-20">
-          {navLinks.map((link) => (
-            <button
-              key={link.page}
-              onClick={() => handleNavigate(link.page)}
-              className={`text-2xl font-heading font-medium ${currentPage === link.page ? 'text-shefa-gold' : 'text-white'
-                }`}
-            >
-              {link.label}
-            </button>
-          ))}
+        {navLinks.map((link) => (
           <button
-            onClick={() => handleNavigate('contact')}
-            className="btn-primary mt-4"
+            key={link.page}
+            onClick={() => handleNavigate(link.page)}
+            className="font-heading text-3xl tracking-widest text-white uppercase"
           >
-            Get Started
+            {link.label}
           </button>
-        </div>
+        ))}
+        <button
+          onClick={() => handleNavigate('contact')}
+          className="btn-primary"
+        >
+          Get Started
+        </button>
       </div>
     </>
   );
