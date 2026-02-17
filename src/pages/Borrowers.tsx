@@ -31,7 +31,7 @@ const Borrowers = () => {
           <img
             src="/borrower_hero.jpg"
             alt="Business Operations"
-            className="w-full h-full object-cover grayscale"
+            className="w-full h-full object-cover"
           />
         </div>
         <div className="w-full px-6 lg:px-12 relative z-10">

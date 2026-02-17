@@ -71,7 +71,7 @@ const About = () => {
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-60" />
                     <div className="absolute bottom-8 right-8 w-12 h-12 bg-secondary text-secondary-foreground rounded-2xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0 shadow-glow-gold pointer-events-none">
@@ -142,7 +142,7 @@ const About = () => {
             <div className="glass-card rounded-[48px] overflow-hidden min-h-[500px] border-white/5 relative shadow-3xl">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.912345678901!2d101.6734567!3d3.1189012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc49a8c1f0b0b1%3A0x12b0b1c1f0b0b1c!2sKL%20Eco%20City!5e0!3m2!1sen!2smy!4v1715421234567!5m2!1sen!2smy"
-                className="absolute inset-0 w-full h-full grayscale invert opacity-50 contrast-125"
+                className="absolute inset-0 w-full h-full opacity-80"
                 style={{ border: 0 }}
                 allowFullScreen={true}
                 loading="lazy"

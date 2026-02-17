@@ -80,7 +80,7 @@ const Footer = ({ onNavigate }: FooterProps) => {
                     <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
                         <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-white/20">
                             <Shield size={16} />
-                            <span>&copy; 2024 Shefa Risk Management. Private & Confidential.</span>
+                            <span>&copy; {new Date().getFullYear()} Shefa Risk Management. Private & Confidential.</span>
                         </div>
 
                         <div className="flex items-center gap-8">

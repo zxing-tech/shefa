@@ -54,7 +54,7 @@ const Industries = () => {
                     <img
                         src="/coverage_agriculture.jpg"
                         alt="Industries"
-                        className="w-full h-full object-cover grayscale"
+                        className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
                 </div>
@@ -88,7 +88,7 @@ const Industries = () => {
                                         <img
                                             src={industry.image}
                                             alt={industry.name}
-                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                         />
                                         <div className="absolute inset-0 bg-background/20" />
                                         <div className="absolute top-8 left-8 w-16 h-16 rounded-2xl bg-background/80 backdrop-blur-md flex items-center justify-center text-secondary border border-white/10 shadow-xl">
