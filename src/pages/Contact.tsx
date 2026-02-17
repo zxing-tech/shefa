@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Contact = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -16,7 +18,7 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
@@ -33,7 +35,7 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: MapPin,
-      title: 'Visit Us',
+      title: t('contact_card1_title'),
       details: [
         'Level 19, Boutique Office 1, Menara 2',
         'No. 3, Jalan Bangsar, KL Eco City',
@@ -42,20 +44,20 @@ const Contact = () => {
     },
     {
       icon: Phone,
-      title: 'Call Us',
+      title: t('contact_card2_title'),
       details: ['+60 3-2774 5254'],
       link: 'tel:+60327745254',
     },
     {
       icon: Mail,
-      title: 'Email Us',
+      title: t('contact_card3_title'),
       details: ['enquiries@shefa.com.my'],
       link: 'mailto:enquiries@shefa.com.my',
     },
     {
       icon: Clock,
-      title: 'Business Hours',
-      details: ['Monday - Friday: 9:00 AM - 6:00 PM', 'Saturday - Sunday: Closed'],
+      title: t('contact_card4_title'),
+      details: [t('footer_mon_fri'), t('footer_sat_sun')],
     },
   ];
 
@@ -65,13 +67,13 @@ const Contact = () => {
       <section className="relative py-20 lg:py-32 bg-shefa-navy">
         <div className="w-[86vw] mx-auto">
           <div className="max-w-4xl">
-            <span className="eyebrow block mb-4 text-white/60">Contact</span>
+            <span className="eyebrow block mb-4 text-white/60">{t('contact_hero_eyebrow')}</span>
             <div className="gold-rule mb-6" />
             <h1 className="heading-xl text-white mb-6">
-              Get in <span className="text-shefa-gold">Touch</span>
+              {t('contact_hero_title')} <span className="text-shefa-gold">{t('contact_hero_title_accent')}</span>
             </h1>
             <p className="text-xl text-white/80 max-w-3xl">
-              Have questions about our services? Ready to protect your business or start investing? Our team is here to help.
+              {t('contact_hero_desc')}
             </p>
           </div>
         </div>
@@ -96,7 +98,7 @@ const Contact = () => {
                   </div>
                 </div>
               );
-              
+
               return info.link ? (
                 <a key={info.title} href={info.link} className="block hover:shadow-card-hover transition-shadow">
                   {content}
@@ -110,25 +112,25 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <span className="eyebrow block mb-4">Enquiry Form</span>
+              <span className="eyebrow block mb-4">{t('contact_form_eyebrow')}</span>
               <div className="gold-rule mb-6" />
               <h2 className="heading-lg text-shefa-navy mb-6">
-                Send Us a <span className="text-shefa-gold">Message</span>
+                {t('contact_form_title')} <span className="text-shefa-gold">{t('contact_form_title_accent')}</span>
               </h2>
               <p className="body-lg mb-8">
-                Fill out the form below and our team will get back to you within 48 hours.
+                {t('contact_form_desc')}
               </p>
-              
+
               {submitted ? (
                 <div className="card p-8 text-center">
                   <div className="w-16 h-16 rounded-full bg-shefa-gold/20 flex items-center justify-center mx-auto mb-4">
                     <CheckCircle className="w-8 h-8 text-shefa-gold" />
                   </div>
                   <h3 className="font-heading text-xl font-medium text-shefa-navy mb-2">
-                    Message Sent!
+                    {t('contact_form_submitted_title')}
                   </h3>
                   <p className="text-shefa-gray">
-                    Thank you for reaching out. We will get back to you within 48 hours.
+                    {t('contact_form_submitted_desc')}
                   </p>
                 </div>
               ) : (
@@ -136,7 +138,7 @@ const Contact = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-sm font-medium text-shefa-navy mb-2">
-                        Full Name *
+                        {t('contact_form_label_name')}
                       </label>
                       <input
                         type="text"
@@ -145,12 +147,12 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 rounded-xl border border-[#E9ECEF] focus:border-shefa-gold focus:ring-1 focus:ring-shefa-gold outline-none transition-all"
-                        placeholder="Your name"
+                        placeholder={t('contact_form_placeholder_name')}
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-shefa-navy mb-2">
-                        Company Name *
+                        {t('contact_form_label_company')}
                       </label>
                       <input
                         type="text"
@@ -159,15 +161,15 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 rounded-xl border border-[#E9ECEF] focus:border-shefa-gold focus:ring-1 focus:ring-shefa-gold outline-none transition-all"
-                        placeholder="Your company"
+                        placeholder={t('contact_form_placeholder_company')}
                       />
                     </div>
                   </div>
-                  
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-sm font-medium text-shefa-navy mb-2">
-                        Email Address *
+                        {t('contact_form_label_email')}
                       </label>
                       <input
                         type="email"
@@ -176,12 +178,12 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 rounded-xl border border-[#E9ECEF] focus:border-shefa-gold focus:ring-1 focus:ring-shefa-gold outline-none transition-all"
-                        placeholder="your@email.com"
+                        placeholder={t('contact_form_placeholder_email')}
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-shefa-navy mb-2">
-                        Phone Number
+                        {t('contact_form_label_phone')}
                       </label>
                       <input
                         type="tel"
@@ -189,14 +191,14 @@ const Contact = () => {
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-xl border border-[#E9ECEF] focus:border-shefa-gold focus:ring-1 focus:ring-shefa-gold outline-none transition-all"
-                        placeholder="+60 XX-XXXX XXXX"
+                        placeholder={t('contact_form_placeholder_phone')}
                       />
                     </div>
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-shefa-navy mb-2">
-                      I am interested in *
+                      {t('contact_form_label_interest')}
                     </label>
                     <select
                       name="interest"
@@ -205,17 +207,17 @@ const Contact = () => {
                       required
                       className="w-full px-4 py-3 rounded-xl border border-[#E9ECEF] focus:border-shefa-gold focus:ring-1 focus:ring-shefa-gold outline-none transition-all bg-white"
                     >
-                      <option value="">Select an option</option>
-                      <option value="borrower">Becoming a Borrower (SME Financing)</option>
-                      <option value="lender">Becoming a Lender (Investment)</option>
-                      <option value="insurance">Trade Credit Insurance</option>
-                      <option value="general">General Enquiry</option>
+                      <option value="">{t('contact_form_opt_placeholder')}</option>
+                      <option value="borrower">{t('contact_form_opt_borrower')}</option>
+                      <option value="lender">{t('contact_form_opt_lender')}</option>
+                      <option value="insurance">{t('contact_form_opt_insurance')}</option>
+                      <option value="general">{t('contact_form_opt_general')}</option>
                     </select>
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-shefa-navy mb-2">
-                      Message *
+                      {t('contact_form_label_message')}
                     </label>
                     <textarea
                       name="message"
@@ -224,22 +226,22 @@ const Contact = () => {
                       required
                       rows={4}
                       className="w-full px-4 py-3 rounded-xl border border-[#E9ECEF] focus:border-shefa-gold focus:ring-1 focus:ring-shefa-gold outline-none transition-all resize-none"
-                      placeholder="How can we help you?"
+                      placeholder={t('contact_form_placeholder_message')}
                     />
                   </div>
-                  
+
                   <button
                     type="submit"
                     disabled={isSubmitting}
                     className="btn-primary w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    {isSubmitting ? t('contact_form_btn_sending') : t('contact_form_btn_send')}
                     <Send className="ml-2 w-4 h-4" />
                   </button>
                 </form>
               )}
             </div>
-            
+
             <div className="image-card h-[400px] lg:h-auto overflow-hidden">
               <img
                 src="/hero_main.jpg"
@@ -255,16 +257,16 @@ const Contact = () => {
       <section className="py-20 lg:py-32 bg-shefa-navy">
         <div className="w-[86vw] mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="eyebrow block mb-4 text-white/60">Location</span>
+            <span className="eyebrow block mb-4 text-white/60">{t('contact_loc_eyebrow')}</span>
             <div className="gold-rule mx-auto mb-6" />
             <h2 className="heading-lg text-white mb-4">
-              Find Us in <span className="text-shefa-gold">Kuala Lumpur</span>
+              {t('contact_loc_title')} <span className="text-shefa-gold">{t('contact_loc_title_accent')}</span>
             </h2>
             <p className="text-white/70">
-              Located in the heart of KL Eco City, easily accessible via public transport.
+              {t('contact_loc_desc')}
             </p>
           </div>
-          
+
           <div className="rounded-3xl overflow-hidden bg-white/5 border border-white/10 h-[400px] flex items-center justify-center">
             <div className="text-center p-8">
               <MapPin className="w-16 h-16 text-shefa-gold mx-auto mb-4" />
@@ -273,13 +275,13 @@ const Contact = () => {
                 Level 19, Boutique Office 1, Menara 2<br />
                 KL Eco City, 59200 Kuala Lumpur
               </p>
-              <a 
-                href="https://maps.google.com/?q=KL+Eco+City" 
-                target="_blank" 
+              <a
+                href="https://maps.google.com/?q=KL+Eco+City"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center mt-6 px-6 py-3 bg-shefa-gold text-shefa-navy font-medium rounded-full hover:bg-shefa-gold/90 transition-colors"
               >
-                Open in Google Maps
+                {t('contact_loc_map_btn')}
               </a>
             </div>
           </div>

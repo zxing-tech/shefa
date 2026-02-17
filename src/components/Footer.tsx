@@ -44,7 +44,7 @@ const Footer = ({ onNavigate }: FooterProps) => {
                         <span className="eyebrow block mb-4">{t('footer_contact_us')}</span>
                         <div className="gold-rule mb-6" />
                         <h2 className="heading-lg text-shefa-navy mb-8">
-                            Contact <span className="text-shefa-gold">Shefa</span>
+                            {t('footer_contact_shefa').split(' ')[0]} <span className="text-shefa-gold">{t('footer_contact_shefa').split(' ').slice(1).join(' ')}</span>
                         </h2>
 
                         {submitted ? (
@@ -90,7 +90,7 @@ const Footer = ({ onNavigate }: FooterProps) => {
                     {/* Contact Info */}
                     <div>
                         <div className="card p-8 lg:p-10 h-full">
-                            <h3 className="font-heading text-xl font-medium text-shefa-navy mb-6">Contact Information</h3>
+                            <h3 className="font-heading text-xl font-medium text-shefa-navy mb-6">{t('footer_info_title')}</h3>
 
                             <div className="space-y-6">
                                 <div className="flex items-start gap-4">
@@ -99,7 +99,7 @@ const Footer = ({ onNavigate }: FooterProps) => {
                                     </div>
                                     <div>
                                         <div className="font-medium text-shefa-navy">{t('footer_address')}</div>
-                                        <div className="text-shefa-gray text-sm">Level 19, Menara 2, KL Eco City, 59200 Kuala Lumpur</div>
+                                        <div className="text-shefa-gray text-sm">Level 19, Boutique Office 1, Menara 2, KL Eco City, 59200 Kuala Lumpur</div>
                                     </div>
                                 </div>
 
@@ -119,7 +119,7 @@ const Footer = ({ onNavigate }: FooterProps) => {
                                     </div>
                                     <div>
                                         <div className="font-medium text-shefa-navy">{t('footer_email')}</div>
-                                        <a href="mailto:info@shefa-risk.com" className="text-shefa-gray text-sm hover:text-shefa-gold transition-colors">info@shefa-risk.com</a>
+                                        <a href="mailto:enquiries@shefa.com.my" className="text-shefa-gray text-sm hover:text-shefa-gold transition-colors">enquiries@shefa.com.my</a>
                                     </div>
                                 </div>
 
@@ -165,8 +165,8 @@ const Footer = ({ onNavigate }: FooterProps) => {
                     <div>
                         <h4 className="font-bold text-shefa-navy mb-4">{t('nav_services')}</h4>
                         <ul className="space-y-2 text-sm text-shefa-gray">
-                            <li><button onClick={() => onNavigate('services')} className="hover:text-shefa-gold text-left">Trade Credit Insurance</button></li>
-                            <li><button onClick={() => onNavigate('services')} className="hover:text-shefa-gold text-left">Invoice Financing</button></li>
+                            <li><button onClick={() => onNavigate('services')} className="hover:text-shefa-gold text-left">{t('footer_trade_ins')}</button></li>
+                            <li><button onClick={() => onNavigate('services')} className="hover:text-shefa-gold text-left">{t('footer_inv_fin')}</button></li>
                         </ul>
                     </div>
                     <div>
@@ -177,9 +177,8 @@ const Footer = ({ onNavigate }: FooterProps) => {
                             <li><button onClick={() => onNavigate('contact')} className="hover:text-shefa-gold text-left">{t('nav_contact')}</button></li>
                         </ul>
                     </div>
-                    {/* Include Borrowers/Lenders here too? */}
                     <div>
-                        <h4 className="font-bold text-shefa-navy mb-4">Solutions</h4>
+                        <h4 className="font-bold text-shefa-navy mb-4">{t('footer_solutions')}</h4>
                         <ul className="space-y-2 text-sm text-shefa-gray">
                             <li><button onClick={() => onNavigate('borrowers')} className="hover:text-shefa-gold text-left">{t('nav_borrowers')}</button></li>
                             <li><button onClick={() => onNavigate('lenders')} className="hover:text-shefa-gold text-left">{t('nav_lenders')}</button></li>
@@ -194,8 +193,8 @@ const Footer = ({ onNavigate }: FooterProps) => {
                 <div className="w-[86vw] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm opacity-70">
                     <div>&copy; {new Date().getFullYear()} {t('footer_rights')}</div>
                     <div className="flex gap-6">
-                        <button>{t('footer_privacy')}</button>
-                        <button>{t('footer_terms')}</button>
+                        <button className="hover:text-shefa-gold transition-colors">{t('footer_privacy')}</button>
+                        <button className="hover:text-shefa-gold transition-colors">{t('footer_terms')}</button>
                     </div>
                 </div>
             </div>

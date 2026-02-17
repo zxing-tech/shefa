@@ -1,21 +1,24 @@
 import { ArrowRight, Shield, TrendingUp, Lock, Eye, CheckCircle, Building2 } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Lenders = () => {
+  const { t } = useLanguage();
+
   const benefits = [
     {
       icon: Shield,
-      title: 'Principal Shielding',
-      description: 'Your capital isn’t just "secured"—it is backed by a regulated insurance policy. If the borrower’s customer defaults, the policy pays out.',
+      title: t('lenders_benefit1_title'),
+      description: t('lenders_benefit1_desc'),
     },
     {
       icon: TrendingUp,
-      title: 'Targeted Returns',
-      description: 'Aim for 8-15% annual returns. This is a risk-adjusted yield derived from real economic activity, not speculation.',
+      title: t('lenders_benefit2_title'),
+      description: t('lenders_benefit2_desc'),
     },
     {
       icon: Eye,
-      title: 'Due Diligence',
-      description: 'We don’t just list anyone. Every borrower is vetted, and every invoice is verified against the insurer’s credit limits.',
+      title: t('lenders_benefit3_title'),
+      description: t('lenders_benefit3_desc'),
     },
   ];
 
@@ -35,29 +38,29 @@ const Lenders = () => {
         <div className="relative z-10 w-full px-6 lg:px-12 py-20">
           <div className="max-w-3xl">
             <span className="inline-block px-4 py-2 bg-shefa-gold/20 backdrop-blur-sm rounded-full text-shefa-gold text-sm font-medium mb-6">
-              For Institutional & Accredited Investors
+              {t('lenders_hero_tag')}
             </span>
             <h1 className="heading-xl text-white mb-6">
-              Invest with an <br />
-              <span className="text-shefa-gold">Insurance Shield.</span>
+              {t('lenders_hero_title')} <br />
+              <span className="text-shefa-gold">{t('lenders_hero_title_accent')}</span>
             </h1>
             <p className="text-xl text-white/80 mb-8 max-w-2xl leading-relaxed">
-              Earn 8-15% annual returns on diversified SME portfolios backed by comprehensive trade credit insurance. Institutional-grade security for your capital.
+              {t('lenders_hero_desc')}
             </p>
             <div className="flex flex-wrap gap-4">
               <a href="#invest" className="btn-primary">
-                Start Investing
+                {t('lenders_cta_start')}
                 <ArrowRight className="ml-2 w-4 h-4" />
               </a>
               <a
                 href="mailto:enquiries@shefa.com.my"
                 className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-medium rounded-full border border-white/30 hover:bg-white/20 transition-all"
               >
-                Request Prospectus
+                {t('lenders_cta_prospectus')}
               </a>
             </div>
             <p className="mt-6 text-xs text-white/50 font-mono">
-              * Returns are targeted and subject to market conditions. Capital is risk-managed but not guaranteed.
+              {t('lenders_disclaimer')}
             </p>
           </div>
         </div>
@@ -68,29 +71,29 @@ const Lenders = () => {
         <div className="w-[86vw] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div>
-              <span className="eyebrow block mb-4">Risk Management</span>
+              <span className="eyebrow block mb-4">{t('lenders_risk_eyebrow')}</span>
               <div className="gold-rule mb-6" />
               <h2 className="heading-lg text-shefa-navy mb-6">
-                Institutional-Grade <br />
-                <span className="text-shefa-gold">Security Architecture</span>
+                {t('lenders_risk_title')} <br />
+                <span className="text-shefa-gold">{t('lenders_risk_title_accent')}</span>
               </h2>
               <p className="body-lg mb-6">
-                Your primary fear is loss of principal. We address this through a formal <strong>Risk Transfer</strong> mechanism.
+                {t('lenders_risk_desc1')}
               </p>
               <p className="body-base mb-8">
-                When you fund an invoice, you aren't just trusting the SME. You are relying on the credit rating of their large corporate buyers, backed by a global insurer. If the buyer goes insolvent, the insurance layer activates to recover your capital.
+                {t('lenders_risk_desc2')}
               </p>
 
               <div className="bg-shefa-navy/5 p-6 rounded-2xl border border-shefa-navy/10">
                 <h4 className="font-heading font-medium text-shefa-navy mb-3 flex items-center gap-2">
                   <Shield className="w-5 h-5 text-shefa-gold" />
-                  The Protection Layers
+                  {t('lenders_risk_layers_title')}
                 </h4>
                 <ul className="space-y-3">
                   {[
-                    'Layer 1: Buyer Credit Assessment',
-                    'Layer 2: Trade Credit Insurance Policy',
-                    'Layer 3: Shefa Risk Surveillance',
+                    t('lenders_risk_layer1'),
+                    t('lenders_risk_layer2'),
+                    t('lenders_risk_layer3'),
                   ].map((layer) => (
                     <li key={layer} className="flex items-center gap-3 text-sm text-shefa-gray">
                       <CheckCircle className="w-4 h-4 text-shefa-gold" />
@@ -102,7 +105,6 @@ const Lenders = () => {
             </div>
 
             <div className="relative">
-              {/* Abstract Process Diagram Visualization */}
               <div className="bg-shefa-navy rounded-3xl p-8 lg:p-12 text-white overflow-hidden relative">
                 <div className="absolute top-0 right-0 p-8 opacity-10">
                   <Lock className="w-40 h-40" />
@@ -174,18 +176,18 @@ const Lenders = () => {
       {/* Portfolio Diversification */}
       <section className="py-20 lg:py-32 bg-shefa-white">
         <div className="w-[86vw] mx-auto text-center">
-          <span className="eyebrow block mb-4">Portfolio Strategy</span>
+          <span className="eyebrow block mb-4">{t('lenders_portfolio_eyebrow')}</span>
           <div className="gold-rule mx-auto mb-6" />
           <h2 className="heading-lg text-shefa-navy mb-12">
-            Diversification Across <span className="text-shefa-gold">Key Sectors</span>
+            {t('lenders_portfolio_title')} <span className="text-shefa-gold">{t('lenders_portfolio_title_accent')}</span>
           </h2>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { name: 'Manufacturing', icon: Building2 },
-              { name: 'Logistics', icon: ArrowRight },
-              { name: 'Healthcare', icon: CheckCircle },
-              { name: 'Construction', icon: Lock },
+              { name: t('industry_manufacturing'), icon: Building2 },
+              { name: t('industry_logistics'), icon: ArrowRight },
+              { name: t('industry_healthcare'), icon: CheckCircle },
+              { name: t('industry_construction'), icon: Lock },
             ].map((sector) => {
               const Icon = sector.icon;
               return (
@@ -197,7 +199,7 @@ const Lenders = () => {
             })}
           </div>
           <p className="mt-12 max-w-2xl mx-auto text-shefa-gray">
-            We spread funds across multiple borrowers ("Sams") in different industries to minimize idiosyncratic risk and ensure stable portfolio performance.
+            {t('lenders_portfolio_desc')}
           </p>
         </div>
       </section>
@@ -207,32 +209,32 @@ const Lenders = () => {
         <div className="w-[86vw] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div>
-              <span className="font-mono text-shefa-gold text-sm tracking-widest uppercase mb-4 block">// FREQUENTLY ASKED QUESTIONS</span>
+              <span className="font-mono text-shefa-gold text-sm tracking-widest uppercase mb-4 block">{t('lenders_faq_eyebrow')}</span>
               <h2 className="heading-lg text-white mb-6">
-                Technical <br />
-                <span className="text-shefa-gold">Insights</span>
+                {t('lenders_faq_title')} <br />
+                <span className="text-shefa-gold">{t('lenders_faq_title_accent')}</span>
               </h2>
               <p className="text-white/60 mb-8 max-w-sm">
-                Understanding the mechanics of trade credit insurance and risk transfer.
+                {t('lenders_faq_subtitle')}
               </p>
               <a href="/contact" className="btn-outline text-sm">
-                Download Full Prospectus
+                {t('lenders_cta_prospectus')}
               </a>
             </div>
 
             <div className="col-span-1 lg:col-span-2 space-y-8">
               {[
                 {
-                  q: 'What is "Protracted Default"?',
-                  a: 'It is the failure of a buyer to pay the contractual debt within a pre-defined period (the "Waiting Period") after the due date, even if they aren\'t legally bankrupt. Our insurance covers this specific event.'
+                  q: t('lenders_faq1_q'),
+                  a: t('lenders_faq1_a')
                 },
                 {
-                  q: 'Is this a loan?',
-                  a: 'No. It is a factoring arrangement where you purchase the rights to an invoice. The "security" is the insured invoice itself, not the borrower\'s personal property. This isolates your risk to the specific trade transaction.'
+                  q: t('lenders_faq2_q'),
+                  a: t('lenders_faq2_a')
                 },
                 {
-                  q: 'How is my investment protected?',
-                  a: 'Your principal is tied to invoices protected by Trade Credit Insurance. If the end-buyer defaults, the insurance payout (typically 90%) covers the loss, ensuring capital preservation.'
+                  q: t('lenders_faq3_q'),
+                  a: t('lenders_faq3_a')
                 }
               ].map((faq, idx) => (
                 <div key={idx} className="border-b border-white/10 pb-8 last:border-0 last:pb-0">
@@ -255,18 +257,18 @@ const Lenders = () => {
 
         <div className="w-[86vw] mx-auto relative z-10 text-center">
           <h2 className="heading-lg text-white mb-6">
-            Make Your Capital <span className="text-shefa-gold">Work Harder.</span>
+            {t('lenders_final_title')} <span className="text-shefa-gold">{t('lenders_final_title_accent')}</span>
           </h2>
           <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
-            Join the smart money earning 8-15% yields backed by trade credit insurance.
+            {t('lenders_final_desc')}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a href="/contact" className="btn-primary">
-              Start Investing
+              {t('lenders_cta_start')}
               <ArrowRight className="ml-2 w-4 h-4" />
             </a>
             <a href="mailto:enquiries@shefa.com.my" className="inline-flex items-center px-8 py-4 border border-white/20 text-white font-medium rounded-full hover:bg-white/10 transition-all">
-              Schedule a Call
+              {t('lenders_final_cta_call')}
             </a>
           </div>
         </div>

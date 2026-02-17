@@ -1,21 +1,24 @@
 import { Shield, Award, Target, Globe, Mail, Phone } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const About = () => {
+  const { t } = useLanguage();
+
   const values = [
     {
       icon: Shield,
-      title: 'Structural Resilience',
-      description: 'We do not just lend; we architect secured environments. Through our one-stop FinHub and credit-insurance backing, we prioritize Capital Preservation over speculation.',
+      title: t('about_val1_title'),
+      description: t('about_val1_desc'),
     },
     {
       icon: Globe,
-      title: 'Industrial Connectivity',
-      description: 'We are the vital bridge between Global Liquidity and Malaysia\'s Industrial Backbone. By addressing the MYR 24.3bn liquidity gap, we turn MSME trade receivables into a high-performance asset class.',
+      title: t('about_val2_title'),
+      description: t('about_val2_desc'),
     },
     {
       icon: Target,
-      title: 'Forensic Integrity',
-      description: 'Our data-first approach ensures every transaction is characterized by technical precision. Backed by a 40-year leadership pedigree, we provide the transparency essential for high-stakes investing.',
+      title: t('about_val3_title'),
+      description: t('about_val3_desc'),
     },
   ];
 
@@ -23,22 +26,22 @@ const About = () => {
     {
       name: 'Russell Boyd',
       title: 'Director / CEO',
-      image: '/team_1.jpg',
+      image: '/assets/legacy/russell_boyd.webp',
     },
     {
       name: 'Dr. Surendran Sanggarin',
       title: 'Director / COO',
-      image: '/team_3.jpg',
+      image: '/assets/legacy/dr_surendran.webp',
     },
     {
-      name: 'Dato\' Chik Nazrin',
+      name: "Dato' Chik Nazrin",
       title: 'Director / CRO',
-      image: '/team_2.jpg',
+      image: '/assets/legacy/dato_chik.webp',
     },
     {
       name: 'Laura Daniel',
       title: 'Advisor',
-      image: '/team_4.jpg',
+      image: '/assets/legacy/laura_daniel.webp',
     },
   ];
 
@@ -51,11 +54,11 @@ const About = () => {
             <span className="eyebrow block mb-4 text-white/60">About Shefa</span>
             <div className="gold-rule mb-6" />
             <h1 className="heading-xl text-white mb-6">
-              Institutional Security Meets{" "}
-              <span className="text-shefa-gold">Economic Momentum</span>
+              {t('about_hero_title')}{" "}
+              <span className="text-shefa-gold">{t('about_hero_title_accent')}</span>
             </h1>
             <p className="text-xl text-white/80 max-w-3xl">
-              Shefa operates at the intersection of institutional capital and the industrial backbone of Southeast Asia, addressing systemic liquidity gaps in sectors responsible for 40% of Malaysia&apos;s GDP.
+              {t('about_hero_desc')}
             </p>
           </div>
         </div>
@@ -67,7 +70,7 @@ const About = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="text-6xl text-shefa-gold mb-6">&ldquo;</div>
             <blockquote className="heading-lg text-shefa-navy mb-8">
-              Risk management is not about predicting the future, but about creating systems that are resilient to it.
+              {t('about_quote')}
             </blockquote>
             <cite className="text-shefa-gray not-italic">— Nassim Nicholas Taleb</cite>
           </div>
@@ -82,13 +85,13 @@ const About = () => {
               <span className="eyebrow block mb-4 text-white/60">Our Story</span>
               <div className="gold-rule mb-6" />
               <h2 className="heading-lg text-white mb-6">
-                Building <span className="text-shefa-gold">Credit Infrastructure</span>
+                {t('about_story_title')} <span className="text-shefa-gold">{t('about_story_title_accent')}</span>
               </h2>
               <p className="text-white/80 mb-6">
-                Through our proprietary FinHub platform, we transform trade receivables into high-conviction, insurance-backed assets; advancing up to 80% of invoice values against verified corporate obligations in resilient sectors.
+                {t('about_story_desc1')}
               </p>
               <p className="text-white/70">
-                Our mandate is capital preservation through structural resilience: delivering institutional investors secured access to Southeast Asia&apos;s growth engines while building essential credit infrastructure for a liquid, resilient global economy.
+                {t('about_story_desc2')}
               </p>
             </div>
             <div className="image-card h-[400px] lg:h-[500px] overflow-hidden">
@@ -106,10 +109,10 @@ const About = () => {
       <section className="py-20 lg:py-32 bg-shefa-white">
         <div className="w-[86vw] mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow block mb-4">Our Values</span>
+            <span className="eyebrow block mb-4">{t('about_values_eyebrow')}</span>
             <div className="gold-rule mx-auto mb-6" />
             <h2 className="heading-lg text-shefa-navy">
-              The Foundation of <span className="text-shefa-gold">Everything We Do</span>
+              {t('about_values_title')} <span className="text-shefa-gold">{t('about_values_title_accent')}</span>
             </h2>
           </div>
 
@@ -135,10 +138,10 @@ const About = () => {
         <div className="w-[86vw] mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { value: '40+', label: 'Years Combined Experience' },
-              { value: 'MYR 2.8B+', label: 'Receivables Under Coverage' },
-              { value: '500+', label: 'Businesses Supported' },
-              { value: '94%', label: 'Client Satisfaction' },
+              { value: '40+', label: t('home_stats_experience') },
+              { value: 'MYR 2.8B+', label: t('home_stats_receivables') },
+              { value: '500+', label: t('home_stats_businesses') },
+              { value: '94%', label: t('home_stats_satisfaction') },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="font-heading text-4xl lg:text-5xl font-bold text-shefa-navy mb-2">{stat.value}</div>
@@ -153,13 +156,13 @@ const About = () => {
       <section className="py-20 lg:py-32 bg-shefa-white">
         <div className="w-[86vw] mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow block mb-4">Leadership</span>
+            <span className="eyebrow block mb-4">{t('about_leadership_eyebrow')}</span>
             <div className="gold-rule mx-auto mb-6" />
             <h2 className="heading-lg text-shefa-navy mb-4">
-              Meet Our <span className="text-shefa-gold">Team</span>
+              {t('about_leadership_title')} <span className="text-shefa-gold">{t('about_leadership_title_accent')}</span>
             </h2>
             <p className="body-lg">
-              Led by underwriters, not just algorithms. A team with decades of credit, trade, and risk experience.
+              {t('about_leadership_desc')}
             </p>
           </div>
 
@@ -170,7 +173,7 @@ const About = () => {
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                   />
                 </div>
                 <div className="gold-rule mb-3" />
@@ -187,13 +190,13 @@ const About = () => {
         <div className="w-[86vw] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <span className="eyebrow block mb-4 text-white/60">Contact</span>
+              <span className="eyebrow block mb-4 text-white/60">{t('about_contact_eyebrow')}</span>
               <div className="gold-rule mb-6" />
               <h2 className="heading-lg text-white mb-6">
-                Get in <span className="text-shefa-gold">Touch</span>
+                {t('about_contact_title')} <span className="text-shefa-gold">{t('about_contact_title_accent')}</span>
               </h2>
               <p className="text-white/70 mb-8">
-                Have questions about our services? Our team is here to help.
+                {t('about_contact_desc')}
               </p>
             </div>
             <div className="space-y-6">
@@ -202,7 +205,7 @@ const About = () => {
                   <Award className="w-5 h-5 text-shefa-gold" />
                 </div>
                 <div>
-                  <h4 className="font-heading text-lg font-medium text-white mb-1">Address</h4>
+                  <h4 className="font-heading text-lg font-medium text-white mb-1">{t('footer_address')}</h4>
                   <p className="text-white/70">
                     Level 19, Boutique Office 1, Menara 2<br />
                     No. 3, Jalan Bangsar, KL Eco City<br />
@@ -215,7 +218,7 @@ const About = () => {
                   <Mail className="w-5 h-5 text-shefa-gold" />
                 </div>
                 <div>
-                  <h4 className="font-heading text-lg font-medium text-white mb-1">Email</h4>
+                  <h4 className="font-heading text-lg font-medium text-white mb-1">{t('footer_email')}</h4>
                   <a href="mailto:enquiries@shefa.com.my" className="text-white/70 hover:text-shefa-gold transition-colors">
                     enquiries@shefa.com.my
                   </a>
@@ -226,7 +229,7 @@ const About = () => {
                   <Phone className="w-5 h-5 text-shefa-gold" />
                 </div>
                 <div>
-                  <h4 className="font-heading text-lg font-medium text-white mb-1">Phone</h4>
+                  <h4 className="font-heading text-lg font-medium text-white mb-1">{t('footer_phone')}</h4>
                   <a href="tel:+60327745254" className="text-white/70 hover:text-shefa-gold transition-colors">
                     +60 3-2774 5254
                   </a>

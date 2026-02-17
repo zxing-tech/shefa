@@ -1,49 +1,52 @@
 import { ArrowRight, Shield, FileCheck, Gavel, TrendingUp, Globe, Building2, User, ClipboardList, AlertTriangle } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Services = () => {
+  const { t } = useLanguage();
+
   const mainServices = [
     {
       icon: Shield,
-      title: 'Protection Against Non-Payment',
-      description: 'Shefa Group gets a trade credit insurance policy, protecting your business if buyers do not pay for goods or services.',
+      title: t('services_main1_title'),
+      description: t('services_main1_desc'),
       features: [
-        'Coverage up to 90% of invoice value',
-        'Protection against insolvency and protracted default',
-        'Domestic and export receivables covered',
-        'Fast claim settlement process',
+        t('services_main1_f1'),
+        t('services_main1_f2'),
+        t('services_main1_f3'),
+        t('services_main1_f4'),
       ],
     },
     {
       icon: FileCheck,
-      title: 'Policy Negotiation',
-      description: 'We negotiate a tailored policy with insurers based on your estimated annual credit sales and bad debt history.',
+      title: t('services_main2_title'),
+      description: t('services_main2_desc'),
       features: [
-        'Customized coverage limits',
-        'Competitive premium rates',
-        'Flexible policy terms',
-        'Expert broker representation',
+        t('services_main2_f1'),
+        t('services_main2_f2'),
+        t('services_main2_f3'),
+        t('services_main2_f4'),
       ],
     },
     {
       icon: Gavel,
-      title: 'Claim Process Management',
-      description: 'When a distributor becomes insolvent and cannot pay, report the non-payment to Shefa Group. We gather documents and submit claims.',
+      title: t('services_main3_title'),
+      description: t('services_main3_desc'),
       features: [
-        'End-to-end claim handling',
-        'Documentation preparation',
-        'Negotiation with insurers',
-        'Recovery pursuit',
+        t('services_main3_f1'),
+        t('services_main3_f2'),
+        t('services_main3_f3'),
+        t('services_main3_f4'),
       ],
     },
     {
       icon: TrendingUp,
-      title: 'Business Benefits',
-      description: 'The insurance allows you to continue your day-to-day operations, receive money from your claim, and save your business from losing profit.',
+      title: t('services_main4_title'),
+      description: t('services_main4_desc'),
       features: [
-        'Improved cash flow predictability',
-        'Enhanced borrowing capacity',
-        'Peace of mind for expansion',
-        'Protection of profit margins',
+        t('services_main4_f1'),
+        t('services_main4_f2'),
+        t('services_main4_f3'),
+        t('services_main4_f4'),
       ],
     },
   ];
@@ -51,33 +54,33 @@ const Services = () => {
   const coverageTypes = [
     {
       icon: Building2,
-      title: 'Domestic Receivables',
-      description: 'Protect your local Malaysian buyers against non-payment with comprehensive coverage.',
+      title: t('services_type1_title'),
+      description: t('services_type1_desc'),
     },
     {
       icon: Globe,
-      title: 'Export Credit Coverage',
-      description: 'Expand confidently into ASEAN and global markets with political and commercial risk protection.',
+      title: t('services_type2_title'),
+      description: t('services_type2_desc'),
     },
     {
       icon: User,
-      title: 'Single Buyer Policies',
-      description: 'Focused protection for your largest or most critical trading relationships.',
+      title: t('services_type3_title'),
+      description: t('services_type3_desc'),
     },
     {
       icon: ClipboardList,
-      title: 'Whole Turnover',
-      description: 'Comprehensive coverage for your entire buyer portfolio with streamlined administration.',
+      title: t('services_type4_title'),
+      description: t('services_type4_desc'),
     },
     {
       icon: AlertTriangle,
-      title: 'Political Risk',
-      description: 'Safeguard against government actions, currency inconvertibility, and expropriation risks.',
+      title: t('services_type5_title'),
+      description: t('services_type5_desc'),
     },
     {
       icon: Shield,
-      title: 'Collections Support',
-      description: 'Professional debt collection services to recover outstanding payments efficiently.',
+      title: t('services_type6_title'),
+      description: t('services_type6_desc'),
     },
   ];
 
@@ -87,14 +90,14 @@ const Services = () => {
       <section className="relative py-20 lg:py-32 bg-shefa-navy">
         <div className="w-[86vw] mx-auto">
           <div className="max-w-4xl">
-            <span className="eyebrow block mb-4 text-white/60">Our Services</span>
+            <span className="eyebrow block mb-4 text-white/60">{t('services_hero_eyebrow')}</span>
             <div className="gold-rule mb-6" />
             <h1 className="heading-xl text-white mb-6">
-              Trade Credit Insurance &{" "}
-              <span className="text-shefa-gold">Financing Solutions</span>
+              {t('services_hero_title')} <br />
+              <span className="text-shefa-gold">{t('services_hero_title_accent')}</span>
             </h1>
             <p className="text-xl text-white/80 max-w-3xl">
-              Comprehensive protection and financing solutions designed for Malaysian businesses. From policy negotiation to claim settlement, we handle it all.
+              {t('services_hero_desc')}
             </p>
           </div>
         </div>
@@ -104,10 +107,10 @@ const Services = () => {
       <section className="py-20 lg:py-32 bg-shefa-white">
         <div className="w-[86vw] mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow block mb-4">What We Offer</span>
+            <span className="eyebrow block mb-4">{t('services_offer_eyebrow')}</span>
             <div className="gold-rule mx-auto mb-6" />
             <h2 className="heading-lg text-shefa-navy">
-              End-to-End <span className="text-shefa-gold">Protection</span>
+              {t('services_offer_title')} <span className="text-shefa-gold">{t('services_offer_title_accent')}</span>
             </h2>
           </div>
 
@@ -140,13 +143,13 @@ const Services = () => {
       <section className="py-20 lg:py-32 bg-shefa-navy">
         <div className="w-[86vw] mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow block mb-4 text-white/60">Coverage Options</span>
+            <span className="eyebrow block mb-4 text-white/60">{t('services_opt_eyebrow')}</span>
             <div className="gold-rule mx-auto mb-6" />
             <h2 className="heading-lg text-white mb-4">
-              Types of <span className="text-shefa-gold">Coverage</span>
+              {t('services_opt_title')} <span className="text-shefa-gold">{t('services_opt_title_accent')}</span>
             </h2>
             <p className="text-white/70">
-              Choose the coverage that best fits your business needs and trading patterns.
+              {t('services_opt_desc')}
             </p>
           </div>
 
@@ -171,13 +174,13 @@ const Services = () => {
       <section className="py-20 lg:py-32 bg-shefa-white">
         <div className="w-[86vw] mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow block mb-4">The Process</span>
+            <span className="eyebrow block mb-4">{t('services_how_eyebrow')}</span>
             <div className="gold-rule mx-auto mb-6" />
             <h2 className="heading-lg text-shefa-navy mb-4">
-              How It <span className="text-shefa-gold">Works</span>
+              {t('services_how_title')} <span className="text-shefa-gold">{t('services_how_title_accent')}</span>
             </h2>
             <p className="body-lg">
-              From policy setup to claim settlement—simple, transparent, and fast.
+              {t('services_how_desc')}
             </p>
           </div>
 
@@ -185,18 +188,18 @@ const Services = () => {
             {[
               {
                 step: '1',
-                title: 'Assessment',
-                description: 'We analyze your buyer portfolio, trade patterns, and credit sales history to understand your risk profile.',
+                title: t('services_step1_title'),
+                description: t('services_step1_desc'),
               },
               {
                 step: '2',
-                title: 'Policy Setup',
-                description: 'We negotiate with insurers to secure the best coverage terms tailored to your specific needs.',
+                title: t('services_step2_title'),
+                description: t('services_step2_desc'),
               },
               {
                 step: '3',
-                title: 'Ongoing Support',
-                description: 'We provide continuous monitoring, claim management, and policy adjustments as your business grows.',
+                title: t('services_step3_title'),
+                description: t('services_step3_desc'),
               },
             ].map((step) => (
               <div key={step.step} className="text-center">
@@ -217,28 +220,28 @@ const Services = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="heading-lg text-shefa-navy mb-6">
-                Confidence and Security
+                {t('services_conf_title')}
               </h2>
               <p className="text-shefa-navy/80 text-lg mb-8">
-                With trade credit insurance, you gain peace of mind, knowing your profits, liquidity, and cash flow are protected, allowing you to expand your business confidently.
+                {t('services_conf_desc')}
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="/borrowers" className="inline-flex items-center px-8 py-4 bg-shefa-navy text-white font-medium rounded-full hover:bg-shefa-navy/90 transition-colors">
-                  For Borrowers
+                  {t('nav_borrowers')}
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </a>
                 <a href="/lenders" className="inline-flex items-center px-8 py-4 bg-white text-shefa-navy font-medium rounded-full hover:bg-white/90 transition-colors">
-                  For Lenders
+                  {t('nav_lenders')}
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </a>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-6">
               {[
-                { value: '<48h', label: 'Policy Indication' },
-                { value: '90%', label: 'Coverage Available' },
-                { value: '30-60', label: 'Days Claim Settlement' },
-                { value: '24/7', label: 'Support Available' },
+                { value: '<48h', label: t('services_stat1_label') },
+                { value: '90%', label: t('services_stat2_label') },
+                { value: '30-60', label: t('services_stat3_label') },
+                { value: '24/7', label: t('services_stat4_label') },
               ].map((stat) => (
                 <div key={stat.label} className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center">
                   <div className="font-heading text-3xl font-bold text-shefa-navy mb-1">{stat.value}</div>
@@ -256,13 +259,13 @@ const Services = () => {
           <div className="card p-12 lg:p-16 text-center">
             <Shield className="w-16 h-16 text-shefa-gold mx-auto mb-6" />
             <h2 className="heading-lg text-shefa-navy mb-4">
-              Ready to Protect Your <span className="text-shefa-gold">Business?</span>
+              {t('services_final_title')} <span className="text-shefa-gold">{t('services_final_title_accent')}</span>
             </h2>
             <p className="body-lg max-w-2xl mx-auto mb-8">
-              Get a tailored trade credit insurance policy designed for your business needs. Speak to our team today.
+              {t('services_final_desc')}
             </p>
             <a href="/contact" className="btn-primary">
-              Get a Quote
+              {t('nav_quote')}
               <ArrowRight className="ml-2 w-4 h-4" />
             </a>
           </div>
