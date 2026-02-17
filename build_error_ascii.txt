@@ -1,5 +1,0 @@
-
-> shefa-risk-management@0.0.0 build
-> tsc && vite build
-
-src/App.tsx(2,29): error TS6133: 'Users' is declared but its value is never read.

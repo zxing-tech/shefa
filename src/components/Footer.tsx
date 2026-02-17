@@ -1,13 +1,15 @@
 import { Shield, Mail, MapPin, Globe } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 interface FooterProps {
     onNavigate: (page: any, hash?: string) => void;
 }
 
 const Footer = ({ onNavigate }: FooterProps) => {
+    const { t } = useLanguage();
 
     return (
-        <footer className="bg-[#1A2255] text-white pt-24 pb-12 overflow-hidden relative">
+        <footer className="bg-shefa-cobalt text-white pt-24 pb-12 overflow-hidden relative">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary to-primary" />
 
             {/* Abstract background detail */}
@@ -24,10 +26,10 @@ const Footer = ({ onNavigate }: FooterProps) => {
                                     <span className="font-heading font-black text-2xl tracking-[2px] uppercase text-white leading-none">
                                         <span className="border-b-4 border-secondary pb-0.5">SHEFA</span>
                                     </span>
-                                    <span className="text-[8px] font-black uppercase tracking-[0.4em] mt-1.5 text-secondary">Risk Management</span>
+                                    <span className="text-[8px] font-black uppercase tracking-[0.4em] mt-1.5 text-secondary">{t('footer_risk_mgmt')}</span>
                                 </div>
                                 <p className="text-white/50 text-xl font-light leading-relaxed max-w-md">
-                                    Institutional trade finance & risk management. Bridging the liquidity gap for Malaysia's industrial backbone with AA-rated insurance protection.
+                                    {t('footer_desc')}
                                 </p>
                             </div>
 
@@ -49,29 +51,29 @@ const Footer = ({ onNavigate }: FooterProps) => {
                         {/* Links Sections */}
                         <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-12">
                             <div className="space-y-8">
-                                <div className="text-[10px] font-black uppercase tracking-[0.4em] text-secondary">Solutions</div>
+                                <div className="text-[10px] font-black uppercase tracking-[0.4em] text-secondary">{t('footer_solutions')}</div>
                                 <ul className="space-y-4">
-                                    <li><button onClick={() => onNavigate('borrowers', '#invoice-financing')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all">Invoice Financing</button></li>
-                                    <li><button onClick={() => onNavigate('borrowers', '#supply-chain')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all">Supply Chain Finance</button></li>
-                                    <li><button onClick={() => onNavigate('industries')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all">Sector Expertise</button></li>
+                                    <li><button onClick={() => onNavigate('borrowers', '#invoice-financing')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all text-left">{t('nav_invoice_financing')}</button></li>
+                                    <li><button onClick={() => onNavigate('borrowers', '#supply-chain')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all text-left">{t('nav_supply_chain')}</button></li>
+                                    <li><button onClick={() => onNavigate('industries')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all text-left">{t('footer_sector_expertise')}</button></li>
                                 </ul>
                             </div>
 
                             <div className="space-y-8">
-                                <div className="text-[10px] font-black uppercase tracking-[0.4em] text-secondary">Investors</div>
+                                <div className="text-[10px] font-black uppercase tracking-[0.4em] text-secondary">{t('footer_investors')}</div>
                                 <ul className="space-y-4">
-                                    <li><button onClick={() => onNavigate('lenders')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all">Investment Notes</button></li>
-                                    <li><button onClick={() => window.open('https://kldx.com.my')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all">KLDX Platform</button></li>
-                                    <li><button onClick={() => onNavigate('services')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all">Service Suite</button></li>
+                                    <li><button onClick={() => onNavigate('lenders')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all text-left">{t('footer_investment_notes')}</button></li>
+                                    <li><button onClick={() => window.open('https://kldx.com.my')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all text-left">KLDX Platform</button></li>
+                                    <li><button onClick={() => onNavigate('services')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all text-left">{t('footer_service_suite')}</button></li>
                                 </ul>
                             </div>
 
                             <div className="space-y-8">
-                                <div className="text-[10px] font-black uppercase tracking-[0.4em] text-secondary">Organization</div>
+                                <div className="text-[10px] font-black uppercase tracking-[0.4em] text-secondary">{t('footer_organization')}</div>
                                 <ul className="space-y-4">
-                                    <li><button onClick={() => onNavigate('about', '#about')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all">Our Story</button></li>
-                                    <li><button onClick={() => onNavigate('about', '#leadership')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all">Leadership</button></li>
-                                    <li><button onClick={() => onNavigate('about', '#contact')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all">Contact HQ</button></li>
+                                    <li><button onClick={() => onNavigate('about', '#about')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all text-left">{t('footer_our_story')}</button></li>
+                                    <li><button onClick={() => onNavigate('about', '#leadership')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all text-left">{t('footer_leadership')}</button></li>
+                                    <li><button onClick={() => onNavigate('about', '#contact')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all text-left">{t('footer_contact_hq')}</button></li>
                                 </ul>
                             </div>
                         </div>
@@ -80,7 +82,7 @@ const Footer = ({ onNavigate }: FooterProps) => {
                     <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
                         <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-white/20">
                             <Shield size={16} />
-                            <span>&copy; {new Date().getFullYear()} Shefa Risk Management. Private & Confidential.</span>
+                            <span>&copy; {new Date().getFullYear()} {t('footer_rights')}</span>
                         </div>
 
                         <div className="flex items-center gap-8">

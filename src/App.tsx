@@ -10,6 +10,7 @@ import Industries from './pages/Industries';
 import Contact from './pages/Contact';
 
 import { ThemeProvider } from './context/ThemeContext';
+import { LanguageProvider } from './context/LanguageContext';
 
 type Page = 'home' | 'borrowers' | 'lenders' | 'about' | 'services' | 'industries' | 'contact';
 
@@ -75,11 +76,13 @@ function App() {
 
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
-        <Navigation currentPage={currentPage} onNavigate={navigateTo} />
-        {renderPage()}
-        <Footer onNavigate={navigateTo} />
-      </div>
+      <LanguageProvider>
+        <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+          <Navigation currentPage={currentPage} onNavigate={navigateTo} />
+          {renderPage()}
+          <Footer onNavigate={navigateTo} />
+        </div>
+      </LanguageProvider>
     </ThemeProvider>
   );
 }

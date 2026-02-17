@@ -28,3 +28,8 @@ assets/index-*.js
 assets/index-*.css
 
 .vercel
+
+# Build logs
+build_*.txt
+status_*.txt
+error_*.log

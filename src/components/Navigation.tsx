@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, Globe, Sun, Moon } from 'lucide-react';
+import { Menu, X, ChevronDown, Globe, Sun, Moon, Check } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+import { useLanguage } from '../context/LanguageContext';
 
 type Page = 'home' | 'borrowers' | 'lenders' | 'about' | 'services' | 'industries' | 'contact';
 
@@ -13,7 +14,10 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+
   const { theme, toggleTheme } = useTheme();
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,25 +30,14 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
 
   const navLinks = [
     {
-      label: 'Borrowers',
+      label: t('nav_borrowers'),
       page: 'borrowers' as Page,
       dropdown: [
-        { label: 'Invoice Financing', hash: '#invoice-financing' },
-        { label: 'Supply Chain Financing', hash: '#supply-chain' }
+        { label: t('nav_invoice_financing'), hash: '#invoice-financing' },
+        { label: t('nav_supply_chain'), hash: '#supply-chain' }
       ]
     },
-    { label: 'Lenders', page: 'lenders' as Page },
-    { label: 'Services', page: 'services' as Page },
-    { label: 'Industries', page: 'industries' as Page },
-    {
-      label: 'Company',
-      page: 'about' as Page,
-      dropdown: [
-        { label: 'About Us', hash: '#about' },
-        { label: 'Team', hash: '#leadership' },
-        { label: 'Contact', hash: '#contact', page: 'contact' as Page }
-      ]
-    },
+    { label: t('nav_lenders'), page: 'lenders' as Page },
   ];
 
   const handleNavigate = (page: Page, hash?: string) => {
@@ -53,7 +46,10 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
     setActiveDropdown(null);
   };
 
-
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'ms' : 'en');
+    setIsLangMenuOpen(false);
+  }
 
   return (
     <>
@@ -99,7 +95,7 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
                         <button
                           key={item.label}
                           className="w-full text-left px-5 py-3.5 text-[10px] font-black uppercase tracking-widest text-foreground/60 hover:text-primary hover:bg-primary/5 rounded-xl transition-all"
-                          onClick={() => handleNavigate(item.page || link.page, item.hash)}
+                          onClick={() => handleNavigate(link.page, item.hash)}
                         >
                           {item.label}
                         </button>
@@ -113,9 +109,35 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
 
           {/* Extra Actions */}
           <div className="hidden lg:flex items-center gap-6">
-            <div className="flex items-center gap-2 text-foreground/60">
-              <Globe size={16} />
-              <span className="text-[10px] font-black uppercase tracking-widest">EN</span>
+
+            {/* Language Switcher */}
+            <div className="relative">
+              <button
+                onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                className="flex items-center gap-2 text-foreground/60 hover:text-primary transition-colors"
+              >
+                <Globe size={16} />
+                <span className="text-[10px] font-black uppercase tracking-widest">{language.toUpperCase()}</span>
+              </button>
+
+              {isLangMenuOpen && (
+                <div className="absolute top-full right-0 mt-4 bg-card border border-border rounded-[20px] p-2 w-32 shadow-2xl">
+                  <button
+                    onClick={() => { setLanguage('en'); setIsLangMenuOpen(false); }}
+                    className={`w-full text-left px-4 py-3 text-[10px] font-black uppercase tracking-widest rounded-xl transition-all flex justify-between items-center ${language === 'en' ? 'text-primary bg-primary/5' : 'text-foreground/60 hover:bg-foreground/5'}`}
+                  >
+                    English
+                    {language === 'en' && <Check size={12} />}
+                  </button>
+                  <button
+                    onClick={() => { setLanguage('ms'); setIsLangMenuOpen(false); }}
+                    className={`w-full text-left px-4 py-3 text-[10px] font-black uppercase tracking-widest rounded-xl transition-all flex justify-between items-center ${language === 'ms' ? 'text-primary bg-primary/5' : 'text-foreground/60 hover:bg-foreground/5'}`}
+                  >
+                    Malay
+                    {language === 'ms' && <Check size={12} />}
+                  </button>
+                </div>
+              )}
             </div>
 
             <button
@@ -130,7 +152,7 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
               onClick={() => handleNavigate('borrowers')}
               className="bg-secondary text-secondary-foreground px-8 py-3.5 rounded-xl font-black text-[10px] uppercase tracking-[0.2em] hover:brightness-105 active:scale-95 transition-all shadow-xl hover:shadow-glow-gold"
             >
-              Get Funded
+              {t('nav_get_funded')}
             </button>
           </div>
 
@@ -164,7 +186,7 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
                     {link.dropdown.map(item => (
                       <button
                         key={item.label}
-                        onClick={() => handleNavigate(item.page || link.page, item.hash)}
+                        onClick={() => handleNavigate(link.page, item.hash)}
                         className="text-sm font-black uppercase tracking-[0.2em] text-foreground/40"
                       >
                         {item.label}
@@ -183,21 +205,21 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
               <div className="w-12 h-12 rounded-2xl bg-foreground/5 flex items-center justify-center mb-1">
                 {theme === 'light' ? <Moon size={22} /> : <Sun size={22} />}
               </div>
-              Theme
+              {t('theme')}
             </button>
-            <div className="flex flex-col items-center gap-2 text-foreground font-black uppercase text-[10px] tracking-widest">
+            <button onClick={toggleLanguage} className="flex flex-col items-center gap-2 text-foreground font-black uppercase text-[10px] tracking-widest">
               <div className="w-12 h-12 rounded-2xl bg-foreground/5 flex items-center justify-center mb-1">
                 <Globe size={22} />
               </div>
-              EN
-            </div>
+              {t('language')} ({language.toUpperCase()})
+            </button>
           </div>
 
           <button
             onClick={() => handleNavigate('borrowers')}
             className="w-full bg-secondary text-secondary-foreground py-6 rounded-2xl font-black uppercase tracking-[0.3em] text-sm shadow-2xl"
           >
-            Get Funded
+            {t('nav_get_funded')}
           </button>
         </div>
       </div>

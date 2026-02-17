@@ -6,75 +6,55 @@
 
 @layer base {
   :root {
-    /* Light Mode (Switch to these when .light is active) */
-    --background: 210 17% 97%;
-    /* #F4F6F8 */
-    --foreground: 232 53% 33%;
-    /* #27337F */
+    /* Light Mode (Primary) */
+    --background: 0 0% 100%;
+    /* #FFFFFF */
+    --foreground: 220 53% 33%;
+    /* #27337F (Electric Cobalt/Blue) */
     --card: 0 0% 100%;
     /* #FFFFFF */
-    --card-foreground: 232 53% 33%;
+    --card-foreground: 220 53% 33%;
     --popover: 0 0% 100%;
-    --popover-foreground: 232 53% 33%;
-    --primary: 220 84% 37%;
-    /* Electric Cobalt (#0F43AD) in light mode */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 45 97% 51%;
-    /* Gold (#FCC008) */
-    --secondary-foreground: 232 53% 33%;
-    --muted: 210 17% 90%;
-    --muted-foreground: 232 53% 43%;
+    --popover-foreground: 220 53% 33%;
+    --primary: 45 97% 51%;
+    /* #FCC008 (Shefa Gold) */
+    --primary-foreground: 220 53% 33%;
+    --secondary: 220 84% 37%;
+    /* #0F43AD (Navy) */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 17% 95%;
+    --muted-foreground: 220 53% 43%;
     --accent: 45 97% 51%;
-    --accent-foreground: 232 53% 33%;
+    --accent-foreground: 220 53% 33%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     --border: 210 17% 90%;
     --input: 210 17% 90%;
-    --ring: 220 84% 37%;
+    --ring: 45 97% 51%;
     --radius: 0.75rem;
   }
 
-  /* Default is DARK MODE (as per user master status) */
-  :root,
   .dark {
-    --background: 232 53% 33%;
-    /* #27337F Royal Navy */
+    --background: 220 53% 33%;
+    /* #27337F Blue */
     --foreground: 0 0% 100%;
-    /* White */
-    --card: 232 53% 22%;
-    /* #1A2255 Deep Navy */
+    --card: 220 53% 25%;
     --card-foreground: 0 0% 100%;
-    --popover: 232 53% 22%;
+    --popover: 220 53% 25%;
     --popover-foreground: 0 0% 100%;
     --primary: 45 97% 51%;
-    /* Prosperity Gold (#FCC008) as primary in Dark mode */
-    --primary-foreground: 232 53% 33%;
+    --primary-foreground: 220 53% 33%;
     --secondary: 220 84% 37%;
-    /* Electric Cobalt (#0F43AD) */
     --secondary-foreground: 0 0% 100%;
-    --muted: 232 53% 28%;
-    --muted-foreground: 232 20% 80%;
+    --muted: 220 53% 28%;
+    --muted-foreground: 220 20% 80%;
     --accent: 45 97% 51%;
-    --accent-foreground: 232 53% 33%;
+    --accent-foreground: 220 53% 33%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 232 53% 38%;
-    --input: 232 53% 38%;
+    --border: 220 53% 38%;
+    --input: 220 53% 38%;
     --ring: 45 97% 51%;
-  }
-
-  /* Force .light override */
-  .light {
-    --background: 210 17% 97%;
-    --foreground: 232 53% 33%;
-    --card: 0 0% 100%;
-    --card-foreground: 232 53% 33%;
-    --primary: 220 84% 37%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 45 97% 51%;
-    --secondary-foreground: 232 53% 33%;
-    --border: 210 17% 90%;
-    --ring: 220 84% 37%;
   }
 }
 
