@@ -1,4 +1,4 @@
-import { ArrowRight, Shield, Clock, TrendingUp, CheckCircle, Smartphone, FileText, Zap } from 'lucide-react';
+import { ArrowRight, Shield, Clock, TrendingUp, Smartphone, FileText, Zap } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const Borrowers = () => {
