@@ -116,8 +116,8 @@ const Lenders = () => {
                       <TrendingUp className="w-5 h-5 text-shefa-gold" />
                     </div>
                     <div>
-                      <span className="font-mono text-xs text-shefa-gold mb-1 block">SOURCE</span>
-                      <div className="font-heading text-lg">Lender Capital</div>
+                      <span className="font-mono text-xs text-shefa-gold mb-1 block">{t('lenders_flow_source')}</span>
+                      <div className="font-heading text-lg">{t('lenders_flow_source_label')}</div>
                     </div>
                   </div>
 
@@ -128,9 +128,9 @@ const Lenders = () => {
                       S
                     </div>
                     <div>
-                      <span className="font-mono text-xs text-shefa-gold mb-1 block">INTERMEDIARY</span>
-                      <div className="font-heading text-lg">Shefa Platform</div>
-                      <div className="text-xs text-white/60">Risk Assessment & Allocation</div>
+                      <span className="font-mono text-xs text-shefa-gold mb-1 block">{t('lenders_flow_intermediary')}</span>
+                      <div className="font-heading text-lg">{t('lenders_flow_intermediary_label')}</div>
+                      <div className="text-xs text-white/60">{t('lenders_flow_intermediary_desc')}</div>
                     </div>
                   </div>
 
@@ -141,9 +141,9 @@ const Lenders = () => {
                       <Shield className="w-5 h-5 text-shefa-gold" />
                     </div>
                     <div>
-                      <span className="font-mono text-xs text-shefa-gold mb-1 block">DESTINATION (SECURED)</span>
-                      <div className="font-heading text-lg">Insured Borrower</div>
-                      <div className="text-xs text-white/60">Backed by A-Rated Insurance</div>
+                      <span className="font-mono text-xs text-shefa-gold mb-1 block">{t('lenders_flow_destination')}</span>
+                      <div className="font-heading text-lg">{t('lenders_flow_destination_label')}</div>
+                      <div className="text-xs text-white/60">{t('lenders_flow_destination_desc')}</div>
                     </div>
                   </div>
                 </div>

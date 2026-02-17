@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -41,19 +41,24 @@
   * {
     @apply border-border;
   }
-  
+
   html {
     scroll-behavior: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
+
   body {
     @apply bg-shefa-white text-shefa-black font-sans;
     overflow-x: hidden;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading font-medium tracking-tight;
   }
 }
@@ -62,63 +67,63 @@
   .eyebrow {
     @apply font-mono text-xs font-medium uppercase tracking-[0.14em] text-shefa-gray;
   }
-  
+
   .heading-xl {
-    @apply font-heading text-[clamp(44px,5vw,76px)] font-medium leading-[0.95] tracking-[-0.02em];
+    @apply font-heading text-[clamp(44px, 5vw, 76px)] font-medium leading-[0.95] tracking-[-0.02em];
   }
-  
+
   .heading-lg {
-    @apply font-heading text-[clamp(34px,3.6vw,56px)] font-medium leading-[1.0];
+    @apply font-heading text-[clamp(34px, 3.6vw, 56px)] font-medium leading-[1.0];
   }
-  
+
   .heading-md {
-    @apply font-heading text-[clamp(28px,2.8vw,42px)] font-medium leading-[1.1];
+    @apply font-heading text-[clamp(28px, 2.8vw, 42px)] font-medium leading-[1.1];
   }
-  
+
   .body-lg {
     @apply text-lg leading-relaxed text-shefa-gray;
   }
-  
+
   .body-base {
     @apply text-base leading-[1.55] text-shefa-gray;
   }
-  
+
   .btn-primary {
     @apply inline-flex items-center justify-center px-8 py-4 bg-shefa-navy text-white font-medium rounded-pill transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card;
   }
-  
+
   .btn-secondary {
     @apply inline-flex items-center justify-center px-8 py-4 border-2 border-shefa-gold text-shefa-navy font-medium rounded-pill transition-all duration-200 hover:-translate-y-0.5 hover:bg-shefa-gold/5;
   }
-  
+
   .btn-outline {
     @apply inline-flex items-center justify-center px-8 py-4 border border-shefa-navy/20 text-shefa-navy font-medium rounded-pill transition-all duration-200 hover:-translate-y-0.5 hover:border-shefa-navy/40;
   }
-  
+
   .card {
     @apply bg-white rounded-3xl border border-[#E9ECEF] p-8 transition-all duration-200;
   }
-  
+
   .card-hover:hover {
     @apply -translate-y-1 shadow-card-hover;
   }
-  
+
   .gold-rule {
     @apply w-[72px] h-[2px] bg-shefa-gold;
   }
-  
+
   .section-light {
     @apply bg-shefa-white;
   }
-  
+
   .section-dark {
     @apply bg-shefa-black text-shefa-white;
   }
-  
+
   .image-card {
     @apply rounded-3xl overflow-hidden;
   }
-  
+
   .grain-overlay {
     @apply fixed inset-0 pointer-events-none z-[9999] opacity-[0.06] mix-blend-multiply;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
@@ -129,12 +134,12 @@
   .text-balance {
     text-wrap: balance;
   }
-  
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  
+
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
@@ -163,6 +168,7 @@ html.lenis {
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {

@@ -1,5 +1,6 @@
 import { ArrowRight, Shield, Clock, TrendingUp, Smartphone, FileText, Zap } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import FundingCalculator from '../components/FundingCalculator';
 
 const Borrowers = () => {
   const { t } = useLanguage();
@@ -112,12 +113,10 @@ const Borrowers = () => {
             </div>
             <div className="order-1 lg:order-2">
               <div className="relative">
-                <img
-                  src="/coverage_factory.jpg"
-                  alt="Manufacturing Facility"
-                  className="rounded-3xl shadow-2xl relative z-10"
-                />
-                <div className="absolute -bottom-6 -right-6 w-full h-full border-2 border-shefa-gold rounded-3xl z-0" />
+                <div className="relative z-10">
+                  <FundingCalculator />
+                </div>
+                <div className="hidden lg:block absolute -bottom-6 -right-6 w-full h-full border-2 border-shefa-gold rounded-3xl z-0" />
               </div>
             </div>
           </div>
@@ -182,11 +181,11 @@ const Borrowers = () => {
 
             <div className="relative z-10 max-w-3xl">
               <h2 className="heading-lg text-shefa-navy mb-6">
-                Ready to Access <br />
-                <span className="opacity-60">Insured Capital?</span>
+                {t('borrowers_final_title')} <br />
+                <span className="opacity-60">{t('borrowers_final_title_accent')}</span>
               </h2>
               <p className="text-shefa-navy/80 text-xl mb-10 max-w-2xl">
-                Get a funding indication for your invoices within 24 hours. No cost to apply, no hidden fees.
+                {t('borrowers_final_desc')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="/contact" className="btn-primary bg-shefa-navy text-white hover:bg-shefa-navy/90 border-shefa-navy">
@@ -194,7 +193,7 @@ const Borrowers = () => {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </a>
                 <a href="tel:+60327745254" className="inline-flex items-center px-8 py-4 bg-transparent text-shefa-navy font-bold border-2 border-shefa-navy/20 rounded-full hover:bg-shefa-navy/5 transition-all">
-                  Talk to an Advisor
+                  {t('borrowers_final_cta_advisor')}
                 </a>
               </div>
             </div>

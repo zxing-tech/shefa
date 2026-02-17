@@ -25,6 +25,8 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
   }, []);
 
   const navLinks: { label: string; page: Page }[] = [
+    { label: t('nav_about'), page: 'about' },
+    { label: t('nav_services'), page: 'services' },
     { label: t('nav_borrowers'), page: 'borrowers' },
     { label: t('nav_lenders'), page: 'lenders' },
   ];

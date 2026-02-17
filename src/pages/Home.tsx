@@ -37,7 +37,7 @@ const Home = ({ navigateTo }: HomeProps) => {
         <div className="relative z-10 w-full px-6 lg:px-12 pt-32 pb-20">
           <div className="max-w-3xl">
             <span className="inline-block px-4 py-2 bg-shefa-gold/20 backdrop-blur-sm rounded-full text-shefa-gold text-sm font-medium mb-6">
-              Shefa Risk Management
+              {t('home_hero_tag')}
             </span>
             <h1 className="heading-xl text-white mb-6">
               {t('home_hero_title')}{" "}
@@ -86,6 +86,7 @@ const Home = ({ navigateTo }: HomeProps) => {
                 src="/approach_handshake.jpg"
                 alt="Business Partnership"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
           </div>
@@ -155,6 +156,7 @@ const Home = ({ navigateTo }: HomeProps) => {
                 src="/borrower_hero.jpg"
                 alt="For Borrowers"
                 className="w-full h-[400px] lg:h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-shefa-navy/90 via-shefa-navy/50 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8">
@@ -180,6 +182,7 @@ const Home = ({ navigateTo }: HomeProps) => {
                 src="/lender_hero.jpg"
                 alt="For Lenders"
                 className="w-full h-[400px] lg:h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-shefa-navy/90 via-shefa-navy/50 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8">
@@ -222,6 +225,7 @@ const Home = ({ navigateTo }: HomeProps) => {
                     src={industry.image}
                     alt={industry.name}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-shefa-navy/80 via-shefa-navy/40 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5">
@@ -242,7 +246,7 @@ const Home = ({ navigateTo }: HomeProps) => {
         <div className="w-[86vw] mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { value: '<48h', label: 'Policy Indication' },
+              { value: '<48h', label: t('home_stats_policy') },
               { value: '94%', label: t('home_stats_satisfaction') },
               { value: 'MYR 2.8B+', label: t('home_stats_receivables') },
               { value: '40+', label: t('home_stats_experience') },
@@ -264,6 +268,7 @@ const Home = ({ navigateTo }: HomeProps) => {
               src="/cta_container.jpg"
               alt="Get Started"
               className="w-full h-[400px] lg:h-[500px] object-cover"
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-shefa-navy/80" />
             <div className="absolute inset-0 flex items-center justify-center text-center p-8">

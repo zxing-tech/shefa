@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+import WhatsAppButton from './components/WhatsAppButton';
 import { LanguageProvider } from './context/LanguageContext';
 import Home from './pages/Home';
 import Borrowers from './pages/Borrowers';
@@ -65,6 +66,7 @@ function App() {
         <Navigation currentPage={currentPage} onNavigate={navigateTo} />
         {renderPage()}
         <Footer onNavigate={navigateTo} />
+        <WhatsAppButton />
       </div>
     </LanguageProvider>
   );

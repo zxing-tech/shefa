@@ -26,22 +26,22 @@ const About = () => {
     {
       name: 'Russell Boyd',
       title: 'Director / CEO',
-      image: '/assets/legacy/russell_boyd.webp',
+      image: 'https://ui-avatars.com/api/?name=Russell+Boyd&background=C8A34C&color=fff',
     },
     {
       name: 'Dr. Surendran Sanggarin',
       title: 'Director / COO',
-      image: '/assets/legacy/dr_surendran.webp',
+      image: 'https://ui-avatars.com/api/?name=Dr+Surendran+Sanggarin&background=C8A34C&color=fff',
     },
     {
       name: "Dato' Chik Nazrin",
       title: 'Director / CRO',
-      image: '/assets/legacy/dato_chik.webp',
+      image: 'https://ui-avatars.com/api/?name=Dato+Chik+Nazrin&background=C8A34C&color=fff',
     },
     {
       name: 'Laura Daniel',
       title: 'Advisor',
-      image: '/assets/legacy/laura_daniel.webp',
+      image: 'https://ui-avatars.com/api/?name=Laura+Daniel&background=C8A34C&color=fff',
     },
   ];
 
@@ -51,7 +51,7 @@ const About = () => {
       <section className="relative py-20 lg:py-32 bg-shefa-navy">
         <div className="w-[86vw] mx-auto">
           <div className="max-w-4xl">
-            <span className="eyebrow block mb-4 text-white/60">About Shefa</span>
+            <span className="eyebrow block mb-4 text-white/60">{t('about_hero_eyebrow')}</span>
             <div className="gold-rule mb-6" />
             <h1 className="heading-xl text-white mb-6">
               {t('about_hero_title')}{" "}
@@ -82,7 +82,7 @@ const About = () => {
         <div className="w-[86vw] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div>
-              <span className="eyebrow block mb-4 text-white/60">Our Story</span>
+              <span className="eyebrow block mb-4 text-white/60">{t('about_story_eyebrow')}</span>
               <div className="gold-rule mb-6" />
               <h2 className="heading-lg text-white mb-6">
                 {t('about_story_title')} <span className="text-shefa-gold">{t('about_story_title_accent')}</span>
@@ -99,6 +99,7 @@ const About = () => {
                 src="/why_meeting.jpg"
                 alt="Shefa Team"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
           </div>
@@ -174,6 +175,7 @@ const About = () => {
                     src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    loading="lazy"
                   />
                 </div>
                 <div className="gold-rule mb-3" />

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const Contact = () => {
@@ -247,6 +247,7 @@ const Contact = () => {
                 src="/hero_main.jpg"
                 alt="Shefa Office"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
           </div>
@@ -267,11 +268,21 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="rounded-3xl overflow-hidden bg-white/5 border border-white/10 h-[400px] flex items-center justify-center">
-            <div className="text-center p-8">
-              <MapPin className="w-16 h-16 text-shefa-gold mx-auto mb-4" />
-              <h3 className="font-heading text-xl font-medium text-white mb-2">Shefa Risk Management</h3>
-              <p className="text-white/70">
+          <div className="rounded-3xl overflow-hidden bg-white/5 border border-white/10 h-[500px] relative">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.8344837581!2d101.6705!3d3.1188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc49887702f30b%3A0x550d50731557053e!2sKL%20Eco%20City!5e0!3m2!1sen!2smy!4v1700000000000!5m2!1sen!2smy"
+              width="100%"
+              height="100%"
+              style={{ border: 0, filter: 'grayscale(1) contrast(1.2) opacity(0.8)' }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Shefa Risk Management Location"
+              className="absolute inset-0"
+            />
+            <div className="absolute bottom-8 left-8 bg-shefa-navy/90 backdrop-blur-md p-6 rounded-2xl border border-white/10 max-w-sm">
+              <h3 className="font-heading text-lg font-medium text-white mb-2">Shefa Risk Management</h3>
+              <p className="text-white/70 text-sm mb-4">
                 Level 19, Boutique Office 1, Menara 2<br />
                 KL Eco City, 59200 Kuala Lumpur
               </p>
@@ -279,9 +290,9 @@ const Contact = () => {
                 href="https://maps.google.com/?q=KL+Eco+City"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center mt-6 px-6 py-3 bg-shefa-gold text-shefa-navy font-medium rounded-full hover:bg-shefa-gold/90 transition-colors"
+                className="text-shefa-gold text-sm font-medium hover:text-white transition-colors flex items-center gap-2"
               >
-                {t('contact_loc_map_btn')}
+                {t('contact_loc_map_btn')} <ArrowRight className="w-4 h-4" />
               </a>
             </div>
           </div>

@@ -83,6 +83,14 @@ export const translations = {
         industry_technology: "Technology",
         industry_healthcare: "Healthcare",
 
+        // Home extras
+        home_hero_tag: "Shefa Risk Management",
+        home_stats_policy: "Policy Indication",
+
+        // About extras
+        about_hero_eyebrow: "About Shefa",
+        about_story_eyebrow: "Our Story",
+
         // About
         about_hero_title: "Institutional Security Meets",
         about_hero_title_accent: "Economic Momentum",
@@ -143,6 +151,12 @@ export const translations = {
         borrowers_how_step3_title: "Fast Funding",
         borrowers_how_step3_desc: "Receive up to 80% of the invoice value in your account within 48 hours.",
 
+        // Borrowers final CTA
+        borrowers_final_title: "Ready to Access",
+        borrowers_final_title_accent: "Insured Capital?",
+        borrowers_final_desc: "Get a funding indication for your invoices within 24 hours. No cost to apply, no hidden fees.",
+        borrowers_final_cta_advisor: "Talk to an Advisor",
+
         // Lenders
         lenders_hero_tag: "For Institutional & Accredited Investors",
         lenders_hero_title: "Invest with an",
@@ -165,7 +179,17 @@ export const translations = {
         lenders_benefit2_title: "Targeted Returns",
         lenders_benefit2_desc: "Aim for 8-15% annual returns. This is a risk-adjusted yield derived from real economic activity, not speculation.",
         lenders_benefit3_title: "Due Diligence",
-        lenders_benefit3_desc: "We don’t just list anyone. Every borrower is vetted, and every invoice is verified against the insurer’s credit limits.",
+        lenders_benefit3_desc: "We don't just list anyone. Every borrower is vetted, and every invoice is verified against the insurer's credit limits.",
+
+        // Lenders flow diagram
+        lenders_flow_source: "SOURCE",
+        lenders_flow_source_label: "Lender Capital",
+        lenders_flow_intermediary: "INTERMEDIARY",
+        lenders_flow_intermediary_label: "Shefa Platform",
+        lenders_flow_intermediary_desc: "Risk Assessment & Allocation",
+        lenders_flow_destination: "DESTINATION (SECURED)",
+        lenders_flow_destination_label: "Insured Borrower",
+        lenders_flow_destination_desc: "Backed by A-Rated Insurance",
         lenders_portfolio_eyebrow: "Portfolio Strategy",
         lenders_portfolio_title: "Diversification Across",
         lenders_portfolio_title_accent: "Key Sectors",
@@ -290,7 +314,20 @@ export const translations = {
         contact_loc_title: "Find Us in",
         contact_loc_title_accent: "Kuala Lumpur",
         contact_loc_desc: "Located in the heart of KL Eco City, easily accessible via public transport.",
-        contact_loc_map_btn: "Open in Google Maps",
+        contact_loc_map_btn: "View on Google Maps",
+
+        // Calculator
+        calc_title: "Funding Calculator",
+        calc_desc: "Estimate how much capital you can unlock from your outstanding invoices.",
+        calc_label_amount: "Invoice Value (MYR)",
+        calc_label_terms: "Payment Terms (Days)",
+        calc_result_advance: "Estimated Advance (80%)",
+        calc_result_fees: "Estimated Fees",
+        calc_result_net: "Net Funding",
+        calc_disclaimer: "*Estimates only. Final terms subject to credit assessment.",
+
+        // WA
+        wa_chat: "Chat with Us",
     },
     ms: {
         // Navigation
@@ -376,6 +413,14 @@ export const translations = {
         industry_technology: "Teknologi",
         industry_healthcare: "Penjagaan Kesihatan",
 
+        // Home extras
+        home_hero_tag: "Shefa Risk Management",
+        home_stats_policy: "Petunjuk Polisi",
+
+        // About extras
+        about_hero_eyebrow: "Tentang Shefa",
+        about_story_eyebrow: "Cerita Kami",
+
         // About
         about_hero_title: "Keselamatan Institusi Bertemu",
         about_hero_title_accent: "Momentum Ekonomi",
@@ -436,6 +481,12 @@ export const translations = {
         borrowers_how_step3_title: "Pembiayaan Pantas",
         borrowers_how_step3_desc: "Terima sehingga 80% daripada nilai invois dalam akaun anda dalam masa 48 jam.",
 
+        // Borrowers final CTA
+        borrowers_final_title: "Bersedia untuk Mengakses",
+        borrowers_final_title_accent: "Modal Berinsurans?",
+        borrowers_final_desc: "Dapatkan petunjuk pembiayaan untuk invois anda dalam masa 24 jam. Tiada kos untuk memohon, tiada yuran tersembunyi.",
+        borrowers_final_cta_advisor: "Bercakap dengan Penasihat",
+
         // Lenders
         lenders_hero_tag: "Untuk Pelabur Institusi & Bertauliah",
         lenders_hero_title: "Melabur dengan",
@@ -459,6 +510,16 @@ export const translations = {
         lenders_benefit2_desc: "Sasarkan pulangan tahunan 8-15%. Ini adalah hasil terlaras risiko yang diperoleh daripada aktiviti ekonomi sebenar, bukan spekulasi.",
         lenders_benefit3_title: "Uji Tuntas",
         lenders_benefit3_desc: "Kami tidak menyenaraikan sesiapa sahaja. Setiap peminjam ditapis, dan setiap invois disahkan terhadap had kredit syarikat insurans.",
+
+        // Lenders flow diagram
+        lenders_flow_source: "SUMBER",
+        lenders_flow_source_label: "Modal Pemberi Pinjaman",
+        lenders_flow_intermediary: "PERANTARA",
+        lenders_flow_intermediary_label: "Platform Shefa",
+        lenders_flow_intermediary_desc: "Penilaian & Pengagihan Risiko",
+        lenders_flow_destination: "DESTINASI (TERJAMIN)",
+        lenders_flow_destination_label: "Peminjam Berinsurans",
+        lenders_flow_destination_desc: "Disokong oleh Insurans Bertaraf-A",
         lenders_portfolio_eyebrow: "Strategi Portfolio",
         lenders_portfolio_title: "Kepelbagaian Merentasi",
         lenders_portfolio_title_accent: "Sektor Utama",
@@ -544,7 +605,7 @@ export const translations = {
         services_stat4_label: "Sokongan Tersedia",
         services_final_title: "Bersedia untuk Melindungi",
         services_final_title_accent: "Perniagaan Anda?",
-        services_final_desc: "Dapatkan polisi insurans kredit perdagangan yang direka untuk keperluan perniagaan anda. Bercakap degan pasukan kami hari ini.",
+        services_final_desc: "Dapatkan polisi insurans kredit perdagangan yang direka untuk keperluan perniagaan anda. Bercakap dengan pasukan kami hari ini.",
 
         // Contact
         contact_hero_eyebrow: "Hubungi",
@@ -556,7 +617,7 @@ export const translations = {
         contact_card3_title: "Emel Kami",
         contact_card4_title: "Waktu Perniagaan",
         contact_form_eyebrow: "Borang Pertanyaan",
-        contact_form_title: "Hantar Kamii",
+        contact_form_title: "Hantar Kami",
         contact_form_title_accent: "Pesanan",
         contact_form_desc: "Isi borang di bawah dan pasukan kami akan membalas dalam masa 48 jam.",
         contact_form_submitted_title: "Mesej Dihantar!",
@@ -583,7 +644,20 @@ export const translations = {
         contact_loc_title: "Cari Kami di",
         contact_loc_title_accent: "Kuala Lumpur",
         contact_loc_desc: "Terletak di tengah-tengah KL Eco City, mudah diakses melalui pengangkutan awam.",
-        contact_loc_map_btn: "Buka di Google Maps",
+        contact_loc_map_btn: "Lihat di Google Maps",
+
+        // Calculator
+        calc_title: "Kalkulator Pembiayaan",
+        calc_desc: "Anggarkan berapa banyak modal yang boleh anda nyahkunci daripada invois tertunggak anda.",
+        calc_label_amount: "Nilai Invois (MYR)",
+        calc_label_terms: "Terma Bayaran (Hari)",
+        calc_result_advance: "Anggaran Pendahuluan (80%)",
+        calc_result_fees: "Anggaran Yuran",
+        calc_result_net: "Pembiayaan Bersih",
+        calc_disclaimer: "*Anggaran sahaja. Terma akhir tertakluk kepada penilaian kredit.",
+
+        // WA
+        wa_chat: "Hubungi Kami",
     },
 };
 
