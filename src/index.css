@@ -98,6 +98,7 @@
 
   .btn-outline {
     @apply inline-flex items-center justify-center px-8 py-4 border border-shefa-navy/20 text-shefa-navy font-medium rounded-pill transition-all duration-200 hover:-translate-y-0.5 hover:border-shefa-navy/40;
+    /* Fix spaces in clamp */
   }
 
   .card {
