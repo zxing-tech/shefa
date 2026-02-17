@@ -1,92 +1,134 @@
-import { ArrowRight, BookOpen, Repeat, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Shield, FileCheck, Gavel, TrendingUp, Globe, Building2, User, ClipboardList, AlertTriangle } from 'lucide-react';
 
 const Services = () => {
-  const services = [
+  const mainServices = [
     {
-      title: 'Receivable Purchase Financing (RPF)',
-      icon: BookOpen,
-      desc: 'Sell your book debts at a discount. You retain the relationship, we provide the liquidity. Non-recourse options available.',
-      features: ['Immediate Liquidity', 'Credit Risk Mitigation', 'Balance Sheet Optimization']
+      icon: Shield,
+      title: 'Protection Against Non-Payment',
+      description: 'Shefa Group gets a trade credit insurance policy, protecting your business if buyers do not pay for goods or services.',
+      features: [
+        'Coverage up to 90% of invoice value',
+        'Protection against insolvency and protracted default',
+        'Domestic and export receivables covered',
+        'Fast claim settlement process',
+      ],
     },
     {
-      title: 'Supply Chain Financing (Payables)',
-      icon: Repeat,
-      desc: 'Reverse Factoring. We pay your suppliers early, you pay us at maturity. Strengthen your supply chain reliability.',
-      features: ['Supplier Loyalty', 'Extended Payment Terms', 'Improved Working Capital']
+      icon: FileCheck,
+      title: 'Policy Negotiation',
+      description: 'We negotiate a tailored policy with insurers based on your estimated annual credit sales and bad debt history.',
+      features: [
+        'Customized coverage limits',
+        'Competitive premium rates',
+        'Flexible policy terms',
+        'Expert broker representation',
+      ],
     },
     {
-      title: 'Trade Credit Insurance Broking',
-      icon: ShieldCheck,
-      desc: 'Protect your P&L against bad debts and customer insolvency. Brokered via top-tier insurers like Coface and Allianz.',
-      features: ['Global Coverage', 'Real-time Credit Monitoring', 'Claims Management Support']
-    }
+      icon: Gavel,
+      title: 'Claim Process Management',
+      description: 'When a distributor becomes insolvent and cannot pay, report the non-payment to Shefa Group. We gather documents and submit claims.',
+      features: [
+        'End-to-end claim handling',
+        'Documentation preparation',
+        'Negotiation with insurers',
+        'Recovery pursuit',
+      ],
+    },
+    {
+      icon: TrendingUp,
+      title: 'Business Benefits',
+      description: 'The insurance allows you to continue your day-to-day operations, receive money from your claim, and save your business from losing profit.',
+      features: [
+        'Improved cash flow predictability',
+        'Enhanced borrowing capacity',
+        'Peace of mind for expansion',
+        'Protection of profit margins',
+      ],
+    },
+  ];
+
+  const coverageTypes = [
+    {
+      icon: Building2,
+      title: 'Domestic Receivables',
+      description: 'Protect your local Malaysian buyers against non-payment with comprehensive coverage.',
+    },
+    {
+      icon: Globe,
+      title: 'Export Credit Coverage',
+      description: 'Expand confidently into ASEAN and global markets with political and commercial risk protection.',
+    },
+    {
+      icon: User,
+      title: 'Single Buyer Policies',
+      description: 'Focused protection for your largest or most critical trading relationships.',
+    },
+    {
+      icon: ClipboardList,
+      title: 'Whole Turnover',
+      description: 'Comprehensive coverage for your entire buyer portfolio with streamlined administration.',
+    },
+    {
+      icon: AlertTriangle,
+      title: 'Political Risk',
+      description: 'Safeguard against government actions, currency inconvertibility, and expropriation risks.',
+    },
+    {
+      icon: Shield,
+      title: 'Collections Support',
+      description: 'Professional debt collection services to recover outstanding payments efficiently.',
+    },
   ];
 
   return (
-    <main className="min-h-screen bg-background pt-24 transition-all duration-700">
+    <main className="pt-20">
       {/* Hero Section */}
-      <section className="py-24 lg:py-48 relative overflow-hidden bg-background">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/approach_handshake.jpg"
-            alt="Services"
-            className="w-full h-full object-cover opacity-20"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-        </div>
-        <div className="w-[86vw] mx-auto relative z-10">
-          <div className="max-w-4xl space-y-8">
-            <span className="text-secondary font-black uppercase tracking-[0.4em] text-[10px] reveal-up active">
-              Our Expertise // Global Solutions
-            </span>
-            <h1 className="text-5xl lg:text-8xl font-heading font-extrabold text-foreground uppercase leading-[0.9] tracking-tighter reveal-up active">
-              Strategic <br />
-              <span className="text-secondary">Financial</span> Engineering.
+      <section className="relative py-20 lg:py-32 bg-shefa-navy">
+        <div className="w-[86vw] mx-auto">
+          <div className="max-w-4xl">
+            <span className="eyebrow block mb-4 text-white/60">Our Services</span>
+            <div className="gold-rule mb-6" />
+            <h1 className="heading-xl text-white mb-6">
+              Trade Credit Insurance &{" "}
+              <span className="text-shefa-gold">Financing Solutions</span>
             </h1>
-            <div className="w-24 h-1.5 bg-secondary reveal-up active" />
-            <p className="text-xl lg:text-2xl text-foreground/70 max-w-2xl leading-relaxed font-light reveal-up active">
-              We structure complex trade finance solutions that bridge the gap between
-              traditional banking limitations and the practical needs of industrial giants.
+            <p className="text-xl text-white/80 max-w-3xl">
+              Comprehensive protection and financing solutions designed for Malaysian businesses. From policy negotiation to claim settlement, we handle it all.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Services Breakdown */}
-      <section className="py-20 lg:py-40 bg-card/20">
+      {/* Main Services */}
+      <section className="py-20 lg:py-32 bg-shefa-white">
         <div className="w-[86vw] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-            {services.map((service, index) => {
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="eyebrow block mb-4">What We Offer</span>
+            <div className="gold-rule mx-auto mb-6" />
+            <h2 className="heading-lg text-shefa-navy">
+              End-to-End <span className="text-shefa-gold">Protection</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {mainServices.map((service) => {
               const Icon = service.icon;
               return (
-                <div
-                  key={service.title}
-                  className="glass-card rounded-[40px] p-8 lg:p-14 space-y-10 hover:border-secondary transition-all duration-500 group reveal-up active border border-border/50"
-                  style={{ transitionDelay: `${index * 150}ms` }}
-                >
-                  <div className="w-20 h-20 rounded-2xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary group-hover:text-secondary-foreground transition-all">
-                    <Icon className="w-10 h-10" />
+                <div key={service.title} className="card p-8 lg:p-10">
+                  <div className="w-14 h-14 rounded-2xl bg-shefa-gold/10 flex items-center justify-center mb-6">
+                    <Icon className="w-7 h-7 text-shefa-gold" />
                   </div>
-                  <div className="space-y-6">
-                    <h3 className="text-2xl lg:text-3xl font-heading font-black text-foreground uppercase leading-tight tracking-tight">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm lg:text-base text-foreground/60 leading-relaxed font-light">
-                      {service.desc}
-                    </p>
-                  </div>
-                  <ul className="space-y-4 pt-6 border-t border-border/30">
-                    {service.features.map(feature => (
-                      <li key={feature} className="flex items-center gap-4 text-[10px] font-black uppercase tracking-widest text-foreground/40">
-                        <div className="w-1.5 h-1.5 bg-secondary rounded-full shadow-glow-gold" />
-                        {feature}
+                  <h3 className="font-heading text-2xl font-medium text-shefa-navy mb-4">{service.title}</h3>
+                  <p className="body-base mb-6">{service.description}</p>
+                  <ul className="space-y-3">
+                    {service.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-3">
+                        <div className="w-1.5 h-1.5 rounded-full bg-shefa-gold mt-2 flex-shrink-0" />
+                        <span className="text-shefa-navy/80">{feature}</span>
                       </li>
                     ))}
                   </ul>
-                  <button className="pt-6 flex items-center gap-4 text-secondary group-hover:gap-6 transition-all">
-                    <span className="text-[10px] font-black uppercase tracking-[0.2em]">Structure Enquiry</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
                 </div>
               );
             })}
@@ -94,17 +136,135 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Quote */}
-      <section className="py-32 bg-background text-center border-t border-border">
-        <div className="w-full px-6 lg:px-12">
-          <div className="max-w-4xl mx-auto space-y-10">
-            <h2 className="font-heading text-3xl lg:text-5xl italic text-foreground/90 leading-snug font-light">
-              "We don't just provide funding; we engineer the structural resilience required for the global economy."
+      {/* Coverage Types */}
+      <section className="py-20 lg:py-32 bg-shefa-navy">
+        <div className="w-[86vw] mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="eyebrow block mb-4 text-white/60">Coverage Options</span>
+            <div className="gold-rule mx-auto mb-6" />
+            <h2 className="heading-lg text-white mb-4">
+              Types of <span className="text-shefa-gold">Coverage</span>
             </h2>
-            <div className="flex flex-col items-center gap-6">
-              <div className="w-16 h-1 bg-secondary" />
-              <div className="font-black text-[10px] text-secondary uppercase tracking-[0.5em]">Shefa Strategy Board</div>
+            <p className="text-white/70">
+              Choose the coverage that best fits your business needs and trading patterns.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {coverageTypes.map((coverage) => {
+              const Icon = coverage.icon;
+              return (
+                <div key={coverage.title} className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-shefa-gold/20 flex items-center justify-center mb-6">
+                    <Icon className="w-6 h-6 text-shefa-gold" />
+                  </div>
+                  <h3 className="font-heading text-xl font-medium text-white mb-4">{coverage.title}</h3>
+                  <p className="text-white/70">{coverage.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-20 lg:py-32 bg-shefa-white">
+        <div className="w-[86vw] mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="eyebrow block mb-4">The Process</span>
+            <div className="gold-rule mx-auto mb-6" />
+            <h2 className="heading-lg text-shefa-navy mb-4">
+              How It <span className="text-shefa-gold">Works</span>
+            </h2>
+            <p className="body-lg">
+              From policy setup to claim settlement—simple, transparent, and fast.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                step: '1',
+                title: 'Assessment',
+                description: 'We analyze your buyer portfolio, trade patterns, and credit sales history to understand your risk profile.',
+              },
+              {
+                step: '2',
+                title: 'Policy Setup',
+                description: 'We negotiate with insurers to secure the best coverage terms tailored to your specific needs.',
+              },
+              {
+                step: '3',
+                title: 'Ongoing Support',
+                description: 'We provide continuous monitoring, claim management, and policy adjustments as your business grows.',
+              },
+            ].map((step) => (
+              <div key={step.step} className="text-center">
+                <div className="w-16 h-16 rounded-full bg-shefa-gold flex items-center justify-center mx-auto mb-6">
+                  <span className="font-heading text-2xl font-bold text-shefa-navy">{step.step}</span>
+                </div>
+                <h3 className="font-heading text-xl font-medium text-shefa-navy mb-4">{step.title}</h3>
+                <p className="body-base">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Confidence Section */}
+      <section className="py-20 lg:py-32 bg-shefa-gold">
+        <div className="w-[86vw] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="heading-lg text-shefa-navy mb-6">
+                Confidence and Security
+              </h2>
+              <p className="text-shefa-navy/80 text-lg mb-8">
+                With trade credit insurance, you gain peace of mind, knowing your profits, liquidity, and cash flow are protected, allowing you to expand your business confidently.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <a href="/borrowers" className="inline-flex items-center px-8 py-4 bg-shefa-navy text-white font-medium rounded-full hover:bg-shefa-navy/90 transition-colors">
+                  For Borrowers
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </a>
+                <a href="/lenders" className="inline-flex items-center px-8 py-4 bg-white text-shefa-navy font-medium rounded-full hover:bg-white/90 transition-colors">
+                  For Lenders
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </a>
+              </div>
             </div>
+            <div className="grid grid-cols-2 gap-6">
+              {[
+                { value: '<48h', label: 'Policy Indication' },
+                { value: '90%', label: 'Coverage Available' },
+                { value: '30-60', label: 'Days Claim Settlement' },
+                { value: '24/7', label: 'Support Available' },
+              ].map((stat) => (
+                <div key={stat.label} className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center">
+                  <div className="font-heading text-3xl font-bold text-shefa-navy mb-1">{stat.value}</div>
+                  <div className="text-shefa-navy/70 text-sm">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 lg:py-32 bg-shefa-white">
+        <div className="w-[86vw] mx-auto">
+          <div className="card p-12 lg:p-16 text-center">
+            <Shield className="w-16 h-16 text-shefa-gold mx-auto mb-6" />
+            <h2 className="heading-lg text-shefa-navy mb-4">
+              Ready to Protect Your <span className="text-shefa-gold">Business?</span>
+            </h2>
+            <p className="body-lg max-w-2xl mx-auto mb-8">
+              Get a tailored trade credit insurance policy designed for your business needs. Speak to our team today.
+            </p>
+            <a href="/contact" className="btn-primary">
+              Get a Quote
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </a>
           </div>
         </div>
       </section>

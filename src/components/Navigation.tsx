@@ -1,225 +1,154 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, Globe, Sun, Moon, Check } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
+import { Menu, X, Globe, Check } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
-type Page = 'home' | 'borrowers' | 'lenders' | 'about' | 'services' | 'industries' | 'contact';
+type Page = 'home' | 'borrowers' | 'lenders' | 'about' | 'services' | 'contact';
 
 interface NavigationProps {
   currentPage: Page;
-  onNavigate: (page: Page, hash?: string) => void;
+  onNavigate: (page: Page) => void;
 }
 
 const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
+  const { t, language, setLanguage } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
-
-  const { theme, toggleTheme } = useTheme();
-  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    {
-      label: t('nav_borrowers'),
-      page: 'borrowers' as Page,
-      dropdown: [
-        { label: t('nav_invoice_financing'), hash: '#invoice-financing' },
-        { label: t('nav_supply_chain'), hash: '#supply-chain' }
-      ]
-    },
-    { label: t('nav_lenders'), page: 'lenders' as Page },
+  const navLinks: { label: string; page: Page }[] = [
+    { label: t('nav_borrowers'), page: 'borrowers' },
+    { label: t('nav_lenders'), page: 'lenders' },
   ];
 
-  const handleNavigate = (page: Page, hash?: string) => {
-    onNavigate(page, hash);
+  const handleNavigate = (page: Page) => {
+    onNavigate(page);
     setIsMobileMenuOpen(false);
-    setActiveDropdown(null);
   };
 
   const toggleLanguage = () => {
     setLanguage(language === 'en' ? 'ms' : 'en');
     setIsLangMenuOpen(false);
-  }
+  };
 
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 ${isScrolled ? 'bg-background/95 backdrop-blur-xl border-b border-border py-4 shadow-xl' : 'bg-transparent py-8'
+        className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 ${isScrolled
+          ? 'bg-shefa-navy/95 backdrop-blur-xl shadow-lg border-b border-white/10'
+          : 'bg-gradient-to-b from-black/50 to-transparent'
           }`}
       >
-        <div className="w-full px-6 lg:px-12 flex items-center justify-between">
-          {/* Logo */}
-          <button
-            onClick={() => handleNavigate('home')}
-            className="flex flex-col items-start active:scale-95 transition-transform group"
-          >
-            <span className="font-heading font-black text-2xl tracking-[2px] uppercase text-foreground leading-none">
-              <span className="border-b-4 border-secondary pb-0.5">SHEFA</span>
-            </span>
-            <span className={`text-[8px] font-black uppercase tracking-[0.4em] mt-1.5 ${theme === 'dark' ? 'text-secondary' : 'text-primary'}`}>Risk Management</span>
-          </button>
+        <div className="w-full px-6 lg:px-12">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo */}
+            <button
+              onClick={() => handleNavigate('home')}
+              className="flex items-center gap-3"
+            >
+              <img
+                src="/shefa-white-logo.png"
+                alt="Shefa Risk Management"
+                className="h-10 lg:h-12 w-auto transition-all"
+              />
+            </button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-10">
-            {navLinks.map((link) => (
-              <div
-                key={link.label}
-                className="relative group/nav"
-                onMouseEnter={() => setActiveDropdown(link.label)}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center gap-8">
+              {navLinks.map((link) => (
                 <button
+                  key={link.page}
                   onClick={() => handleNavigate(link.page)}
-                  className={`text-[11px] font-black uppercase tracking-[0.2em] transition-all flex items-center gap-1.5 py-2 ${currentPage === link.page ? 'text-primary' : 'text-foreground/70 hover:text-foreground'
+                  className={`text-sm font-medium transition-colors relative group ${currentPage === link.page ? 'text-shefa-gold' : 'text-white/90 hover:text-white'
                     }`}
                 >
                   {link.label}
-                  {link.dropdown && <ChevronDown size={12} className={`transition-transform duration-300 ${activeDropdown === link.label ? 'rotate-180' : ''}`} />}
+                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-shefa-gold transition-all duration-300 ${currentPage === link.page ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`} />
                 </button>
+              ))}
+            </div>
 
-                {link.dropdown && (
-                  <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-4 transition-all duration-300 transform ${activeDropdown === link.label ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
-                    <div className="bg-card border border-border rounded-[20px] p-3 w-64 shadow-2xl relative overflow-hidden">
-                      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary to-primary" />
-                      {link.dropdown.map((item) => (
-                        <button
-                          key={item.label}
-                          className="w-full text-left px-5 py-3.5 text-[10px] font-black uppercase tracking-widest text-foreground/60 hover:text-primary hover:bg-primary/5 rounded-xl transition-all"
-                          onClick={() => handleNavigate(link.page, item.hash)}
-                        >
-                          {item.label}
-                        </button>
-                      ))}
-                    </div>
+            {/* CTA + Language + Mobile Menu */}
+            <div className="flex items-center gap-4">
+
+              {/* Language Switcher (Desktop) */}
+              <div className="relative hidden lg:block">
+                <button
+                  onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                  className="flex items-center gap-2 text-white/90 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest"
+                >
+                  <Globe size={16} />
+                  {language}
+                </button>
+                {isLangMenuOpen && (
+                  <div className="absolute top-full right-0 mt-2 bg-white text-shefa-navy rounded-xl shadow-xl overflow-hidden min-w-[120px]">
+                    <button onClick={() => { setLanguage('en'); setIsLangMenuOpen(false); }} className={`flex items-center justify-between w-full px-4 py-3 hover:bg-shefa-gray/10 text-xs font-bold uppercase ${language === 'en' ? 'text-shefa-gold' : ''}`}>
+                      English {language === 'en' && <Check size={14} />}
+                    </button>
+                    <button onClick={() => { setLanguage('ms'); setIsLangMenuOpen(false); }} className={`flex items-center justify-between w-full px-4 py-3 hover:bg-shefa-gray/10 text-xs font-bold uppercase ${language === 'ms' ? 'text-shefa-gold' : ''}`}>
+                      Malay {language === 'ms' && <Check size={14} />}
+                    </button>
                   </div>
                 )}
               </div>
-            ))}
-          </div>
 
-          {/* Extra Actions */}
-          <div className="hidden lg:flex items-center gap-6">
-
-            {/* Language Switcher */}
-            <div className="relative">
               <button
-                onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                className="flex items-center gap-2 text-foreground/60 hover:text-primary transition-colors"
+                onClick={() => handleNavigate('contact')}
+                className={`hidden lg:inline-flex px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-200 ${isScrolled
+                  ? 'bg-shefa-gold text-shefa-navy hover:bg-shefa-gold/90'
+                  : 'bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white/30'
+                  }`}
               >
-                <Globe size={16} />
-                <span className="text-[10px] font-black uppercase tracking-widest">{language.toUpperCase()}</span>
+                {t('nav_quote')}
               </button>
 
-              {isLangMenuOpen && (
-                <div className="absolute top-full right-0 mt-4 bg-card border border-border rounded-[20px] p-2 w-32 shadow-2xl">
-                  <button
-                    onClick={() => { setLanguage('en'); setIsLangMenuOpen(false); }}
-                    className={`w-full text-left px-4 py-3 text-[10px] font-black uppercase tracking-widest rounded-xl transition-all flex justify-between items-center ${language === 'en' ? 'text-primary bg-primary/5' : 'text-foreground/60 hover:bg-foreground/5'}`}
-                  >
-                    English
-                    {language === 'en' && <Check size={12} />}
-                  </button>
-                  <button
-                    onClick={() => { setLanguage('ms'); setIsLangMenuOpen(false); }}
-                    className={`w-full text-left px-4 py-3 text-[10px] font-black uppercase tracking-widest rounded-xl transition-all flex justify-between items-center ${language === 'ms' ? 'text-primary bg-primary/5' : 'text-foreground/60 hover:bg-foreground/5'}`}
-                  >
-                    Malay
-                    {language === 'ms' && <Check size={12} />}
-                  </button>
-                </div>
-              )}
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className={`lg:hidden p-2 rounded-lg transition-colors text-white`}
+                aria-label="Toggle menu"
+              >
+                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
             </div>
-
-            <button
-              onClick={toggleTheme}
-              className="w-10 h-10 flex items-center justify-center rounded-xl bg-foreground/5 hover:bg-foreground/10 text-foreground transition-all"
-              aria-label="Toggle Theme"
-            >
-              {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
-            </button>
-
-            <button
-              onClick={() => handleNavigate('borrowers')}
-              className="bg-secondary text-secondary-foreground px-8 py-3.5 rounded-xl font-black text-[10px] uppercase tracking-[0.2em] hover:brightness-105 active:scale-95 transition-all shadow-xl hover:shadow-glow-gold"
-            >
-              {t('nav_get_funded')}
-            </button>
           </div>
-
-          {/* Mobile Menu Toggle */}
-          <button
-            className="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-foreground/5 text-foreground"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 z-[999] bg-background lg:hidden transition-all duration-700 ease-in-out transform ${isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
+        className={`fixed inset-0 z-[999] bg-shefa-navy/98 backdrop-blur-xl transition-transform duration-300 lg:hidden ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
       >
-        <div className="flex flex-col items-center justify-center h-full gap-10 p-12 text-center overflow-y-auto">
-          <div className="space-y-8 w-full">
-            {navLinks.map((link) => (
-              <div key={link.label} className="space-y-4">
-                <button
-                  onClick={() => handleNavigate(link.page)}
-                  className="text-4xl font-heading font-black uppercase tracking-tighter text-foreground"
-                >
-                  {link.label}
-                </button>
-                {link.dropdown && (
-                  <div className="flex flex-col gap-4">
-                    {link.dropdown.map(item => (
-                      <button
-                        key={item.label}
-                        onClick={() => handleNavigate(link.page, item.hash)}
-                        className="text-sm font-black uppercase tracking-[0.2em] text-foreground/40"
-                      >
-                        {item.label}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-
-          <div className="w-full h-px bg-border" />
-
-          <div className="flex items-center justify-center gap-12 w-full">
-            <button onClick={toggleTheme} className="flex flex-col items-center gap-2 text-foreground font-black uppercase text-[10px] tracking-widest">
-              <div className="w-12 h-12 rounded-2xl bg-foreground/5 flex items-center justify-center mb-1">
-                {theme === 'light' ? <Moon size={22} /> : <Sun size={22} />}
-              </div>
-              {t('theme')}
+        <div className="flex flex-col items-center justify-center h-full gap-6 pt-20">
+          {navLinks.map((link) => (
+            <button
+              key={link.page}
+              onClick={() => handleNavigate(link.page)}
+              className={`text-2xl font-heading font-medium ${currentPage === link.page ? 'text-shefa-gold' : 'text-white'
+                }`}
+            >
+              {link.label}
             </button>
-            <button onClick={toggleLanguage} className="flex flex-col items-center gap-2 text-foreground font-black uppercase text-[10px] tracking-widest">
-              <div className="w-12 h-12 rounded-2xl bg-foreground/5 flex items-center justify-center mb-1">
-                <Globe size={22} />
-              </div>
-              {t('language')} ({language.toUpperCase()})
-            </button>
-          </div>
+          ))}
+
+          <button onClick={toggleLanguage} className="flex items-center gap-2 text-white/80 font-bold uppercase tracking-widest text-sm mt-4">
+            <Globe size={18} /> {language === 'en' ? 'Bahasa Malaysia' : 'English'}
+          </button>
 
           <button
-            onClick={() => handleNavigate('borrowers')}
-            className="w-full bg-secondary text-secondary-foreground py-6 rounded-2xl font-black uppercase tracking-[0.3em] text-sm shadow-2xl"
+            onClick={() => handleNavigate('contact')}
+            className="btn-primary mt-4"
           >
-            {t('nav_get_funded')}
+            {t('nav_quote')}
           </button>
         </div>
       </div>

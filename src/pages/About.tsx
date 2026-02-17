@@ -1,164 +1,238 @@
-import { Linkedin, ShieldCheck, MapPin, Mail, Phone } from 'lucide-react';
+import { Shield, Award, Target, Globe, Mail, Phone } from 'lucide-react';
 
 const About = () => {
+  const values = [
+    {
+      icon: Shield,
+      title: 'Structural Resilience',
+      description: 'We do not just lend; we architect secured environments. Through our one-stop FinHub and credit-insurance backing, we prioritize Capital Preservation over speculation.',
+    },
+    {
+      icon: Globe,
+      title: 'Industrial Connectivity',
+      description: 'We are the vital bridge between Global Liquidity and Malaysia\'s Industrial Backbone. By addressing the MYR 24.3bn liquidity gap, we turn MSME trade receivables into a high-performance asset class.',
+    },
+    {
+      icon: Target,
+      title: 'Forensic Integrity',
+      description: 'Our data-first approach ensures every transaction is characterized by technical precision. Backed by a 40-year leadership pedigree, we provide the transparency essential for high-stakes investing.',
+    },
+  ];
+
   const team = [
     {
-      name: "Russell Boyd",
-      role: "Director / CEO",
-      bio: "20+ years in global trade finance and private equity structuring.",
-      image: "/russell-boyd.png",
+      name: 'Russell Boyd',
+      title: 'Director / CEO',
+      image: '/team_1.jpg',
     },
     {
-      name: "Dr. Surendran Sanggarin",
-      role: "Director / COO",
-      bio: "Operations specialist with 18+ years in financial strategy.",
-      image: "/dr-surendran.png",
+      name: 'Dr. Surendran Sanggarin',
+      title: 'Director / COO',
+      image: '/team_3.jpg',
     },
     {
-      name: "Dato' Chik Nazrin",
-      role: "Director / CRO",
-      bio: "Risk & Compliance veteran. Former PWC & Shell.",
-      image: "/dato-chik.png",
+      name: 'Dato\' Chik Nazrin',
+      title: 'Director / CRO',
+      image: '/team_2.jpg',
     },
     {
-      name: "Laura Daniel",
-      role: "Advisor",
-      bio: "Strategic advisor with deep expertise in Malaysian trade and financial governance.",
-      image: "/laura-daniel.png",
-    }
+      name: 'Laura Daniel',
+      title: 'Advisor',
+      image: '/team_4.jpg',
+    },
   ];
 
   return (
     <main className="pt-20">
-      {/* Hero */}
-      <section id="about" className="bg-background text-foreground py-24 lg:py-48 relative overflow-hidden border-b border-border scroll-mt-32">
-        <div className="absolute inset-0 z-0">
-          <img src="/hero_team_office.jpg" className="w-full h-full object-cover brightness-[0.4]" alt="Shefa HQ" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-        </div>
-        <div className="w-full px-6 lg:px-12 relative z-10">
-          <div className="max-w-[1400px] mx-auto text-center space-y-10">
-            <span className="text-secondary font-black uppercase tracking-[0.4em] text-[10px]">Stewards of Capital</span>
-            <h1 className="text-6xl lg:text-[9rem] font-heading font-extrabold uppercase leading-[0.85] tracking-tighter text-white">
-              BRED IN <br /> <span className="text-secondary">RISK.</span>
+      {/* Hero Section */}
+      <section className="relative py-20 lg:py-32 bg-shefa-navy">
+        <div className="w-[86vw] mx-auto">
+          <div className="max-w-4xl">
+            <span className="eyebrow block mb-4 text-white/60">About Shefa</span>
+            <div className="gold-rule mb-6" />
+            <h1 className="heading-xl text-white mb-6">
+              Institutional Security Meets{" "}
+              <span className="text-shefa-gold">Economic Momentum</span>
             </h1>
-            <p className="text-xl lg:text-3xl text-white/70 max-w-4xl mx-auto font-light leading-relaxed">
-              A leadership team forged in private equity, audit rigor, and industrial operations.
-              We don't just facilitate trade; we protect it.
+            <p className="text-xl text-white/80 max-w-3xl">
+              Shefa operates at the intersection of institutional capital and the industrial backbone of Southeast Asia, addressing systemic liquidity gaps in sectors responsible for 40% of Malaysia&apos;s GDP.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Leadership Grid */}
-      <section id="leadership" className="py-24 lg:py-40 scroll-mt-32">
-        <div className="w-full px-6 lg:px-12">
-          <div className="max-w-[1400px] mx-auto space-y-32">
-            <div className="flex flex-col md:flex-row justify-between items-end gap-12">
-              <div className="space-y-6">
-                <h2 className="text-4xl lg:text-7xl font-heading font-extrabold uppercase tracking-tight text-foreground">THE DIRECTORY OF <br /><span className="text-secondary">AUTHORITY.</span></h2>
-                <div className="w-32 h-2 bg-secondary" />
-              </div>
-              <p className="text-xl text-foreground/60 max-w-xl font-light leading-relaxed">
-                Institutional rigor brought to Malaysia's trade finance sector. Every structured note is a product of combined compliance and industrial logic.
+      {/* Mission Quote */}
+      <section className="py-20 lg:py-32 bg-shefa-white">
+        <div className="w-[86vw] mx-auto">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="text-6xl text-shefa-gold mb-6">&ldquo;</div>
+            <blockquote className="heading-lg text-shefa-navy mb-8">
+              Risk management is not about predicting the future, but about creating systems that are resilient to it.
+            </blockquote>
+            <cite className="text-shefa-gray not-italic">— Nassim Nicholas Taleb</cite>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Story */}
+      <section className="py-20 lg:py-32 bg-shefa-navy">
+        <div className="w-[86vw] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div>
+              <span className="eyebrow block mb-4 text-white/60">Our Story</span>
+              <div className="gold-rule mb-6" />
+              <h2 className="heading-lg text-white mb-6">
+                Building <span className="text-shefa-gold">Credit Infrastructure</span>
+              </h2>
+              <p className="text-white/80 mb-6">
+                Through our proprietary FinHub platform, we transform trade receivables into high-conviction, insurance-backed assets; advancing up to 80% of invoice values against verified corporate obligations in resilient sectors.
+              </p>
+              <p className="text-white/70">
+                Our mandate is capital preservation through structural resilience: delivering institutional investors secured access to Southeast Asia&apos;s growth engines while building essential credit infrastructure for a liquid, resilient global economy.
               </p>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
-              {team.map((member, i) => (
-                <div key={i} className="group space-y-8">
-                  <div className="aspect-[4/5] relative overflow-hidden rounded-[40px] glass-card border-white/5 shadow-2xl">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-60" />
-                    <div className="absolute bottom-8 right-8 w-12 h-12 bg-secondary text-secondary-foreground rounded-2xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0 shadow-glow-gold pointer-events-none">
-                      <Linkedin size={20} />
-                    </div>
-                  </div>
-
-                  <div className="space-y-4 px-2">
-                    <div className="space-y-1">
-                      <h3 className="text-2xl font-heading font-black uppercase text-foreground tracking-tight leading-none">{member.name}</h3>
-                      <div className="text-secondary font-black uppercase tracking-[0.2em] text-[10px]">{member.role}</div>
-                    </div>
-                    <p className="text-foreground/70 text-sm leading-relaxed font-light">
-                      {member.bio}
-                    </p>
-                  </div>
-                </div>
-              ))}
+            <div className="image-card h-[400px] lg:h-[500px] overflow-hidden">
+              <img
+                src="/why_meeting.jpg"
+                alt="Shefa Team"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-24 lg:py-40 bg-card/30 border-t border-border scroll-mt-32">
-        <div className="w-full px-6 lg:px-12">
-          <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
-            <div className="space-y-16">
-              <div className="space-y-6">
-                <h2 className="text-4xl lg:text-7xl font-heading font-extrabold uppercase tracking-tight text-foreground">ENGAGE <br /><span className="text-secondary">US directly.</span></h2>
-                <div className="w-32 h-2 bg-secondary" />
-              </div>
+      {/* Core Values */}
+      <section className="py-20 lg:py-32 bg-shefa-white">
+        <div className="w-[86vw] mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="eyebrow block mb-4">Our Values</span>
+            <div className="gold-rule mx-auto mb-6" />
+            <h2 className="heading-lg text-shefa-navy">
+              The Foundation of <span className="text-shefa-gold">Everything We Do</span>
+            </h2>
+          </div>
 
-              <div className="space-y-10">
-                <div className="flex gap-8 group">
-                  <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-secondary-foreground transition-all">
-                    <MapPin size={32} />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {values.map((value) => {
+              const Icon = value.icon;
+              return (
+                <div key={value.title} className="card p-8 hover:shadow-card-hover transition-shadow">
+                  <div className="w-14 h-14 rounded-2xl bg-shefa-gold/10 flex items-center justify-center mb-6">
+                    <Icon className="w-7 h-7 text-shefa-gold" />
                   </div>
-                  <div className="space-y-2">
-                    <div className="text-[10px] font-black uppercase tracking-widest opacity-40">Headquarters</div>
-                    <p className="text-xl font-bold leading-relaxed text-foreground">
-                      Level 19, Menara 2, KL Eco City,<br />
-                      59200 Kuala Lumpur, Malaysia
-                    </p>
-                  </div>
+                  <h3 className="font-heading text-xl font-medium text-shefa-navy mb-4">{value.title}</h3>
+                  <p className="body-base">{value.description}</p>
                 </div>
-                <div className="flex gap-8 group">
-                  <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-secondary-foreground transition-all">
-                    <Mail size={32} />
-                  </div>
-                  <div className="space-y-2">
-                    <div className="text-[10px] font-black uppercase tracking-widest opacity-40">Correspondence</div>
-                    <p className="text-xl font-bold leading-relaxed text-foreground">enquiries@shefa.com.my</p>
-                  </div>
-                </div>
-                <div className="flex gap-8 group">
-                  <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-secondary-foreground transition-all">
-                    <Phone size={32} />
-                  </div>
-                  <div className="space-y-2">
-                    <div className="text-[10px] font-black uppercase tracking-widest opacity-40">Global Switchboard</div>
-                    <p className="text-xl font-bold leading-relaxed text-foreground">+603 2774 5254</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="glass-card rounded-[48px] overflow-hidden min-h-[500px] border-white/5 relative shadow-3xl">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.912345678901!2d101.6734567!3d3.1189012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc49a8c1f0b0b1%3A0x12b0b1c1f0b0b1c!2sKL%20Eco%20City!5e0!3m2!1sen!2smy!4v1715421234567!5m2!1sen!2smy"
-                className="absolute inset-0 w-full h-full opacity-80"
-                style={{ border: 0 }}
-                allowFullScreen={true}
-                loading="lazy"
-                title="Shefa Map Location"
-              ></iframe>
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Certification Footer */}
-      <section className="py-24 bg-card/10">
-        <div className="w-full px-6 lg:px-12 text-center">
-          <div className="flex flex-col items-center gap-6">
-            <ShieldCheck size={64} className="text-secondary opacity-30" />
-            <div className="text-[10px] font-black uppercase tracking-[0.5em] text-foreground/40">Audit & Risk Certified // Regulated Asset Management</div>
+      {/* Stats */}
+      <section className="py-20 lg:py-32 bg-shefa-gold">
+        <div className="w-[86vw] mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { value: '40+', label: 'Years Combined Experience' },
+              { value: 'MYR 2.8B+', label: 'Receivables Under Coverage' },
+              { value: '500+', label: 'Businesses Supported' },
+              { value: '94%', label: 'Client Satisfaction' },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="font-heading text-4xl lg:text-5xl font-bold text-shefa-navy mb-2">{stat.value}</div>
+                <div className="text-shefa-navy/70">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Team */}
+      <section className="py-20 lg:py-32 bg-shefa-white">
+        <div className="w-[86vw] mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="eyebrow block mb-4">Leadership</span>
+            <div className="gold-rule mx-auto mb-6" />
+            <h2 className="heading-lg text-shefa-navy mb-4">
+              Meet Our <span className="text-shefa-gold">Team</span>
+            </h2>
+            <p className="body-lg">
+              Led by underwriters, not just algorithms. A team with decades of credit, trade, and risk experience.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {team.map((member) => (
+              <div key={member.name} className="group">
+                <div className="relative aspect-[3/4] mb-5 rounded-3xl overflow-hidden bg-shefa-navy/5">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="gold-rule mb-3" />
+                <h3 className="font-heading text-lg font-medium text-shefa-navy mb-1">{member.name}</h3>
+                <p className="text-sm text-shefa-gray">{member.title}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Info */}
+      <section className="py-20 lg:py-32 bg-shefa-navy">
+        <div className="w-[86vw] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+              <span className="eyebrow block mb-4 text-white/60">Contact</span>
+              <div className="gold-rule mb-6" />
+              <h2 className="heading-lg text-white mb-6">
+                Get in <span className="text-shefa-gold">Touch</span>
+              </h2>
+              <p className="text-white/70 mb-8">
+                Have questions about our services? Our team is here to help.
+              </p>
+            </div>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-shefa-gold/20 flex items-center justify-center">
+                  <Award className="w-5 h-5 text-shefa-gold" />
+                </div>
+                <div>
+                  <h4 className="font-heading text-lg font-medium text-white mb-1">Address</h4>
+                  <p className="text-white/70">
+                    Level 19, Boutique Office 1, Menara 2<br />
+                    No. 3, Jalan Bangsar, KL Eco City<br />
+                    59200 Kuala Lumpur, Malaysia
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-shefa-gold/20 flex items-center justify-center">
+                  <Mail className="w-5 h-5 text-shefa-gold" />
+                </div>
+                <div>
+                  <h4 className="font-heading text-lg font-medium text-white mb-1">Email</h4>
+                  <a href="mailto:enquiries@shefa.com.my" className="text-white/70 hover:text-shefa-gold transition-colors">
+                    enquiries@shefa.com.my
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-shefa-gold/20 flex items-center justify-center">
+                  <Phone className="w-5 h-5 text-shefa-gold" />
+                </div>
+                <div>
+                  <h4 className="font-heading text-lg font-medium text-white mb-1">Phone</h4>
+                  <a href="tel:+60327745254" className="text-white/70 hover:text-shefa-gold transition-colors">
+                    +60 3-2774 5254
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

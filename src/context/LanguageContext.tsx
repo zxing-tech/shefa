@@ -1,7 +1,5 @@
-import { createContext, useContext, useState, type ReactNode } from 'react';
-import { translations } from '../i18n/translations';
-
-type Language = 'en' | 'ms';
+import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
+import { translations, type Language } from '../i18n/translations';
 
 interface LanguageContextType {
     language: Language;
@@ -13,6 +11,20 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     const [language, setLanguage] = useState<Language>('en');
+
+    // Load language from storage if available
+    useEffect(() => {
+        const storedLang = localStorage.getItem('shefa_lang');
+        if (storedLang === 'en' || storedLang === 'ms') {
+            setLanguage(storedLang);
+        }
+    }, []);
+
+    // Save to storage on change
+    useEffect(() => {
+        localStorage.setItem('shefa_lang', language);
+        document.documentElement.lang = language;
+    }, [language]);
 
     const t = (key: keyof typeof translations['en']) => {
         return translations[language][key] || translations['en'][key] || key;

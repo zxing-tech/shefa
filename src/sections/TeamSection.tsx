@@ -4,25 +4,25 @@ const teamMembers = [
   {
     name: 'Russell Boyd',
     title: 'Director / CEO',
-    image: '/russell-boyd.png',
+    image: '/team_1.jpg',
     linkedin: '#',
   },
   {
     name: 'Dr. Surendran Sanggarin',
     title: 'Director / COO',
-    image: '/dr-surendran.png',
+    image: '/team_3.jpg',
     linkedin: '#',
   },
   {
     name: 'Dato\' Chik Nazrin',
     title: 'Director / CRO',
-    image: '/dato-chik.png',
+    image: '/team_2.jpg',
     linkedin: '#',
   },
   {
     name: 'Laura Daniel',
     title: 'Advisor',
-    image: '/laura-daniel.png',
+    image: '/team_4.jpg',
     linkedin: '#',
   },
 ];
@@ -49,13 +49,13 @@ const TeamSection = () => {
           {teamMembers.map((member) => (
             <div key={member.name} className="group">
               {/* Portrait */}
-              <div className="relative aspect-[3/4] mb-5 image-card overflow-hidden bg-shefa-navy/5 rounded-xl">
+              <div className="relative aspect-[3/4] mb-5 image-card overflow-hidden bg-shefa-navy/5">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover transition-all duration-500"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                 />
-
+                
                 {/* LinkedIn overlay */}
                 <div className="absolute inset-0 bg-shefa-navy/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <a

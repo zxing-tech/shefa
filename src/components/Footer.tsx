@@ -1,100 +1,201 @@
-import { Shield, Mail, MapPin, Globe } from 'lucide-react';
+import { useState } from 'react';
+import { MapPin, Phone, Mail, Send, Clock, Shield, CheckCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
+type Page = 'home' | 'borrowers' | 'lenders' | 'about' | 'services' | 'contact';
+
 interface FooterProps {
-    onNavigate: (page: any, hash?: string) => void;
+    onNavigate: (page: Page) => void;
 }
 
 const Footer = ({ onNavigate }: FooterProps) => {
     const { t } = useLanguage();
+    const [formData, setFormData] = useState({
+        name: '',
+        company: '',
+        email: '',
+        message: '',
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setTimeout(() => {
+            setIsSubmitting(false);
+            setSubmitted(true);
+            setFormData({ name: '', company: '', email: '', message: '' });
+        }, 1500);
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
 
     return (
-        <footer className="bg-shefa-cobalt text-white pt-24 pb-12 overflow-hidden relative">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary to-primary" />
+        <footer id="contact" className="relative w-full bg-shefa-white pt-20 lg:pt-32 pb-8">
+            <div className="w-[86vw] mx-auto">
 
-            {/* Abstract background detail */}
-            <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-secondary/5 rounded-full blur-[100px]" />
-            <div className="absolute -top-24 -left-24 w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
+                {/* Contact Section */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-[4vw] mb-20 lg:mb-32">
+                    {/* Form */}
+                    <div>
+                        <span className="eyebrow block mb-4">{t('footer_contact_us')}</span>
+                        <div className="gold-rule mb-6" />
+                        <h2 className="heading-lg text-shefa-navy mb-8">
+                            Contact <span className="text-shefa-gold">Shefa</span>
+                        </h2>
 
-            <div className="w-full px-6 lg:px-12 relative z-10">
-                <div className="max-w-[1400px] mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 mb-24">
-                        {/* Brand Section */}
-                        <div className="lg:col-span-5 space-y-12">
+                        {submitted ? (
+                            <div className="card p-8 text-center">
+                                <div className="w-16 h-16 rounded-full bg-shefa-gold/20 flex items-center justify-center mx-auto mb-4">
+                                    <Send className="w-8 h-8 text-shefa-gold" />
+                                </div>
+                                <h3 className="font-heading text-xl font-medium text-shefa-navy mb-2">{t('footer_message_sent')}</h3>
+                                <p className="text-shefa-gray">{t('footer_message_desc')}</p>
+                            </div>
+                        ) : (
+                            <form onSubmit={handleSubmit} className="space-y-5">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                    <div>
+                                        <label className="block text-sm font-medium text-shefa-navy mb-2">{t('footer_name')}</label>
+                                        <input type="text" name="name" value={formData.name} onChange={handleChange} required className="w-full px-4 py-3 rounded-xl border border-[#E9ECEF] focus:border-shefa-gold focus:ring-1 focus:ring-shefa-gold outline-none transition-all" />
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-shefa-navy mb-2">{t('footer_company')}</label>
+                                        <input type="text" name="company" value={formData.company} onChange={handleChange} required className="w-full px-4 py-3 rounded-xl border border-[#E9ECEF] focus:border-shefa-gold focus:ring-1 focus:ring-shefa-gold outline-none transition-all" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium text-shefa-navy mb-2">{t('footer_email')}</label>
+                                    <input type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full px-4 py-3 rounded-xl border border-[#E9ECEF] focus:border-shefa-gold focus:ring-1 focus:ring-shefa-gold outline-none transition-all" />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium text-shefa-navy mb-2">{t('footer_message')}</label>
+                                    <textarea name="message" value={formData.message} onChange={handleChange} required rows={4} className="w-full px-4 py-3 rounded-xl border border-[#E9ECEF] focus:border-shefa-gold focus:ring-1 focus:ring-shefa-gold outline-none transition-all resize-none" />
+                                </div>
+                                <div className="flex items-start gap-3">
+                                    <input type="checkbox" required className="mt-1 accent-shefa-gold" />
+                                    <label className="text-xs text-shefa-gray">{t('footer_consent')}</label>
+                                </div>
+                                <button type="submit" disabled={isSubmitting} className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2">
+                                    {isSubmitting ? t('footer_sending') : t('footer_send')}
+                                    {!isSubmitting && <Send size={16} />}
+                                </button>
+                            </form>
+                        )}
+                    </div>
+
+                    {/* Contact Info */}
+                    <div>
+                        <div className="card p-8 lg:p-10 h-full">
+                            <h3 className="font-heading text-xl font-medium text-shefa-navy mb-6">Contact Information</h3>
+
                             <div className="space-y-6">
-                                <div className="flex flex-col items-start group">
-                                    <span className="font-heading font-black text-2xl tracking-[2px] uppercase text-white leading-none">
-                                        <span className="border-b-4 border-secondary pb-0.5">SHEFA</span>
-                                    </span>
-                                    <span className="text-[8px] font-black uppercase tracking-[0.4em] mt-1.5 text-secondary">{t('footer_risk_mgmt')}</span>
+                                <div className="flex items-start gap-4">
+                                    <div className="w-10 h-10 rounded-full bg-shefa-navy/5 flex items-center justify-center flex-shrink-0">
+                                        <MapPin className="text-shefa-gold w-5 h-5" />
+                                    </div>
+                                    <div>
+                                        <div className="font-medium text-shefa-navy">{t('footer_address')}</div>
+                                        <div className="text-shefa-gray text-sm">Level 19, Menara 2, KL Eco City, 59200 Kuala Lumpur</div>
+                                    </div>
                                 </div>
-                                <p className="text-white/50 text-xl font-light leading-relaxed max-w-md">
-                                    {t('footer_desc')}
-                                </p>
-                            </div>
 
-                            <div className="space-y-6 pt-8 border-t border-white/10">
-                                <div className="flex items-start gap-4 text-white/40 hover:text-secondary transition-colors group">
-                                    <MapPin size={24} className="flex-shrink-0" />
-                                    <p className="text-sm font-bold uppercase tracking-widest leading-relaxed">
-                                        Level 19, Menara 2, KL Eco City,<br />
-                                        59200 Kuala Lumpur, Malaysia
-                                    </p>
+                                <div className="flex items-start gap-4">
+                                    <div className="w-10 h-10 rounded-full bg-shefa-navy/5 flex items-center justify-center flex-shrink-0">
+                                        <Phone className="text-shefa-gold w-5 h-5" />
+                                    </div>
+                                    <div>
+                                        <div className="font-medium text-shefa-navy">{t('footer_phone')}</div>
+                                        <a href="tel:+60327745254" className="text-shefa-gray text-sm hover:text-shefa-gold transition-colors">+60 3-2774 5254</a>
+                                    </div>
                                 </div>
-                                <div className="flex items-center gap-4 text-white/40 hover:text-secondary transition-colors">
-                                    <Mail size={24} />
-                                    <p className="text-sm font-bold uppercase tracking-widest">enquiries@shefa.com.my</p>
+
+                                <div className="flex items-start gap-4">
+                                    <div className="w-10 h-10 rounded-full bg-shefa-navy/5 flex items-center justify-center flex-shrink-0">
+                                        <Mail className="text-shefa-gold w-5 h-5" />
+                                    </div>
+                                    <div>
+                                        <div className="font-medium text-shefa-navy">{t('footer_email')}</div>
+                                        <a href="mailto:info@shefa-risk.com" className="text-shefa-gray text-sm hover:text-shefa-gold transition-colors">info@shefa-risk.com</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        {/* Links Sections */}
-                        <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-12">
-                            <div className="space-y-8">
-                                <div className="text-[10px] font-black uppercase tracking-[0.4em] text-secondary">{t('footer_solutions')}</div>
-                                <ul className="space-y-4">
-                                    <li><button onClick={() => onNavigate('borrowers', '#invoice-financing')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all text-left">{t('nav_invoice_financing')}</button></li>
-                                    <li><button onClick={() => onNavigate('borrowers', '#supply-chain')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all text-left">{t('nav_supply_chain')}</button></li>
-                                    <li><button onClick={() => onNavigate('industries')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all text-left">{t('footer_sector_expertise')}</button></li>
-                                </ul>
-                            </div>
-
-                            <div className="space-y-8">
-                                <div className="text-[10px] font-black uppercase tracking-[0.4em] text-secondary">{t('footer_investors')}</div>
-                                <ul className="space-y-4">
-                                    <li><button onClick={() => onNavigate('lenders')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all text-left">{t('footer_investment_notes')}</button></li>
-                                    <li><button onClick={() => window.open('https://kldx.com.my')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all text-left">KLDX Platform</button></li>
-                                    <li><button onClick={() => onNavigate('services')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all text-left">{t('footer_service_suite')}</button></li>
-                                </ul>
-                            </div>
-
-                            <div className="space-y-8">
-                                <div className="text-[10px] font-black uppercase tracking-[0.4em] text-secondary">{t('footer_organization')}</div>
-                                <ul className="space-y-4">
-                                    <li><button onClick={() => onNavigate('about', '#about')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all text-left">{t('footer_our_story')}</button></li>
-                                    <li><button onClick={() => onNavigate('about', '#leadership')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all text-left">{t('footer_leadership')}</button></li>
-                                    <li><button onClick={() => onNavigate('about', '#contact')} className="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all text-left">{t('footer_contact_hq')}</button></li>
-                                </ul>
+                                <div className="flex items-start gap-4">
+                                    <div className="w-10 h-10 rounded-full bg-shefa-navy/5 flex items-center justify-center flex-shrink-0">
+                                        <Clock className="text-shefa-gold w-5 h-5" />
+                                    </div>
+                                    <div>
+                                        <div className="font-medium text-shefa-navy">{t('footer_hours')}</div>
+                                        <div className="text-shefa-gray text-sm">{t('footer_mon_fri')}<br />{t('footer_sat_sun')}</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
-                        <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-white/20">
-                            <Shield size={16} />
-                            <span>&copy; {new Date().getFullYear()} {t('footer_rights')}</span>
+                {/* Recognized By Section */}
+                <div className="border-t border-shefa-gray/10 py-12">
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-6 opacity-80 hover:opacity-100 transition-opacity">
+                        <span className="text-shefa-navy/60 text-sm font-medium tracking-wide uppercase">{t('footer_recognized_by')}</span>
+                        <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12">
+                            <div className="flex items-center gap-3">
+                                <Shield className="w-5 h-5 text-shefa-navy" />
+                                <span className="text-shefa-navy font-medium text-sm">Bank Negara Malaysia</span>
+                            </div>
+                            <div className="h-4 w-px bg-shefa-navy/20 hidden md:block" />
+                            <div className="flex items-center gap-3">
+                                <CheckCircle className="w-5 h-5 text-shefa-navy" />
+                                <span className="text-shefa-navy font-medium text-sm">MITBA Member</span>
+                            </div>
+                            <div className="h-4 w-px bg-shefa-navy/20 hidden md:block" />
+                            <div className="flex items-center gap-3">
+                                <CheckCircle className="w-5 h-5 text-shefa-navy" />
+                                <span className="text-shefa-navy font-medium text-sm">PIAM Member</span>
+                            </div>
                         </div>
+                    </div>
+                </div>
 
-                        <div className="flex items-center gap-8">
-                            <div className="flex items-center gap-2 text-white/40">
-                                <Globe size={14} />
-                                <span className="text-[9px] font-black uppercase tracking-widest">English (Global)</span>
-                            </div>
-                            <div className="flex gap-6">
-                                <button className="text-[9px] font-black uppercase tracking-widest text-white/20 hover:text-white transition-all">Regulatory Notice</button>
-                                <button className="text-[9px] font-black uppercase tracking-widest text-white/20 hover:text-white transition-all">Privacy Policy</button>
-                            </div>
-                        </div>
+                {/* Global Links */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-12 border-t border-shefa-gray/10">
+                    <div>
+                        <h4 className="font-bold text-shefa-navy mb-4">{t('nav_services')}</h4>
+                        <ul className="space-y-2 text-sm text-shefa-gray">
+                            <li><button onClick={() => onNavigate('services')} className="hover:text-shefa-gold text-left">Trade Credit Insurance</button></li>
+                            <li><button onClick={() => onNavigate('services')} className="hover:text-shefa-gold text-left">Invoice Financing</button></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 className="font-bold text-shefa-navy mb-4">{t('footer_quick_links')}</h4>
+                        <ul className="space-y-2 text-sm text-shefa-gray">
+                            <li><button onClick={() => onNavigate('home')} className="hover:text-shefa-gold text-left">{t('nav_home')}</button></li>
+                            <li><button onClick={() => onNavigate('about')} className="hover:text-shefa-gold text-left">{t('nav_about')}</button></li>
+                            <li><button onClick={() => onNavigate('contact')} className="hover:text-shefa-gold text-left">{t('nav_contact')}</button></li>
+                        </ul>
+                    </div>
+                    {/* Include Borrowers/Lenders here too? */}
+                    <div>
+                        <h4 className="font-bold text-shefa-navy mb-4">Solutions</h4>
+                        <ul className="space-y-2 text-sm text-shefa-gray">
+                            <li><button onClick={() => onNavigate('borrowers')} className="hover:text-shefa-gold text-left">{t('nav_borrowers')}</button></li>
+                            <li><button onClick={() => onNavigate('lenders')} className="hover:text-shefa-gold text-left">{t('nav_lenders')}</button></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            {/* Copyright Bar */}
+            <div className="bg-shefa-navy text-white py-8">
+                <div className="w-[86vw] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm opacity-70">
+                    <div>&copy; {new Date().getFullYear()} {t('footer_rights')}</div>
+                    <div className="flex gap-6">
+                        <button>{t('footer_privacy')}</button>
+                        <button>{t('footer_terms')}</button>
                     </div>
                 </div>
             </div>
