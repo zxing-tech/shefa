@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { MapPin, Phone, Mail, Send, Clock, Shield, CheckCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
-type Page = 'home' | 'borrowers' | 'lenders' | 'about' | 'services' | 'contact';
+type Page = 'home' | 'borrowers' | 'lenders' | 'about' | 'services' | 'contact' | 'privacy' | 'terms';
 
 interface FooterProps {
     onNavigate: (page: Page) => void;
@@ -161,7 +161,13 @@ const Footer = ({ onNavigate }: FooterProps) => {
                 </div>
 
                 {/* Global Links */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-12 border-t border-shefa-gray/10">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 py-12 border-t border-shefa-gray/10">
+                    <div>
+                        <h4 className="font-bold text-shefa-navy mb-4">Shefa Risk Management</h4>
+                        <p className="text-sm text-shefa-gray leading-relaxed mb-4">
+                            Shefa Risk Management Sdn. Bhd. is a licensed financial advisory firm regulated by Bank Negara Malaysia. We specialize in providing comprehensive risk management and insurance solutions tailored for corporate clients, focusing on trade credit, political risk, and structured finance.
+                        </p>
+                    </div>
                     <div>
                         <h4 className="font-bold text-shefa-navy mb-4">{t('nav_services')}</h4>
                         <ul className="space-y-2 text-sm text-shefa-gray">
@@ -193,8 +199,8 @@ const Footer = ({ onNavigate }: FooterProps) => {
                 <div className="w-[86vw] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm opacity-70">
                     <div>&copy; {new Date().getFullYear()} {t('footer_rights')}</div>
                     <div className="flex gap-6">
-                        <button className="hover:text-shefa-gold transition-colors">{t('footer_privacy')}</button>
-                        <button className="hover:text-shefa-gold transition-colors">{t('footer_terms')}</button>
+                        <button onClick={() => onNavigate('privacy')} className="hover:text-shefa-gold transition-colors">{t('footer_privacy')}</button>
+                        <button onClick={() => onNavigate('terms')} className="hover:text-shefa-gold transition-colors">{t('footer_terms')}</button>
                     </div>
                 </div>
             </div>

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Globe, Check } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
-type Page = 'home' | 'borrowers' | 'lenders' | 'about' | 'services' | 'contact';
+type Page = 'home' | 'borrowers' | 'lenders' | 'about' | 'services' | 'contact' | 'privacy' | 'terms';
 
 interface NavigationProps {
   currentPage: Page;
@@ -25,8 +25,6 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
   }, []);
 
   const navLinks: { label: string; page: Page }[] = [
-    { label: t('nav_about'), page: 'about' },
-    { label: t('nav_services'), page: 'services' },
     { label: t('nav_borrowers'), page: 'borrowers' },
     { label: t('nav_lenders'), page: 'lenders' },
   ];
@@ -63,13 +61,13 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
               />
             </button>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-8">
+            {/* Desktop Navigation (Right Aligned) */}
+            <div className="hidden lg:flex items-center gap-8 ml-auto mr-8">
               {navLinks.map((link) => (
                 <button
                   key={link.page}
                   onClick={() => handleNavigate(link.page)}
-                  className={`text-sm font-medium transition-colors relative group ${currentPage === link.page ? 'text-shefa-gold' : 'text-white/90 hover:text-white'
+                  className={`text-base font-bold uppercase tracking-wider transition-colors relative group ${currentPage === link.page ? 'text-shefa-gold' : 'text-white/90 hover:text-white'
                     }`}
                 >
                   {link.label}
@@ -79,7 +77,7 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
               ))}
             </div>
 
-            {/* CTA + Language + Mobile Menu */}
+            {/* Language + Mobile Menu */}
             <div className="flex items-center gap-4">
 
               {/* Language Switcher (Desktop) */}
@@ -102,16 +100,6 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
                   </div>
                 )}
               </div>
-
-              <button
-                onClick={() => handleNavigate('contact')}
-                className={`hidden lg:inline-flex px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-200 ${isScrolled
-                  ? 'bg-shefa-gold text-shefa-navy hover:bg-shefa-gold/90'
-                  : 'bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white/30'
-                  }`}
-              >
-                {t('nav_quote')}
-              </button>
 
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -142,15 +130,12 @@ const Navigation = ({ currentPage, onNavigate }: NavigationProps) => {
             </button>
           ))}
 
-          <button onClick={toggleLanguage} className="flex items-center gap-2 text-white/80 font-bold uppercase tracking-widest text-sm mt-4">
-            <Globe size={18} /> {language === 'en' ? 'Bahasa Malaysia' : 'English'}
-          </button>
+          <button onClick={() => handleNavigate('about')} className="text-xl font-heading font-medium text-white/80">{t('nav_about')}</button>
+          <button onClick={() => handleNavigate('services')} className="text-xl font-heading font-medium text-white/80">{t('nav_services')}</button>
+          <button onClick={() => handleNavigate('contact')} className="text-xl font-heading font-medium text-white/80">{t('nav_contact')}</button>
 
-          <button
-            onClick={() => handleNavigate('contact')}
-            className="btn-primary mt-4"
-          >
-            {t('nav_quote')}
+          <button onClick={toggleLanguage} className="flex items-center gap-2 text-white/80 font-bold uppercase tracking-widest text-sm mt-8">
+            <Globe size={18} /> {language === 'en' ? 'Bahasa Malaysia' : 'English'}
           </button>
         </div>
       </div>

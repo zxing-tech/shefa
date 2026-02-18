@@ -9,8 +9,10 @@ import Lenders from './pages/Lenders';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 
-type Page = 'home' | 'borrowers' | 'lenders' | 'about' | 'services' | 'contact';
+type Page = 'home' | 'borrowers' | 'lenders' | 'about' | 'services' | 'contact' | 'privacy' | 'terms';
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -19,7 +21,7 @@ function App() {
   useEffect(() => {
     const handlePopState = () => {
       const path = window.location.pathname.slice(1) as Page;
-      if (['home', 'borrowers', 'lenders', 'about', 'services', 'contact'].includes(path)) {
+      if (['home', 'borrowers', 'lenders', 'about', 'services', 'contact', 'privacy', 'terms'].includes(path)) {
         setCurrentPage(path);
       }
     };
@@ -28,7 +30,7 @@ function App() {
 
     // Check initial URL
     const path = window.location.pathname.slice(1) as Page;
-    if (['home', 'borrowers', 'lenders', 'about', 'services', 'contact'].includes(path)) {
+    if (['home', 'borrowers', 'lenders', 'about', 'services', 'contact', 'privacy', 'terms'].includes(path)) {
       setCurrentPage(path);
     }
 
@@ -55,6 +57,10 @@ function App() {
         return <Services />;
       case 'contact':
         return <Contact />;
+      case 'privacy':
+        return <Privacy />;
+      case 'terms':
+        return <Terms />;
       default:
         return <Home navigateTo={navigateTo} />;
     }

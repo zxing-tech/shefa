@@ -26,22 +26,22 @@ const About = () => {
     {
       name: 'Russell Boyd',
       title: 'Director / CEO',
-      image: 'https://ui-avatars.com/api/?name=Russell+Boyd&background=C8A34C&color=fff',
+      image: '/russell-boyd.webp',
     },
     {
       name: 'Dr. Surendran Sanggarin',
       title: 'Director / COO',
-      image: 'https://ui-avatars.com/api/?name=Dr+Surendran+Sanggarin&background=C8A34C&color=fff',
+      image: '/dr-surendran.webp',
     },
     {
       name: "Dato' Chik Nazrin",
       title: 'Director / CRO',
-      image: 'https://ui-avatars.com/api/?name=Dato+Chik+Nazrin&background=C8A34C&color=fff',
+      image: '/dato-chik.webp',
     },
     {
       name: 'Laura Daniel',
       title: 'Advisor',
-      image: 'https://ui-avatars.com/api/?name=Laura+Daniel&background=C8A34C&color=fff',
+      image: '/laura-daniel.webp',
     },
   ];
 
