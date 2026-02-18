@@ -1,5 +1,6 @@
 import { ArrowRight, Shield, TrendingUp, Lock, Eye, CheckCircle, Building2 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import YieldChart from '../components/YieldChart';
 
 const Lenders = () => {
   const { t } = useLanguage();
@@ -156,7 +157,7 @@ const Lenders = () => {
       {/* Benefits / Features */}
       <section className="py-20 lg:py-32 bg-shefa-navy text-white">
         <div className="w-[86vw] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
             {benefits.map((benefit) => {
               const Icon = benefit.icon;
               return (
@@ -169,6 +170,10 @@ const Lenders = () => {
                 </div>
               );
             })}
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            <YieldChart />
           </div>
         </div>
       </section>

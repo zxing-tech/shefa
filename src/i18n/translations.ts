@@ -328,6 +328,15 @@ export const translations = {
 
         // WA
         wa_chat: "Chat with Us",
+
+        // Yield Chart
+        yield_title: "Competitive Returns",
+        yield_subtitle: "Projected annual returns compared to traditional instruments.",
+        yield_label_shefa: "Shefa Risk Management",
+        yield_label_p2p: "P2P / ECF",
+        yield_label_bonds: "Bonds / Sukuk",
+        yield_label_fd: "Fixed Deposit",
+        yield_y_axis: "Annual Return (%)",
     },
     ms: {
         // Navigation
@@ -658,6 +667,15 @@ export const translations = {
 
         // WA
         wa_chat: "Hubungi Kami",
+
+        // Yield Chart
+        yield_title: "Pulangan Kompetitif",
+        yield_subtitle: "Jangkaan pulangan tahunan berbanding instrumen tradisional.",
+        yield_label_shefa: "Shefa Risk Management",
+        yield_label_p2p: "P2P / ECF",
+        yield_label_bonds: "Bon / Sukuk",
+        yield_label_fd: "Simpanan Tetap",
+        yield_y_axis: "Pulangan Tahunan (%)",
     },
 };
 
