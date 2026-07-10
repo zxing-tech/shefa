@@ -51,8 +51,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: t('contact_card3_title'),
-      details: ['enquiries@shefa.com.my'],
-      link: 'mailto:enquiries@shefa.com.my',
+      details: ['inquiries@shefa.com.my'],
+      link: 'mailto:inquiries@shefa.com.my',
     },
     {
       icon: Clock,

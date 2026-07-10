@@ -50,7 +50,7 @@ const Lenders = () => {
                 <ArrowRight className="ml-2 w-4 h-4" />
               </a>
               <a
-                href="mailto:enquiries@shefa.com.my"
+                href="mailto:inquiries@shefa.com.my"
                 className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-medium rounded-full border border-white/30 hover:bg-white/20 transition-all"
               >
                 Request Prospectus
@@ -265,7 +265,7 @@ const Lenders = () => {
               Start Investing
               <ArrowRight className="ml-2 w-4 h-4" />
             </a>
-            <a href="mailto:enquiries@shefa.com.my" className="inline-flex items-center px-8 py-4 border border-white/20 text-white font-medium rounded-full hover:bg-white/10 transition-all">
+            <a href="mailto:inquiries@shefa.com.my" className="inline-flex items-center px-8 py-4 border border-white/20 text-white font-medium rounded-full hover:bg-white/10 transition-all">
               Schedule a Call
             </a>
           </div>

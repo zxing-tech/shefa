@@ -40,7 +40,7 @@ const FinalCTA = () => {
                 <ArrowRight className="ml-2 w-4 h-4" />
               </button>
               <a
-                href="mailto:enquiries@shefa.com.my"
+                href="mailto:inquiries@shefa.com.my"
                 className="inline-flex items-center px-6 lg:px-8 py-3 lg:py-4 border border-shefa-white/30 text-shefa-white font-medium rounded-pill transition-all duration-200 hover:-translate-y-0.5 hover:bg-shefa-white/10"
               >
                 <Mail className="mr-2 w-4 h-4" />

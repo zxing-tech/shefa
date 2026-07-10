@@ -187,7 +187,7 @@ const Borrowers = () => {
                   Apply for Financing
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </a>
-                <a href="mailto:enquiries@shefa.com.my" className="btn-outline w-full sm:w-auto">
+                <a href="mailto:inquiries@shefa.com.my" className="btn-outline w-full sm:w-auto">
                   Contact Our Team
                 </a>
               </div>

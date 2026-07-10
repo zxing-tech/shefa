@@ -43,8 +43,8 @@ const ContactFooter = () => {
                 <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/5 group-hover:border-shefa-cobalt transition-colors">
                   <Mail className="w-4 h-4 text-shefa-cobalt" />
                 </div>
-                <a href="mailto:enquiries@shefa.com.my" className="text-sm text-shefa-silver/80 hover:text-white transition-colors font-mono">
-                  enquiries@shefa.com.my
+                <a href="mailto:inquiries@shefa.com.my" className="text-sm text-shefa-silver/80 hover:text-white transition-colors font-mono">
+                  inquiries@shefa.com.my
                 </a>
               </div>
 

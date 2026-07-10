@@ -221,8 +221,8 @@ const About = () => {
                 </div>
                 <div>
                   <h4 className="font-heading text-lg font-medium text-white mb-1">{t('footer_email')}</h4>
-                  <a href="mailto:enquiries@shefa.com.my" className="text-white/70 hover:text-shefa-gold transition-colors">
-                    enquiries@shefa.com.my
+                  <a href="mailto:inquiries@shefa.com.my" className="text-white/70 hover:text-shefa-gold transition-colors">
+                    inquiries@shefa.com.my
                   </a>
                 </div>
               </div>

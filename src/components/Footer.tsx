@@ -119,7 +119,7 @@ const Footer = ({ onNavigate }: FooterProps) => {
                                     </div>
                                     <div>
                                         <div className="font-medium text-shefa-navy">{t('footer_email')}</div>
-                                        <a href="mailto:enquiries@shefa.com.my" className="text-shefa-gray text-sm hover:text-shefa-gold transition-colors">enquiries@shefa.com.my</a>
+                                        <a href="mailto:inquiries@shefa.com.my" className="text-shefa-gray text-sm hover:text-shefa-gold transition-colors">inquiries@shefa.com.my</a>
                                     </div>
                                 </div>
 

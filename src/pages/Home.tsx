@@ -285,7 +285,7 @@ const Home = ({ navigateTo }: HomeProps) => {
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </button>
                   <a
-                    href="mailto:enquiries@shefa.com.my"
+                    href="mailto:inquiries@shefa.com.my"
                     className="inline-flex items-center px-8 py-4 border border-white/30 text-white font-medium rounded-full hover:bg-white/10 transition-all"
                   >
                     {t('home_final_cta_email')}

@@ -124,7 +124,7 @@ const About = () => {
                   </div>
                   <div className="space-y-2">
                     <div className="text-[10px] font-black uppercase tracking-widest opacity-40">Correspondence</div>
-                    <p className="text-xl font-bold leading-relaxed text-foreground">enquiries@shefa.com.my</p>
+                    <p className="text-xl font-bold leading-relaxed text-foreground">inquiries@shefa.com.my</p>
                   </div>
                 </div>
                 <div className="flex gap-8 group">

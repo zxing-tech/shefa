@@ -49,8 +49,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      details: ['enquiries@shefa.com.my'],
-      link: 'mailto:enquiries@shefa.com.my',
+      details: ['inquiries@shefa.com.my'],
+      link: 'mailto:inquiries@shefa.com.my',
     },
     {
       icon: Clock,
